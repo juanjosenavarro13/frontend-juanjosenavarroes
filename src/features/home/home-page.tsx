@@ -1,7 +1,9 @@
+import { Header } from "./header/header";
+
 export default function HomePage() {
   return (
     <main>
-      <h1 className="text-3xl font-bold underline text-red-600">homee</h1>
+      <Header />
     </main>
   );
 }

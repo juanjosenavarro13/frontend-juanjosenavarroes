@@ -4,6 +4,9 @@ import react from "@vitejs/plugin-react-swc";
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
+  server: {
+    port: 3000,
+  },
   test: {
     globals: true,
     environment: "happy-dom",
@@ -11,7 +14,7 @@ export default defineConfig({
       provider: "v8",
       enabled: true,
       include: ["src/**"],
-      exclude: ["src/main.tsx", "src/router", "src/**/index.ts"],
+      exclude: ["src/main.tsx", "src/router.tsx", "src/**/index.ts"],
       thresholds: {
         statements: 100,
         branches: 100,
