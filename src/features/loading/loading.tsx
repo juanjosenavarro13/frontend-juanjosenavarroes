@@ -1,7 +1,7 @@
 import styles from "./loading.module.css";
 export function GeneralLoading() {
   return (
-    <div className={styles.loadingContainer}>
+    <div className={styles.loadingContainer} data-testid="generalLoading">
       <output>
         <svg
           aria-hidden="true"
@@ -19,7 +19,6 @@ export function GeneralLoading() {
             fill="currentFill"
           />
         </svg>
-        <span className="sr-only">Loading...</span>
       </output>
     </div>
   );
