@@ -1,7 +1,7 @@
 interface SectionContainerProps {
-  id?: string;
-  className: string;
   children: JSX.Element | JSX.Element[];
+  id?: string;
+  className?: string;
 }
 export function SectionContainer({
   className,
