@@ -14,7 +14,11 @@
     "noEmit": true,
     "jsx": "react-jsx",
 
-    "types": ["@testing-library/jest-dom"],
+    "types": ["node", "@testing-library/jest-dom"],
+
+    "paths": {
+      "@/*": ["./src/*"]
+    },
 
     /* Linting */
     "strict": true,
