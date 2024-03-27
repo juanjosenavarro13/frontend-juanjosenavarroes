@@ -1,3 +1,5 @@
+import { ThemeToggle } from "../../theme-toggle";
+
 const navItems = [
   {
     title: "Experiencia",
@@ -34,7 +36,7 @@ export function Header() {
             {link.title}
           </a>
         ))}
-        {/* <ThemeToggle /> */}
+        <ThemeToggle />
       </nav>
     </header>
   );
