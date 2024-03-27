@@ -1,3 +1,3 @@
 export default function NotFoundPage() {
-  return <>404</>;
+  return <main data-testid="page404">404</main>;
 }
