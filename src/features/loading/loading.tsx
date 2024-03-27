@@ -1,5 +1,5 @@
 import styles from "./loading.module.css";
-export function HomePageLoading() {
+export function GeneralLoading() {
   return (
     <div className={styles.loadingContainer}>
       <output>

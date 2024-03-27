@@ -1,16 +1,26 @@
 import { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import { HomePageLazy, HomePageLoading } from "./features/home";
+import { HomePageLazy } from "./features/home";
+import { GeneralLoading } from "./features/loading";
 import { NotFoundPageLazy } from "./features/not-found";
 
 export const router = createBrowserRouter([
   {
     path: "/",
     element: (
-      <Suspense fallback={<HomePageLoading />}>
+      <Suspense fallback={<GeneralLoading />}>
         <HomePageLazy />
       </Suspense>
     ),
-    errorElement: <NotFoundPageLazy />,
+    errorElement: <GeneralLoading />,
+  },
+  {
+    path: "*",
+    element: (
+      <Suspense fallback={<GeneralLoading />}>
+        <NotFoundPageLazy />
+      </Suspense>
+    ),
+    errorElement: <GeneralLoading />,
   },
 ]);
