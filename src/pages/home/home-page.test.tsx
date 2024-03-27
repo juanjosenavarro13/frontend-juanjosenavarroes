@@ -1,5 +1,5 @@
 import { describe, it, expect } from "vitest";
-describe("app", () => {
+describe("home page", () => {
   it("render", () => {
     expect(true).toBe(true);
   });
