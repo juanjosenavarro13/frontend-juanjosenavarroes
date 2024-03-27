@@ -1,7 +1,9 @@
-import styles from "./loading.module.css";
 export function GeneralLoading() {
   return (
-    <div className={styles.loadingContainer} data-testid="generalLoading">
+    <div
+      className="min-h-dvh flex items-center justify-center"
+      data-testid="generalLoading"
+    >
       <output>
         <svg
           aria-hidden="true"
