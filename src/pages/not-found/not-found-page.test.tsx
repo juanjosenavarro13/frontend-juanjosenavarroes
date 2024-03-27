@@ -1,8 +1,8 @@
 import { render } from "@testing-library/react";
 import { describe, it } from "vitest";
-import { HomePage } from "./home-page";
-describe("home page", () => {
+import { NotFoundPage } from "./not-found-page";
+describe("not found page", () => {
   it("render", () => {
-    render(<HomePage />);
+    render(<NotFoundPage />);
   });
 });
