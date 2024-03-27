@@ -11,12 +11,7 @@ export default defineConfig({
       provider: "v8",
       enabled: true,
       include: ["src/**"],
-      exclude: [
-        "src/main.tsx",
-        "src/App.tsx",
-        "src/router.tsx",
-        "src/**/index.ts",
-      ],
+      exclude: ["src/main.tsx", "src/router", "src/**/index.ts"],
       thresholds: {
         statements: 100,
         branches: 100,
