@@ -1,4 +1,3 @@
-import { VercelAnalitics } from "../vercel";
 import {
   AboutMe,
   Background,
@@ -16,7 +15,6 @@ export default function Portfolio() {
   return (
     <main className={`${theme} relative`}>
       <Background />
-      <VercelAnalitics />
       <Header />
       <main className="px-4">
         <SectionContainer className="py-16 md:py-36">
