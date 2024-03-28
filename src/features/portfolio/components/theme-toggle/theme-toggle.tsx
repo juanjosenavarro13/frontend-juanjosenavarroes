@@ -6,6 +6,7 @@ export function ThemeToggle() {
   return (
     <div className="relative ml-1 mr-1">
       <button
+        aria-label="cambiar tema"
         data-testid="buttonChangeTheme"
         className="border-none flex hover:scale-125 transition"
         onClick={toggleTheme}
