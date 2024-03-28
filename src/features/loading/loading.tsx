@@ -1,9 +1,12 @@
+import { VercelAnalitics } from "../vercel";
+
 export function GeneralLoading() {
   return (
     <div
       className="min-h-dvh flex items-center justify-center"
       data-testid="generalLoading"
     >
+      <VercelAnalitics />
       <output>
         <svg
           aria-hidden="true"
