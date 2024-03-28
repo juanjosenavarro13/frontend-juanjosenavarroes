@@ -1,4 +1,3 @@
-import { useStoreTheme } from "@/stores";
 import {
   AboutMe,
   Background,
@@ -9,6 +8,7 @@ import {
   Projects,
   SectionContainer,
 } from "./components";
+import { useStoreTheme } from "./store";
 
 export default function HomePage() {
   const { theme } = useStoreTheme();

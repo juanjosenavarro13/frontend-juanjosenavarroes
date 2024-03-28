@@ -1,4 +1,4 @@
-import { ThemeToggle } from "@/features/theme-toggle";
+import { ThemeToggle } from "../theme-toggle";
 
 const navItems = [
   {

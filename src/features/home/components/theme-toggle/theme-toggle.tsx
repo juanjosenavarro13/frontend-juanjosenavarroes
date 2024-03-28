@@ -1,4 +1,4 @@
-import { useStoreTheme } from "@/stores";
+import { useStoreTheme } from "../../store";
 import { MoonIcon, SunIcon } from "./icons";
 
 export function ThemeToggle() {
