@@ -10,7 +10,7 @@ import {
 } from "./components";
 import { useStoreTheme } from "./store";
 
-export default function HomePage() {
+export default function Portfolio() {
   const { theme } = useStoreTheme();
   return (
     <main className={`${theme} relative`}>
