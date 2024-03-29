@@ -1,8 +1,8 @@
-export function Github({ className }: Readonly<{ className?: string }>) {
+export function GithubIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      className={`${className} icon icon-tabler icon-tabler-brand-github`}
+      className={className}
       width="24"
       height="24"
       viewBox="0 0 24 24"

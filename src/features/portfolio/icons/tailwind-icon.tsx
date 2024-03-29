@@ -1,4 +1,4 @@
-export function Wordpress({ className }: Readonly<{ className?: string }>) {
+export function TailwindIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       className={className}

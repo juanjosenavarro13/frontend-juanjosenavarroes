@@ -1,4 +1,4 @@
-export function Tailwind({ className }: Readonly<{ className?: string }>) {
+export function PhpIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       className={className}

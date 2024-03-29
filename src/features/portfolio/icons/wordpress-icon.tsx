@@ -1,4 +1,4 @@
-export function React({ className }: Readonly<{ className?: string }>) {
+export function WordpressIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       className={className}

@@ -1,4 +1,4 @@
-export function Php({ className }: Readonly<{ className?: string }>) {
+export function ReactIcon({ className }: Readonly<{ className?: string }>) {
   return (
     <svg
       className={className}
