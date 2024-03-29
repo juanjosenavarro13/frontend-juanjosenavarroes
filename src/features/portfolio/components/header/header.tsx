@@ -1,8 +1,10 @@
+import { useTranslation } from "react-i18next";
 import { NAVITEMS } from "../../constants/header";
 import { ThemeToggle } from "../theme-toggle";
 import styles from "./header.module.css";
 
 export function Header() {
+  const { t } = useTranslation("portfolio");
   return (
     <header
       data-testid="header"
@@ -15,10 +17,10 @@ export function Header() {
           <a
             key={link.title}
             className="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-400"
-            aria-label={link.label}
+            aria-label={link.title}
             href={link.url}
           >
-            {link.title}
+            {t(link.title)}
           </a>
         ))}
         <ThemeToggle />

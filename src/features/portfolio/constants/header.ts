@@ -1,27 +1,22 @@
 interface NavItems {
   title: string;
-  label: string;
   url: string;
 }
 export const NAVITEMS: NavItems[] = [
   {
-    title: "Experiencia",
-    label: "experiencia",
+    title: "experience",
     url: "/#experiencia",
   },
   {
-    title: "Proyectos",
-    label: "proyectos",
+    title: "projects",
     url: "/#proyectos",
   },
   {
-    title: "Sobre mí",
-    label: "sobre-mi",
+    title: "aboutMe",
     url: "/#sobre-mi",
   },
   {
-    title: "Contacto",
-    label: "contacto",
+    title: "contact",
     url: "mailto:juanjosenavarroperea@gmail.com",
   },
 ];
