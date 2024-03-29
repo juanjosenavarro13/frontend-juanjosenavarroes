@@ -1,0 +1,46 @@
+{
+  "laboralExperience": "Experiencia laboral",
+  "experience": "Experiencia",
+  "projects": "Proyectos",
+  "aboutMe": "Sobre mí",
+  "contact": "Contacto",
+  "onGoinProject": "Proyecto en curso",
+  "hero": {
+    "title": "Hey, soy {{name}}",
+    "description": "2 años de experiencia. <strong>Ingeniero de Software</strong> de Sevilla, España Especializado en el desarrollo de aplicaciones SPA (typescript)"
+  },
+  "contactMe": "Contáctame",
+  "linkedIn": "LinkedIn",
+  "experienceSection": {
+    "NTT": {
+      "date": "Actualmente...",
+      "title": "Center developer specialist",
+      "description": "Desarrollo dual boot utilizando AngularJS (TypeScript) y Angular 13 o superior para la implementación de soluciones web avanzadas. Creación de aplicaciones utilizando React 18 y TypeScript para mejorar la experiencia del usuario en los servicios proporcionados a cliente. Gestión de versiones utilizando herramientas como GitLab y GitHub para garantizar la colaboración y seguimiento efectivo de cambios en librerías y aplicaciones. Experiencia en la gestión de despliegues de aplicaciones a entornos de producción y previos, asegurando una implementación sin problemas."
+    },
+    "knowMore": "Saber más",
+    "gesimar": {
+      "date": "Septiembre 2021",
+      "title": "Técnico servicios microinformaticos y redes",
+      "description": "Reparacion y mantenimiento de equipos informaticos. Gestion de servidores y servicios ISP"
+    }
+  },
+  "preview": "Preview",
+  "code": "Código",
+  "projectsSection": {
+    "pokeapi": {
+      "description": "Desarrollé una aplicación Pokeapi utilizando React, Tanstack Query v5 y Axios para gestionar eficientemente el estado de las llamadas asíncronas. Implementé custom hooks para la paginación y mantenimiento del estado de la página actual mediante parámetros de consulta, garantizando una experiencia de usuario fluida y eficaz."
+    },
+    "belsay": {
+      "description": "Desarrollé la página web oficial de una pizzería, la cual ofrece un servicio completo de reparto a domicilio. Utilicé tecnologías modernas y técnicas de diseño eficientes para garantizar una experiencia de usuario óptima. Además, implementé un sistema de gestión de pedidos intuitivo y seguro para facilitar la interacción de los clientes con el servicio de entrega."
+    },
+    "gesimar": {
+      "description": "Desarrollé una landing web para una empresa especializada en servicios informáticos y redes. Utilicé las últimas tecnologías y mejores prácticas de diseño para crear una experiencia de usuario atractiva y funcional. La landing ofrece una visión integral de los servicios ofrecidos, destacando la experiencia y el expertise de la empresa en el campo de la tecnología de la información. Además, se implementaron elementos interactivos y llamados a la acción estratégicos para fomentar la participación del usuario y la generación de leads cualificados."
+    }
+  },
+  "aboutMeSection": {
+    "description": "Me llamo Juan José pero mis amigos me llaman Juanjo. Empecé en la programación con un juego (Habbo) cuando tenía 13 años. Actualmente estoy <strong> Desarrollando y manteniendo aplicaciones SPA para IBERIA </strong>. Soy autodidacta y me gusta aprender distintas tecnologías de desarrollo web, sobre todo basadas en javascript. También tengo conocimientos de los distintos sectores en el desarrollo; Bases de datos como mysql, postgres, mongodb; Backend con nodejs, express o nestjs y frontend con angularjs, angular, react o astro."
+  },
+  "footer": {
+    "copyright": "Casi todos los derechos reservados"
+  }
+}

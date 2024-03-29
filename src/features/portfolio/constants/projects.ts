@@ -40,8 +40,7 @@ interface Projects {
 export const PROJECTS: Projects[] = [
   {
     title: "Pokeapi",
-    description:
-      "Desarrollé una aplicación Pokeapi utilizando React, Tanstack Query v5 y Axios para gestionar eficientemente el estado de las llamadas asíncronas. Implementé custom hooks para la paginación y mantenimiento del estado de la página actual mediante parámetros de consulta, garantizando una experiencia de usuario fluida y eficaz.",
+    description: "projectsSection.pokeapi.description",
     link: "https://pokeapi-blue.vercel.app/",
     image: "/projects/pokeapi.webp",
     tags: [TAGS.REACT],
@@ -49,16 +48,14 @@ export const PROJECTS: Projects[] = [
   },
   {
     title: "Pizzeria belsay",
-    description:
-      "Desarrollé la página web oficial de una pizzería, la cual ofrece un servicio completo de reparto a domicilio. Utilicé tecnologías modernas y técnicas de diseño eficientes para garantizar una experiencia de usuario óptima. Además, implementé un sistema de gestión de pedidos intuitivo y seguro para facilitar la interacción de los clientes con el servicio de entrega.",
+    description: "projectsSection.belsay.description",
     link: "http://pizzeriabelsay.es/",
     image: "/projects/belsay.webp",
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.PHP],
   },
   {
-    title: "Gesimar - servicios informaticos",
-    description:
-      "Desarrollé una landing web para una empresa especializada en servicios informáticos y redes. Utilicé las últimas tecnologías y mejores prácticas de diseño para crear una experiencia de usuario atractiva y funcional. La landing ofrece una visión integral de los servicios ofrecidos, destacando la experiencia y el expertise de la empresa en el campo de la tecnología de la información. Además, se implementaron elementos interactivos y llamados a la acción estratégicos para fomentar la participación del usuario y la generación de leads cualificados.",
+    title: "Gesimar",
+    description: "projectsSection.gesimar.description",
     link: "http://www.gesimar.es/",
     image: "/projects/gesimar.webp",
     tags: [TAGS.WORDPRESS],
