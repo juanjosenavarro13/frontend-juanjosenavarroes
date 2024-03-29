@@ -16,11 +16,6 @@ export function Footer() {
         </span>
         <ul className="flex flex-wrap justify-center items-center mt-3 text-sm font-medium dark:text-white/90 sm:mt-0">
           <li>
-            <a href="/#sobre-mi" className="hover:underline me-4 md:me-6">
-              {t("aboutMe")}
-            </a>
-          </li>
-          <li>
             <a
               id="contacto"
               href={`mailto:${INFO.email}`}
