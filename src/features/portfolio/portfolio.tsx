@@ -1,4 +1,5 @@
 import { Background, Footer, Header, SectionContainer } from "./components";
+import { CodeIcon, UserIcon, WorkIcon } from "./icons";
 import { AboutMe, Experience, Hero, Projects } from "./sections";
 import { useStoreTheme } from "./store";
 
@@ -13,13 +14,25 @@ export default function Portfolio() {
           <Hero />
         </SectionContainer>
         <div className="space-y-16">
-          <SectionContainer id="experiencia">
+          <SectionContainer
+            title="Experiencia laboral"
+            icon={<WorkIcon className="size-8" />}
+            id="experiencia"
+          >
             <Experience />
           </SectionContainer>
-          <SectionContainer id="proyectos">
+          <SectionContainer
+            title="Proyectos"
+            icon={<CodeIcon className="size-8" />}
+            id="proyectos"
+          >
             <Projects />
           </SectionContainer>
-          <SectionContainer id="sobre-mi">
+          <SectionContainer
+            title="Sobre mí"
+            icon={<UserIcon className="size-8" />}
+            id="sobre-mi"
+          >
             <AboutMe />
           </SectionContainer>
         </div>
