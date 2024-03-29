@@ -1,0 +1,46 @@
+{
+  "laboralExperience": "Work experience",
+  "experience": "Experience",
+  "projects": "Projects",
+  "aboutMe": "About me",
+  "contact": "Contact",
+  "onGoinProject": "Ongoing project",
+  "hero": {
+    "title": "Hey, I am {{name}}",
+    "description": "2 years of experience. <strong>Software engineer</strong> from Seville, Spain Specialized in the development of SPA (typescript) applications"
+  },
+  "contactMe": "Contact me",
+  "linkedIn": "LinkedIn",
+  "experienceSection": {
+    "NTT": {
+      "date": "At the moment...",
+      "title": "Center developer specialist",
+      "description": "Dual boot development using AngularJS (TypeScript) and Angular 13 or higher for the implementation of advanced web solutions. "
+    },
+    "knowMore": "Know more",
+    "gesimar": {
+      "date": "September 2021",
+      "title": "Microcomputer and network services technician",
+      "description": "Repair and maintenance of computer equipment. "
+    }
+  },
+  "preview": "Preview",
+  "code": "Code",
+  "projectsSection": {
+    "pokeapi": {
+      "description": "Developed a Pokeapi application using React, Tanstack Query v5 and Axios to efficiently manage the state of asynchronous calls. "
+    },
+    "belsay": {
+      "description": "I developed the official website of a pizzeria, which offers a complete home delivery service. "
+    },
+    "gesimar": {
+      "description": "I developed a landing website for a company specialized in computer services and networks. "
+    }
+  },
+  "aboutMeSection": {
+    "description": "My name is Juan José but my friends call me Juanjo.  <strong> Developing and maintaining SPA applications for IBERIA </strong>. "
+  },
+  "footer": {
+    "copyright": "Almost all rights reserved"
+  }
+}
