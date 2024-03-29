@@ -1,28 +1,6 @@
+import { NAVITEMS } from "../../constants/header";
 import { ThemeToggle } from "../theme-toggle";
 import styles from "./header.module.css";
-
-const navItems = [
-  {
-    title: "Experiencia",
-    label: "experiencia",
-    url: "/#experiencia",
-  },
-  {
-    title: "Proyectos",
-    label: "proyectos",
-    url: "/#proyectos",
-  },
-  {
-    title: "Sobre mí",
-    label: "sobre-mi",
-    url: "/#sobre-mi",
-  },
-  {
-    title: "Contacto",
-    label: "contacto",
-    url: "mailto:juanjosenavarroperea@gmail.com",
-  },
-];
 
 export function Header() {
   return (
@@ -33,7 +11,7 @@ export function Header() {
       <nav
         className={`${styles.nav} flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center`}
       >
-        {navItems.map((link) => (
+        {NAVITEMS.map((link) => (
           <a
             key={link.title}
             className="relative block px-2 py-2 transition hover:text-blue-500 dark:hover:text-blue-400"
