@@ -7,5 +7,6 @@ export const INFO = {
   firstSurname,
   secondSurname,
   fullName: name + " " + firstSurname + " " + secondSurname,
+  email: "juanjosenavarroperea@gmail.com",
   linkedin: "https://www.linkedin.com/in/juan-jose-navarro-perea/",
 };

@@ -1,3 +1,5 @@
+import { INFO } from "./info";
+
 interface NavItems {
   title: string;
   url: string;
@@ -17,6 +19,6 @@ export const NAVITEMS: NavItems[] = [
   },
   {
     title: "contact",
-    url: "mailto:juanjosenavarroperea@gmail.com",
+    url: `mailto:${INFO.email}`,
   },
 ];

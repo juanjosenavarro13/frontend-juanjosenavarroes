@@ -31,11 +31,12 @@ export function Hero() {
       <p className="mt-6 text-xl text-gray-800 dark:[&>strong]:text-blue-200 [&>strong]:text-blue-500 [&>strong]:font-semibold dark:text-gray-300">
         <Trans
           i18nKey="hero.description"
+          ns="portfolio"
           components={{ strong: <strong></strong> }}
         />
       </p>
       <nav className="flex flex-wrap gap-4 mt-8">
-        <SocialPill href="mailto:juanjosenavarroperea@gmail.com">
+        <SocialPill href={`mailto:${INFO.email}`}>
           <>
             <MailIcon className="size-4" />
             {t("contactMe")}

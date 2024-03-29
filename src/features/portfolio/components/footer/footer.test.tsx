@@ -8,7 +8,7 @@ describe("footer", () => {
     expect(getByText("Juan José").getAttribute("href")).toBe(
       "https://www.juanjosenavarro.es/",
     );
-    expect(getByText("Contacto").getAttribute("href")).toBe(
+    expect(getByText("contact").getAttribute("href")).toBe(
       "mailto:juanjosenavarroperea@gmail.com",
     );
   });

@@ -54,7 +54,7 @@ export const PROJECTS: Projects[] = [
     tags: [TAGS.REACT, TAGS.TAILWIND, TAGS.PHP],
   },
   {
-    title: "Gesimar - servicios informaticos",
+    title: "Gesimar",
     description: "projectsSection.gesimar.description",
     link: "http://www.gesimar.es/",
     image: "/projects/gesimar.webp",
