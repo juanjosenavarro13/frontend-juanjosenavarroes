@@ -1,0 +1,9 @@
+{
+  "conventionalCommits.scopes": ["not-found", "loading", "portfolio", "vercel"],
+  "css.lint.unknownAtRules": "ignore",
+  "i18n-ally.localesPaths": ["./public/locales/"],
+  "i18n-ally.sourceLanguage": "es",
+  "i18n-ally.namespace": true,
+  "i18n-ally.pathMatcher": "{namespace}/{locale}.json",
+  "i18n-ally.keystyle": "nested"
+}
