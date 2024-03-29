@@ -1,8 +1,10 @@
+import { useTranslation } from "react-i18next";
 import { PROJECTS } from "../../constants/projects";
 import { GithubIcon, LinkIcon } from "../../icons";
 import { LinkButton } from "./link-button";
 
 export function Projects() {
+  const { t } = useTranslation("portfolio");
   return (
     <div className="flex flex-col gap-y-16">
       {PROJECTS.map(({ image, title, description, tags, link, github }) => (
@@ -40,14 +42,14 @@ export function Projects() {
               </ul>
 
               <div className="mt-2 text-gray-700 dark:text-gray-400">
-                {description}
+                {t(description)}
               </div>
               <footer className="flex items-end justify-start mt-4 gap-x-4">
                 {link && (
                   <LinkButton href={link}>
                     <>
                       <LinkIcon className="size-4" />
-                      Preview
+                      {t("preview")}
                     </>
                   </LinkButton>
                 )}
@@ -55,7 +57,7 @@ export function Projects() {
                   <LinkButton href={github}>
                     <>
                       <GithubIcon className="size-6" />
-                      Code
+                      {t("code")}
                     </>
                   </LinkButton>
                 )}

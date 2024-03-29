@@ -23,5 +23,18 @@
       "title": "Técnico servicios microinformaticos y redes",
       "description": "Reparacion y mantenimiento de equipos informaticos. Gestion de servidores y servicios ISP"
     }
+  },
+  "preview": "Preview",
+  "code": "Código",
+  "projectsSection": {
+    "pokeapi": {
+      "description": "Desarrollé una aplicación Pokeapi utilizando React, Tanstack Query v5 y Axios para gestionar eficientemente el estado de las llamadas asíncronas. Implementé custom hooks para la paginación y mantenimiento del estado de la página actual mediante parámetros de consulta, garantizando una experiencia de usuario fluida y eficaz."
+    },
+    "belsay": {
+      "description": "Desarrollé la página web oficial de una pizzería, la cual ofrece un servicio completo de reparto a domicilio. Utilicé tecnologías modernas y técnicas de diseño eficientes para garantizar una experiencia de usuario óptima. Además, implementé un sistema de gestión de pedidos intuitivo y seguro para facilitar la interacción de los clientes con el servicio de entrega."
+    },
+    "gesimar": {
+      "description": "Desarrollé una landing web para una empresa especializada en servicios informáticos y redes. Utilicé las últimas tecnologías y mejores prácticas de diseño para crear una experiencia de usuario atractiva y funcional. La landing ofrece una visión integral de los servicios ofrecidos, destacando la experiencia y el expertise de la empresa en el campo de la tecnología de la información. Además, se implementaron elementos interactivos y llamados a la acción estratégicos para fomentar la participación del usuario y la generación de leads cualificados."
+    }
   }
 }
