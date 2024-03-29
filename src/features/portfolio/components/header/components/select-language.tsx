@@ -13,8 +13,12 @@ export function SelectLanguage() {
         i18n.changeLanguage(selectedLanguage);
       }}
     >
-      <option value="es">ES</option>
-      <option value="en">EN</option>
+      <option aria-label="es" value="es">
+        ES
+      </option>
+      <option aria-label="en" value="en">
+        EN
+      </option>
     </select>
   );
 }
