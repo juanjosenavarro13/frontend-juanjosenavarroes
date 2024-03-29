@@ -6,6 +6,7 @@ export function SelectLanguage() {
 
   return (
     <select
+      aria-label="Language"
       data-testid="language-select"
       className={styles.select}
       onChange={(event) => {
@@ -13,12 +14,8 @@ export function SelectLanguage() {
         i18n.changeLanguage(selectedLanguage);
       }}
     >
-      <option aria-label="es" value="es">
-        ES
-      </option>
-      <option aria-label="en" value="en">
-        EN
-      </option>
+      <option value="es">ES</option>
+      <option value="en">EN</option>
     </select>
   );
 }
