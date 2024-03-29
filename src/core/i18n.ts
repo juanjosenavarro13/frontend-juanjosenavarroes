@@ -8,7 +8,7 @@ export const i18nInstance = i18n
   .use(initReactI18next)
   .init({
     ns: ["portfolio"],
-    lng: "en",
+    lng: "es",
     fallbackLng: "es",
     debug: false,
     interpolation: {

@@ -19,7 +19,7 @@ export function ExperienceItem({
             &bull;
           </span>
 
-          <h3 className="text-xl font-bold text-blue-400">{title}</h3>
+          <h3 className="text-xl font-bold text-blue-400">{t(title)}</h3>
           <h4 className="font-semibold text-xl text-gray-600 dark:text-white">
             {company}
           </h4>

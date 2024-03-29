@@ -1,0 +1,8 @@
+.select {
+  background: none;
+  border: none;
+
+  option {
+    background-color: transparent;
+  }
+}
