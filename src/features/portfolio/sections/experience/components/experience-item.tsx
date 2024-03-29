@@ -1,4 +1,4 @@
-import { Experiencie } from "../../constants/experiencie";
+import { Experiencie } from "../../../constants/experiencie";
 import { LinkInLine } from "./link-in-line";
 
 interface ExperienceItemProps {

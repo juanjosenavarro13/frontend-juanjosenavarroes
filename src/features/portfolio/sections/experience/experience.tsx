@@ -1,5 +1,5 @@
 import { EXPERIENCIE } from "../../constants/experiencie";
-import { ExperienceItem } from "./experience-item";
+import { ExperienceItem } from "./components";
 
 export function Experience() {
   return (
