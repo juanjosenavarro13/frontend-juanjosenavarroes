@@ -1,4 +1,5 @@
-import { SocialPill, Badge, MailIcon, LinkedInIcon } from "./components";
+import { LinkedInIcon, MailIcon } from "../../icons";
+import { SocialPill, Badge } from "./components";
 
 export function Hero() {
   return (
