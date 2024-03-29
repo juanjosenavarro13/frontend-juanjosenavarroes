@@ -1,29 +1,24 @@
 import { PhpIcon, ReactIcon, TailwindIcon, WordpressIcon } from "../icons";
 type Tag = {
   name: string;
-  class: string;
   icon: ({ className }: Readonly<{ className?: string }>) => JSX.Element;
 };
 
 export const TAGS: { [key: string]: Tag } = {
   WORDPRESS: {
     name: "Wordpress",
-    class: "bg-black text-white",
     icon: WordpressIcon,
   },
   TAILWIND: {
     name: "Tailwind CSS",
-    class: "bg-[#003159] text-white",
     icon: TailwindIcon,
   },
   REACT: {
     name: "React 18",
-    class: "bg-[#005da8] text-white",
     icon: ReactIcon,
   },
   PHP: {
     name: "PHP",
-    class: "bg-[#6A5ACD] text-white",
     icon: PhpIcon,
   },
 };

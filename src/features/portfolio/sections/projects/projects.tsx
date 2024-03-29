@@ -31,9 +31,7 @@ export function Projects() {
               <ul className="flex flex-row mb-2 gap-x-2">
                 {tags.map((tag) => (
                   <li key={tag.name}>
-                    <span
-                      className={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}
-                    >
+                    <span className="flex gap-x-2 rounded-full text-xs py-1 px-2 bg-gray-800 text-white">
                       <tag.icon className="size-4" />
                       {tag.name}
                     </span>
