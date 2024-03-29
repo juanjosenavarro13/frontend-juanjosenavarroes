@@ -10,5 +10,18 @@
     "description": "2 años de experiencia. <strong>Ingeniero de Software</strong> de Sevilla, España Especializado en el desarrollo de aplicaciones SPA (typescript)"
   },
   "contactMe": "Contáctame",
-  "linkedIn": "LinkedIn"
+  "linkedIn": "LinkedIn",
+  "experienceSection": {
+    "NTT": {
+      "date": "Actualmente...",
+      "title": "Center developer specialist",
+      "description": "Desarrollo dual boot utilizando AngularJS (TypeScript) y Angular 13 o superior para la implementación de soluciones web avanzadas. Creación de aplicaciones utilizando React 18 y TypeScript para mejorar la experiencia del usuario en los servicios proporcionados a cliente. Gestión de versiones utilizando herramientas como GitLab y GitHub para garantizar la colaboración y seguimiento efectivo de cambios en librerías y aplicaciones. Experiencia en la gestión de despliegues de aplicaciones a entornos de producción y previos, asegurando una implementación sin problemas."
+    },
+    "knowMore": "Saber más",
+    "gesimar": {
+      "date": "Septiembre 2021",
+      "title": "Técnico servicios microinformaticos y redes",
+      "description": "Reparacion y mantenimiento de equipos informaticos. Gestion de servidores y servicios ISP"
+    }
+  }
 }
