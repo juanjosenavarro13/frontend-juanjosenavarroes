@@ -8,7 +8,7 @@ export function LinkInLine({
   return (
     <a
       href={href}
-      className="h-12 inline-flex items-center text-lg font-medium text-blue-500 dark:text-blue-200 dark:hover:text-blue-300 hover:text-blue-700"
+      className="inline-flex h-12 items-center text-lg font-medium text-blue-500 hover:text-blue-700 dark:text-blue-200 dark:hover:text-blue-300"
     >
       {children}
     </a>

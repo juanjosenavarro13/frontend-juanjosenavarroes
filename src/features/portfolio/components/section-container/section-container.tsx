@@ -14,10 +14,10 @@ export function SectionContainer({
 }: Readonly<SectionContainerProps>) {
   return (
     <section
-      className={`${className} scroll-m-20 w-full mx-auto container lg:max-w-4xl md:max-w-2xl`}
+      className={`${className} container mx-auto w-full scroll-m-20 md:max-w-2xl lg:max-w-4xl`}
       id={id}
     >
-      <h2 className="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white">
+      <h2 className="mb-6 flex items-center gap-x-3 text-3xl font-semibold text-black/80 dark:text-white">
         {icon}
         {title}
       </h2>
