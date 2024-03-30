@@ -51,6 +51,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Linter
         run: pnpm lint:check
 
@@ -70,6 +73,9 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Install pnpm
+        run: npm install -g pnpm
+
       - name: Format
         run: pnpm format:check
 
@@ -88,6 +94,9 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
+
+      - name: Install pnpm
+        run: npm install -g pnpm
 
       - name: Run unit tests
         run: pnpm test:coverage
