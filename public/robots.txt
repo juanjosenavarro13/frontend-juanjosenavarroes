@@ -1,2 +1,8 @@
 User-agent: *
-Disallow:
+Allow: /
+
+# Host
+Host: https://www.juanjosenavarro.es
+
+# Sitemaps
+Sitemap: https://www.juanjosenavarro.es/sitemap-index.xml
