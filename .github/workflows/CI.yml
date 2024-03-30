@@ -24,10 +24,10 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
-        run: npm install -g pnpm
-
-      - name: Restore dependencies
-        run: pnpm install
+        run: |
+          npm install -g pnpm
+          pnpm install
+          ls
 
       - name: Format
         run: pnpm format:check
@@ -51,10 +51,9 @@ jobs:
           node-version: ${{ matrix.node-version }}
 
       - name: Install pnpm
-        run: npm install -g pnpm
-
-      - name: Restore dependencies
-        run: pnpm install
+        run: |
+          npm install -g pnpm
+          pnpm install
 
       - name: Run unit tests
         run: pnpm test:coverage
