@@ -22,5 +22,11 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      - name: Linter
+        run: pnpm lint:check
+
+      - name: Format
+        run: pnpm format:check
+
       - name: Run unit tests
         run: pnpm test:coverage
