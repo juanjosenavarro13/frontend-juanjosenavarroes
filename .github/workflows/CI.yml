@@ -8,8 +8,8 @@ on:
       - main
 
 jobs:
-  format-lint:
-    name: Format & Lint
+  format:
+    name: Format
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -31,6 +31,27 @@ jobs:
 
       - name: Format
         run: pnpm format:check
+
+  lint:
+    name: Lint
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x, 20.x]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
+        with:
+          version: 8.15.5
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: "pnpm"
+
+      - name: Install dependencies with pnpm
+        run: pnpm install
 
       - name: Linter
         run: pnpm lint:check
