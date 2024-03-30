@@ -8,12 +8,12 @@ on:
       - main
 
 jobs:
-  install_dependencies:
-    name: Install Dependencies
+  lint:
+    name: Linter
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x]
+        node-version: [16.x, 18.x, 20.x]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -22,37 +22,12 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ matrix.node-version }}
-
-      - name: Cache PNPM packages
-        uses: actions/cache@v2
-        with:
-          path: ~/.pnpm-store
-          key: pnpm-${{ runner.os }}-node-${{ hashFiles('pnpm-lock.yaml') }}
 
       - name: Install pnpm
         run: npm install -g pnpm
 
       - name: Restore dependencies
         run: pnpm install
-
-  lint:
-    name: Linter
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [18.x]
-    needs: install_dependencies
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install pnpm
-        run: npm install -g pnpm
 
       - name: Linter
         run: pnpm lint:check
@@ -62,8 +37,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x]
-    needs: install_dependencies
+        node-version: [16.x, 18.x, 20.x]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -75,6 +49,9 @@ jobs:
 
       - name: Install pnpm
         run: npm install -g pnpm
+
+      - name: Restore dependencies
+        run: pnpm install
 
       - name: Format
         run: pnpm format:check
@@ -84,8 +61,7 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        node-version: [18.x]
-    needs: install_dependencies
+        node-version: [16.x, 18.x, 20.x]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -97,6 +73,9 @@ jobs:
 
       - name: Install pnpm
         run: npm install -g pnpm
+
+      - name: Restore dependencies
+        run: pnpm install
 
       - name: Run unit tests
         run: pnpm test:coverage
