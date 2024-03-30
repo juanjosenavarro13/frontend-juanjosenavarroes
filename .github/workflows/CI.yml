@@ -15,17 +15,16 @@ jobs:
       matrix:
         node-version: [18.x, 20.x]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
 
       - name: Install dependencies with pnpm
-        run: |
-          npm install -g pnpm
-          pnpm install
+        run: pnpm install
 
       - name: Format
         run: pnpm format:check
@@ -40,17 +39,16 @@ jobs:
       matrix:
         node-version: [18.x, 20.x]
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
+      - uses: pnpm/action-setup@v2
       - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
           cache: "pnpm"
 
-      - name: Install dependencies with pnpm
-        run: |
-          npm install -g pnpm
-          pnpm install
+      - name: Install dependencies
+        run: pnpm install
 
       - name: Run unit tests
         run: pnpm test:coverage
