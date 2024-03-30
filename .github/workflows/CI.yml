@@ -15,10 +15,16 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      - name: Cache PNPM packages
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: pnpm-${{ runner.os }}-node-${{ hashFiles('pnpm-lock.yaml') }}
+
       - name: Install pnpm
         run: npm install -g pnpm
 
-      - name: Install dependencies
+      - name: Restore dependencies
         run: pnpm install
 
   lint:
