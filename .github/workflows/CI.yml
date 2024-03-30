@@ -1,4 +1,4 @@
-name: Run Vitest Unit Tests
+name: Run Lint, Format, and Test
 
 on:
   push:
@@ -8,10 +8,9 @@ on:
       - main
 
 jobs:
-  test:
-    name: Run Unit Tests
+  install_dependencies:
+    name: Install Dependencies
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
@@ -22,11 +21,35 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+  lint:
+    name: Linter
+    runs-on: ubuntu-latest
+    needs: install_dependencies
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Linter
         run: pnpm lint:check
 
+  format:
+    name: Format
+    runs-on: ubuntu-latest
+    needs: install_dependencies
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
       - name: Format
         run: pnpm format:check
+
+  test:
+    name: Run Unit Tests
+    runs-on: ubuntu-latest
+    needs: install_dependencies
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
 
       - name: Run unit tests
         run: pnpm test:coverage
