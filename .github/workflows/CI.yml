@@ -11,9 +11,17 @@ jobs:
   install_dependencies:
     name: Install Dependencies
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: Cache PNPM packages
         uses: actions/cache@v2
@@ -30,10 +38,18 @@ jobs:
   lint:
     name: Linter
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
     needs: install_dependencies
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: Linter
         run: pnpm lint:check
@@ -41,10 +57,18 @@ jobs:
   format:
     name: Format
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
     needs: install_dependencies
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: Format
         run: pnpm format:check
@@ -52,10 +76,18 @@ jobs:
   test:
     name: Run Unit Tests
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [18.x]
     needs: install_dependencies
     steps:
       - name: Checkout repository
         uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
 
       - name: Run unit tests
         run: pnpm test:coverage
