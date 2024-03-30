@@ -20,9 +20,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
+          cache: "pnpm"
 
-      - name: Install pnpm
+      - name: Install dependencies with pnpm
         run: |
           npm install -g pnpm
           pnpm install
@@ -45,9 +45,9 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: "npm"
+          cache: "pnpm"
 
-      - name: Install pnpm
+      - name: Install dependencies with pnpm
         run: |
           npm install -g pnpm
           pnpm install
