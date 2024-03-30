@@ -16,7 +16,7 @@ jobs:
         node-version: [18.x, 20.x]
     steps:
       - name: Checkout repository
-        uses: actions/setup-node@v4
+        uses: actions/checkout@v4
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -25,6 +25,9 @@ jobs:
 
       - name: Install pnpm
         run: npm install -g pnpm
+
+      - name: Change to project directory
+        run: cd juanjosenavarroes
 
       - name: Restore dependencies
         run: pnpm install
@@ -43,7 +46,7 @@ jobs:
         node-version: [18.x, 20.x]
     steps:
       - name: Checkout repository
-        uses: actions/setup-node@v4
+        uses: actions/checkout@v4
 
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v4
@@ -52,6 +55,9 @@ jobs:
 
       - name: Install pnpm
         run: npm install -g pnpm
+
+      - name: Change to project directory
+        run: cd juanjosenavarroes
 
       - name: Restore dependencies
         run: pnpm install
