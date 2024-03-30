@@ -12,6 +12,7 @@
     "format:check": "prettier --check src",
     "test": "vitest",
     "test:coverage": "vitest --coverage --no-watch",
+    "delete-old-branch": "git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -d",
     "prepare": "husky"
   },
   "dependencies": {
@@ -22,6 +23,8 @@
     "zustand": "4.5.2"
   },
   "devDependencies": {
+    "@commitlint/cli": "19.2.1",
+    "@commitlint/config-conventional": "19.1.0",
     "@testing-library/jest-dom": "6.4.2",
     "@testing-library/react": "14.2.2",
     "@types/node": "20.11.30",
