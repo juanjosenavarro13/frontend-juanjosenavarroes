@@ -8,7 +8,7 @@ export function ThemeToggle() {
       <button
         aria-label="cambiar tema"
         data-testid="buttonChangeTheme"
-        className="border-none flex hover:scale-125 transition"
+        className="flex border-none transition hover:scale-125"
         onClick={toggleTheme}
       >
         {theme === "dark" ? (

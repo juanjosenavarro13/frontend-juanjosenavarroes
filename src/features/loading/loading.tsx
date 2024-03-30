@@ -1,13 +1,13 @@
 export function GeneralLoading() {
   return (
     <div
-      className="min-h-dvh flex items-center justify-center"
+      className="flex min-h-dvh items-center justify-center"
       data-testid="generalLoading"
     >
       <output>
         <svg
           aria-hidden="true"
-          className="inline w-10 h-10 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+          className="inline h-10 w-10 animate-spin fill-blue-600 text-gray-200 dark:text-gray-600"
           viewBox="0 0 100 101"
           fill="none"
           xmlns="http://www.w3.org/2000/svg"

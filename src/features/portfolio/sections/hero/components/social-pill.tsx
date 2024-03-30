@@ -10,7 +10,7 @@ export function SocialPill({
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="h-12 inline-flex items-center justify-center gap-2 px-4 py-1 text-gray-800 transition bg-gray-100 border border-gray-300 rounded-full dark:bg-gray-800 dark:border-gray-600 dark:text-white focus-visible:ring-blue-500/80 text-md hover:bg-gray-900 hover:border-gray-700 group max-w-fit hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black"
+      className="text-md group inline-flex h-12 max-w-fit items-center justify-center gap-2 rounded-full border border-gray-300 bg-gray-100 px-4 py-1 text-gray-800 transition hover:border-gray-700 hover:bg-gray-900 hover:text-white focus:outline-none focus-visible:outline-none focus-visible:ring focus-visible:ring-blue-500/80 focus-visible:ring-white focus-visible:ring-offset-2 active:bg-black dark:border-gray-600 dark:bg-gray-800 dark:text-white"
     >
       {children}
     </a>

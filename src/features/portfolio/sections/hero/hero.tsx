@@ -7,9 +7,9 @@ export function Hero() {
   const { t } = useTranslation("portfolio");
   return (
     <div className="max-w-xl">
-      <div className="flex gap-4 mb-4">
+      <div className="mb-4 flex gap-4">
         <img
-          className="rounded-full shadow-lg size-16"
+          className="size-16 rounded-full shadow-lg"
           src="/juanjose.webp"
           alt={INFO.fullName}
         />
@@ -23,19 +23,19 @@ export function Hero() {
         </a>
       </div>
       <h1
-        className="text-4xl font-bold tracking-tight text-gray
-      -800 sm:text-5xl dark:text-white"
+        className="text-gray -800 text-4xl font-bold
+      tracking-tight dark:text-white sm:text-5xl"
       >
         {t("hero.title", { name: INFO.name })}
       </h1>
-      <p className="mt-6 text-xl text-gray-800 dark:[&>strong]:text-blue-200 [&>strong]:text-blue-500 [&>strong]:font-semibold dark:text-gray-300">
+      <p className="mt-6 text-xl text-gray-800 dark:text-gray-300 [&>strong]:font-semibold [&>strong]:text-blue-500 dark:[&>strong]:text-blue-200">
         <Trans
           i18nKey="hero.description"
           ns="portfolio"
           components={{ strong: <strong></strong> }}
         />
       </p>
-      <nav className="flex flex-wrap gap-4 mt-8">
+      <nav className="mt-8 flex flex-wrap gap-4">
         <SocialPill href={`mailto:${INFO.email}`}>
           <>
             <MailIcon className="size-4" />

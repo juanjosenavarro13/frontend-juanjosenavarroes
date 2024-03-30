@@ -9,10 +9,10 @@ export function Header() {
   return (
     <header
       data-testid="header"
-      className="fixed top-0 z-10 flex items-center justify-center w-full mx-auto mt-2 flex-col"
+      className="fixed top-0 z-10 mx-auto mt-2 flex w-full flex-col items-center justify-center"
     >
       <nav
-        className={`${styles.nav} flex px-3 text-sm font-medium rounded-full text-gray-600 dark:text-gray-200 justify-center items-center`}
+        className={`${styles.nav} flex items-center justify-center rounded-full px-3 text-sm font-medium text-gray-600 dark:text-gray-200`}
       >
         <SelectLanguage />
         {NAVITEMS.map((link) => (
