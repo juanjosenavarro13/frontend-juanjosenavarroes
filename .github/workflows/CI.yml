@@ -8,32 +8,8 @@ on:
       - main
 
 jobs:
-  lint:
-    name: Linter
-    runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: [16.x, 18.x, 20.x]
-    steps:
-      - name: Checkout repository
-        uses: actions/checkout@v2
-
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
-
-      - name: Install pnpm
-        run: npm install -g pnpm
-
-      - name: Restore dependencies
-        run: pnpm install
-
-      - name: Linter
-        run: pnpm lint:check
-
-  format:
-    name: Format
+  format-lint:
+    name: Format & Lint
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -56,8 +32,11 @@ jobs:
       - name: Format
         run: pnpm format:check
 
+      - name: Linter
+        run: pnpm lint:check
+
   test:
-    name: Run Unit Tests
+    name: Unit Tests
     runs-on: ubuntu-latest
     strategy:
       matrix:
