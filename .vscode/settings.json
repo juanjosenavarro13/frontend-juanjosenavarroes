@@ -1,5 +1,11 @@
 {
-  "conventionalCommits.scopes": ["not-found", "loading", "portfolio", "vercel"],
+  "conventionalCommits.scopes": [
+    "not-found",
+    "loading",
+    "portfolio",
+    "vercel",
+    "admin"
+  ],
   "css.lint.unknownAtRules": "ignore",
   "i18n-ally.localesPaths": ["./public/locales/"],
   "i18n-ally.sourceLanguage": "es",
