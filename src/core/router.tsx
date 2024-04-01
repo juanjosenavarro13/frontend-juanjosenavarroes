@@ -5,6 +5,7 @@ import { createBrowserRouter } from "react-router-dom";
 import { GeneralLoading } from "../features/loading";
 import { NotFoundPageLazy } from "../features/not-found";
 import { PortfolioLazy } from "../features/portfolio";
+import { AuthGuardLazy, AuthLoginLazy } from "@/features/auth";
 
 export const router = createBrowserRouter([
   {
@@ -18,12 +19,32 @@ export const router = createBrowserRouter([
     errorElement: <GeneralLoading />,
   },
   {
+    path: "/auth",
+    element: (
+      <Suspense fallback={<GeneralLoading />}>
+        <AuthGuardLazy />
+      </Suspense>
+    ),
+    errorElement: <GeneralLoading />,
+    children: [
+      {
+        index: true,
+        element: (
+          <Suspense fallback={<GeneralLoading />}>
+            <AuthLoginLazy />
+          </Suspense>
+        ),
+      },
+    ],
+  },
+  {
     path: "/admin",
     element: (
       <Suspense fallback={<GeneralLoading />}>
         <AdminGuard />
       </Suspense>
     ),
+    errorElement: <GeneralLoading />,
     children: [
       {
         index: true,
@@ -32,7 +53,6 @@ export const router = createBrowserRouter([
             <AdminLazy />
           </Suspense>
         ),
-        errorElement: <GeneralLoading />,
       },
     ],
   },

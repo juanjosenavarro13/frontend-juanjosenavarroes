@@ -4,7 +4,8 @@
     "loading",
     "portfolio",
     "vercel",
-    "admin"
+    "admin",
+    "auth"
   ],
   "css.lint.unknownAtRules": "ignore",
   "i18n-ally.localesPaths": ["./public/locales/"],
