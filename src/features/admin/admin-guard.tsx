@@ -4,11 +4,12 @@ import { checkAdmin } from "./utils/checkAdmin";
 
 export function AdminGuard() {
   const navigate = useNavigate();
+  const isAdmin = checkAdmin();
 
   useEffect(() => {
-    const isAdmin = checkAdmin();
     if (!isAdmin) navigate("/");
-  }, [navigate]);
+  }, [navigate, isAdmin]);
 
+  if (!isAdmin) return null;
   return <Outlet />;
 }

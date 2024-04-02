@@ -4,7 +4,7 @@ import { AdminGuard } from "./admin-guard";
 import { BrowserRouter } from "react-router-dom";
 import * as checkAdmin from "./utils/checkAdmin";
 
-describe("AdminGuard", () => {
+describe("Admin Guard", () => {
   it("user admin", () => {
     vi.spyOn(checkAdmin, "checkAdmin").mockReturnValue(true);
     render(
@@ -14,7 +14,7 @@ describe("AdminGuard", () => {
     );
   });
 
-  it("normal user", () => {
+  it("no admin", () => {
     vi.spyOn(checkAdmin, "checkAdmin").mockReturnValue(false);
     render(
       <BrowserRouter>
