@@ -1,30 +1,47 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { HTTP_ENDPOINTS } from "@/core/constants/http-endpoints";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { LoginFormSchema } from "./schema/login.schema";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
-import { HTTP_ENDPOINTS } from "@/core/constants/http-endpoints";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { LoginFormSchema } from "./schema/login.schema";
+import { useStoreUser } from "./store/user/store-user";
 
 type Inputs = {
   email: string;
   password: string;
 };
 
+type Response = {
+  token: string;
+  user: {
+    id: number;
+    email: string;
+  };
+};
+
 export default function Login() {
+  const navigate = useNavigate();
+  const { setUser } = useStoreUser();
   const {
     register,
     handleSubmit,
+    reset,
     formState: { isValid },
   } = useForm<Inputs>({ resolver: zodResolver(LoginFormSchema) });
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
     mutation.mutate(data);
   };
 
   const mutation = useMutation({
-    mutationFn: (newTodo: Inputs) => {
-      return axios.post(HTTP_ENDPOINTS.login, newTodo);
+    mutationFn: (login: Inputs) => {
+      return axios.post<Response>(HTTP_ENDPOINTS.login, login);
     },
+    onSuccess: (response) => {
+      setUser(response.data.user);
+      navigate("/admin");
+    },
+    onError: () => reset(),
   });
 
   return (

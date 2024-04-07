@@ -7,7 +7,6 @@ import { useStoreTheme } from "./store";
 export default function Portfolio() {
   const { theme } = useStoreTheme();
   const { t } = useTranslation("portfolio");
-
   return (
     <main className={`${theme} relative`}>
       <Background />

@@ -1,11 +1,10 @@
-import { AdminLazy } from "@/features/admin";
-import { AdminGuard } from "@/features/admin/admin-guard";
+import { AdminGuardLazy, AdminLazy } from "@/features/admin";
 import { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
 import { GeneralLoading } from "../features/loading";
 import { NotFoundPageLazy } from "../features/not-found";
 import { PortfolioLazy } from "../features/portfolio";
-import { AuthGuardLazy, AuthLoginLazy } from "@/features/auth";
+import { AuthLoginLazy } from "@/features/auth";
 
 export const router = createBrowserRouter([
   {
@@ -22,26 +21,16 @@ export const router = createBrowserRouter([
     path: "/auth",
     element: (
       <Suspense fallback={<GeneralLoading />}>
-        <AuthGuardLazy />
+        <AuthLoginLazy />
       </Suspense>
     ),
     errorElement: <GeneralLoading />,
-    children: [
-      {
-        index: true,
-        element: (
-          <Suspense fallback={<GeneralLoading />}>
-            <AuthLoginLazy />
-          </Suspense>
-        ),
-      },
-    ],
   },
   {
     path: "/admin",
     element: (
       <Suspense fallback={<GeneralLoading />}>
-        <AdminGuard />
+        <AdminGuardLazy />
       </Suspense>
     ),
     errorElement: <GeneralLoading />,
