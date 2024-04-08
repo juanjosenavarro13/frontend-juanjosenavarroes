@@ -71,8 +71,8 @@ devDependencies:
     specifier: 0.4.6
     version: 0.4.6(eslint@8.57.0)
   happy-dom:
-    specifier: 14.3.9
-    version: 14.3.9
+    specifier: 14.7.1
+    version: 14.7.1
   husky:
     specifier: 9.0.11
     version: 9.0.11
@@ -114,7 +114,7 @@ devDependencies:
     version: 5.2.7(@types/node@20.12.2)
   vitest:
     specifier: 1.4.0
-    version: 1.4.0(@types/node@20.12.2)(happy-dom@14.3.9)
+    version: 1.4.0(@types/node@20.12.2)(happy-dom@14.7.1)
 
 packages:
 
@@ -1002,7 +1002,7 @@ packages:
       dom-accessibility-api: 0.6.3
       lodash: 4.17.21
       redent: 3.0.0
-      vitest: 1.4.0(@types/node@20.12.2)(happy-dom@14.3.9)
+      vitest: 1.4.0(@types/node@20.12.2)(happy-dom@14.7.1)
     dev: true
 
   /@testing-library/react@14.2.2(react-dom@18.2.0)(react@18.2.0):
@@ -1274,7 +1274,7 @@ packages:
       strip-literal: 2.1.0
       test-exclude: 6.0.0
       v8-to-istanbul: 9.2.0
-      vitest: 1.4.0(@types/node@20.12.2)(happy-dom@14.3.9)
+      vitest: 1.4.0(@types/node@20.12.2)(happy-dom@14.7.1)
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -2364,8 +2364,8 @@ packages:
     resolution: {integrity: sha512-EtKwoO6kxCL9WO5xipiHTZlSzBm7WLT627TqC/uVRd0HKmq8NXyebnNYxDoBi7wt8eTWrUrKXCOVaFq9x1kgag==}
     dev: true
 
-  /happy-dom@14.3.9:
-    resolution: {integrity: sha512-0kPQchwthekcYpYN8CvCiq+/z5bqFYDLbTxZ+yDLwT8AFRVJDFadShHRxp3VAZRy7a5isOZ1j/LzsU1dtAIZMQ==}
+  /happy-dom@14.7.1:
+    resolution: {integrity: sha512-v60Q0evZ4clvMcrAh5/F8EdxDdfHdFrtffz/CNe10jKD+nFweZVxM91tW+UyY2L4AtpgIaXdZ7TQmiO1pfcwbg==}
     engines: {node: '>=16.0.0'}
     dependencies:
       entities: 4.5.0
@@ -4118,7 +4118,7 @@ packages:
       fsevents: 2.3.3
     dev: true
 
-  /vitest@1.4.0(@types/node@20.12.2)(happy-dom@14.3.9):
+  /vitest@1.4.0(@types/node@20.12.2)(happy-dom@14.7.1):
     resolution: {integrity: sha512-gujzn0g7fmwf83/WzrDTnncZt2UiXP41mHuFYFrdwaLRVQ6JYQEiME2IfEjU3vcFL3VKa75XhI3lFgn+hfVsQw==}
     engines: {node: ^18.0.0 || >=20.0.0}
     hasBin: true
@@ -4153,7 +4153,7 @@ packages:
       chai: 4.4.1
       debug: 4.3.4
       execa: 8.0.1
-      happy-dom: 14.3.9
+      happy-dom: 14.7.1
       local-pkg: 0.5.0
       magic-string: 0.30.8
       pathe: 1.1.2
