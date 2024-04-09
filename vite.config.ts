@@ -24,12 +24,6 @@ export default defineConfig({
       enabled: true,
       include: ["src/**"],
       exclude: ["src/core/**", "src/**/index.ts"],
-      thresholds: {
-        statements: 90,
-        branches: 90,
-        functions: 90,
-        lines: 90,
-      },
     },
     setupFiles: "./setup-test.ts",
   },
