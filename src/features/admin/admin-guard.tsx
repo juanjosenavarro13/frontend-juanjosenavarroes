@@ -1,15 +1,16 @@
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
-import { checkAdmin } from "./utils/checkAdmin";
+import { useStoreUser } from "../auth/store/user/store-user";
 
-export function AdminGuard() {
+export default function AdminGuard() {
   const navigate = useNavigate();
-  const isAdmin = checkAdmin();
+  const { user } = useStoreUser();
 
   useEffect(() => {
-    if (!isAdmin) navigate("/");
-  }, [navigate, isAdmin]);
+    console.log(user);
+    if (!user) navigate("/auth");
+  }, [navigate, user]);
 
-  if (!isAdmin) return null;
+  if (!user) return null;
   return <Outlet />;
 }

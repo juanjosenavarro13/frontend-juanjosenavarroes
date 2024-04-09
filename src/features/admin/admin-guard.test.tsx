@@ -1,12 +1,14 @@
 import { render } from "@testing-library/react";
 import { describe, it, vi } from "vitest";
-import { AdminGuard } from "./admin-guard";
+import AdminGuard from "./admin-guard";
 import { BrowserRouter } from "react-router-dom";
-import * as checkAdmin from "./utils/checkAdmin";
+import * as useStoreUser from "../auth/store/user/store-user";
 
 describe("Admin Guard", () => {
-  it("user admin", () => {
-    vi.spyOn(checkAdmin, "checkAdmin").mockReturnValue(true);
+  it("user auth", () => {
+    vi.spyOn(useStoreUser, "useStoreUser").mockReturnValue({
+      user: { id: 1, email: "email@email.es" },
+    });
     render(
       <BrowserRouter>
         <AdminGuard />
@@ -14,8 +16,8 @@ describe("Admin Guard", () => {
     );
   });
 
-  it("no admin", () => {
-    vi.spyOn(checkAdmin, "checkAdmin").mockReturnValue(false);
+  it("no user", () => {
+    vi.spyOn(useStoreUser, "useStoreUser").mockReturnValue({ user: undefined });
     render(
       <BrowserRouter>
         <AdminGuard />

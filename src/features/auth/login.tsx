@@ -1,30 +1,35 @@
-import { useForm, SubmitHandler } from "react-hook-form";
+import { HTTP_ENDPOINTS } from "@/core/constants/http-endpoints";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { LoginFormSchema } from "./schema/login.schema";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
-import { HTTP_ENDPOINTS } from "@/core/constants/http-endpoints";
-
-type Inputs = {
-  email: string;
-  password: string;
-};
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+import { LoginFormSchema } from "./schema/login.schema";
+import { useStoreUser } from "./store/user/store-user";
+import { Inputs, ResponseLogin } from "./types/login";
 
 export default function Login() {
+  const navigate = useNavigate();
+  const { setUser } = useStoreUser();
   const {
     register,
     handleSubmit,
+    reset,
     formState: { isValid },
   } = useForm<Inputs>({ resolver: zodResolver(LoginFormSchema) });
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data);
     mutation.mutate(data);
   };
 
   const mutation = useMutation({
-    mutationFn: (newTodo: Inputs) => {
-      return axios.post(HTTP_ENDPOINTS.login, newTodo);
+    mutationFn: (login: Inputs) => {
+      return axios.post<ResponseLogin>(HTTP_ENDPOINTS.login, login);
     },
+    onSuccess: (response) => {
+      setUser(response.data.user);
+      navigate("/admin");
+    },
+    onError: () => reset(),
   });
 
   return (
@@ -43,6 +48,7 @@ export default function Login() {
               {...register("email")}
               type="email"
               id="email"
+              data-testid="email"
               name="email"
               className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
             />
@@ -58,6 +64,7 @@ export default function Login() {
               {...register("password")}
               type="password"
               id="password"
+              data-testid="password"
               name="password"
               className="focus:shadow-outline w-full appearance-none rounded border px-3 py-2 leading-tight text-gray-700 shadow focus:outline-none"
             />
@@ -66,6 +73,7 @@ export default function Login() {
             <button
               disabled={!isValid}
               type="submit"
+              data-testid="btnSubmitLogin"
               className="focus:shadow-outline rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none disabled:bg-blue-200"
             >
               Iniciar sesión
