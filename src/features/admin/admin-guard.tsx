@@ -7,7 +7,6 @@ export default function AdminGuard() {
   const { user } = useStoreUser();
 
   useEffect(() => {
-    console.log(user);
     if (!user) navigate("/auth");
   }, [navigate, user]);
 
