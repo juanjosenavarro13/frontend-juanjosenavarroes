@@ -7,14 +7,10 @@ export const i18nInstance = i18n
   .use(Backend)
   .use(initReactI18next)
   .init({
-    ns: ["portfolio"],
     lng: "es",
     fallbackLng: "es",
     debug: false,
-    interpolation: {
-      escapeValue: false,
-    },
     backend: {
-      loadPath: "/locales/{{ns}}/{{lng}}.json",
+      loadPath: "/locales/{{lng}}/{{ns}}.json",
     },
   });

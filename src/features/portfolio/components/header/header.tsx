@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { NAVITEMS } from "../../constants/header";
 import { ThemeToggle } from "../theme-toggle";
 import styles from "./header.module.css";
-import { SelectLanguage } from "./components/select-language";
+import { SelectLanguage } from "@/components";
 
 export function Header() {
   const { t } = useTranslation("portfolio");

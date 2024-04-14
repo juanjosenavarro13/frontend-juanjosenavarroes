@@ -9,7 +9,7 @@
     "title": "Hey, soy {{name}}",
     "description": "2 años de experiencia. <strong>Ingeniero de Software</strong> de Sevilla, España Especializado en el desarrollo de aplicaciones SPA (typescript)"
   },
-  "contactMe": "Contáctame",
+  "contactMe": "Contácteme",
   "linkedIn": "LinkedIn",
   "experienceSection": {
     "NTT": {
@@ -20,8 +20,8 @@
     "knowMore": "Saber más",
     "gesimar": {
       "date": "Septiembre 2021",
-      "title": "Técnico servicios microinformaticos y redes",
-      "description": "Reparacion y mantenimiento de equipos informaticos. Gestion de servidores y servicios ISP"
+      "title": "Técnico servicios microinformáticos y redes",
+      "description": "Reparación y mantenimiento de equipos informáticos. Gestión de servidores y servicios ISP"
     }
   },
   "preview": "Preview",
