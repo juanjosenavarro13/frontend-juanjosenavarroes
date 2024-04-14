@@ -7,8 +7,11 @@ import { useNavigate } from "react-router-dom";
 import { LoginFormSchema } from "./schema/login.schema";
 import { useStoreUser } from "./store/user/store-user";
 import { Inputs, ResponseLogin } from "./types/login";
+import { useTranslation } from "react-i18next";
+import { SelectLanguage } from "@/components";
 
 export default function Login() {
+  const { t } = useTranslation("auth");
   const navigate = useNavigate();
   const { setUser } = useStoreUser();
   const {
@@ -17,9 +20,6 @@ export default function Login() {
     reset,
     formState: { isValid },
   } = useForm<Inputs>({ resolver: zodResolver(LoginFormSchema) });
-  const onSubmit: SubmitHandler<Inputs> = (data) => {
-    mutation.mutate(data);
-  };
 
   const mutation = useMutation({
     mutationFn: (login: Inputs) => {
@@ -32,17 +32,25 @@ export default function Login() {
     onError: () => reset(),
   });
 
+  const onSubmit: SubmitHandler<Inputs> = (data) => {
+    mutation.mutate(data);
+  };
+
   return (
     <div className="flex h-screen items-center justify-center bg-gray-200">
-      <div className="w-96 rounded bg-white p-8 shadow-md">
-        <h2 className="mb-4 text-center text-2xl font-bold">Iniciar sesión</h2>
+      <div className="relative w-96 rounded bg-white p-8 shadow-md">
+        <div className="absolute right-2 top-2 text-center font-semibold">
+          {t("language", { ns: "translation" })}:
+          <SelectLanguage />
+        </div>
+        <h2 className="mb-4 text-center text-2xl font-bold">{t("login")}</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
             <label
               htmlFor="email"
               className="mb-2 block text-sm font-bold text-gray-700"
             >
-              Correo electrónico
+              {t("email")}
             </label>
             <input
               {...register("email")}
@@ -58,7 +66,7 @@ export default function Login() {
               htmlFor="password"
               className="mb-2 block text-sm font-bold text-gray-700"
             >
-              Contraseña
+              {t("password")}
             </label>
             <input
               {...register("password")}
@@ -71,12 +79,14 @@ export default function Login() {
           </div>
           <div className="flex items-center justify-center">
             <button
-              disabled={!isValid}
+              disabled={!isValid || mutation.isPending}
               type="submit"
               data-testid="btnSubmitLogin"
               className="focus:shadow-outline rounded bg-blue-500 px-4 py-2 font-bold text-white hover:bg-blue-700 focus:outline-none disabled:bg-blue-200"
             >
-              Iniciar sesión
+              {mutation.isPending
+                ? t("loading", { ns: "translation" })
+                : t("login")}
             </button>
           </div>
         </form>

@@ -1,3 +1,6 @@
+import { useTranslation } from "react-i18next";
+
 export default function Admin() {
-  return <div data-testid="adminPage">admin</div>;
+  const { i18n } = useTranslation();
+  return <div data-testid="adminPage">admin {i18n.language}</div>;
 }
