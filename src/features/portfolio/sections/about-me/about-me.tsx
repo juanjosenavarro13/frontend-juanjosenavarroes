@@ -21,6 +21,7 @@ export function AboutMe() {
         alt={INFO.fullName}
         className="order-1 aspect-square h-full w-64 rotate-3 rounded-2xl bg-black/20 object-cover p-1 ring-1 ring-black/70 dark:bg-blue-500/5 dark:ring-white/20 md:order-2 lg:w-64 lg:p-2"
         style={{ objectPosition: "50% 50%" }}
+        loading="lazy"
       />
     </article>
   );
