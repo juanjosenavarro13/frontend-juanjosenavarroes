@@ -1,5 +1,5 @@
+import { ReactQueryDevTools } from "@/components";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { RouterProvider } from "react-router-dom";
@@ -15,7 +15,7 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
     <QueryClientProvider client={queryClient}>
       <VercelAnalitics />
       <RouterProvider router={router} />
-      {import.meta.env.DEV && <ReactQueryDevtools initialIsOpen={false} />}
+      {import.meta.env.DEV && <ReactQueryDevTools />}
     </QueryClientProvider>
   </React.StrictMode>,
 );
