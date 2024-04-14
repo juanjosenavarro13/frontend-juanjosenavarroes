@@ -12,6 +12,7 @@ export function Hero() {
           className="size-16 rounded-full shadow-lg"
           src="/juanjose.avif"
           alt={INFO.fullName}
+          loading="eager"
         />
         <a
           href={INFO.linkedin}
