@@ -4,8 +4,11 @@ import { ExperienceItem } from "./components";
 export function Experience() {
   return (
     <ol className="relative mt-16">
-      {EXPERIENCIE.map((experiencie) => (
-        <li key={experiencie.title}>
+      {EXPERIENCIE.map((experiencie, index) => (
+        <li
+          className={index !== 0 ? "reveal" : undefined}
+          key={experiencie.title}
+        >
           <ExperienceItem experiencieItem={experiencie} />
         </li>
       ))}
