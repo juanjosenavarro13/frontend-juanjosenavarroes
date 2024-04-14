@@ -10,7 +10,7 @@ export function Hero() {
       <div className="mb-4 flex gap-4">
         <img
           className="size-16 rounded-full shadow-lg"
-          src="/juanjose.webp"
+          src="/juanjose.avif"
           alt={INFO.fullName}
         />
         <a
