@@ -5,10 +5,6 @@
   "aboutMe": "Sobre mí",
   "contact": "Contacto",
   "onGoinProject": "Proyecto en curso",
-  "hero": {
-    "title": "Hey, soy {{name}}",
-    "description": "2 años de experiencia. <strong>Ingeniero de Software</strong> de Sevilla, España Especializado en el desarrollo de aplicaciones SPA (typescript)"
-  },
   "contactMe": "Contácteme",
   "linkedIn": "LinkedIn",
   "experienceSection": {
