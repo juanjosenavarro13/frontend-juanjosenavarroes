@@ -1,9 +1,13 @@
-import { Trans, useTranslation } from "react-i18next";
-import { INFO } from "../../constants/info";
+import { useTranslation } from "react-i18next";
 import { LinkedInIcon, MailIcon } from "../../icons";
-import { SocialPill, Badge } from "./components";
+import { HeroType, InfoType, LinksType } from "../../types";
+import { Badge, SocialPill } from "./components";
 
-export function Hero() {
+export function Hero({
+  hero,
+  links,
+  info,
+}: Readonly<{ hero: HeroType; links: LinksType; info: InfoType }>) {
   const { t } = useTranslation("portfolio");
   return (
     <div className="max-w-xl">
@@ -11,11 +15,11 @@ export function Hero() {
         <img
           className="size-16 rounded-full shadow-lg"
           src="/juanjose.avif"
-          alt={INFO.fullName}
+          alt={info.fullName}
           loading="eager"
         />
         <a
-          href={INFO.linkedin}
+          href={links.linkedin}
           target="_blank"
           rel="noopener"
           className="flex items-center transition md:justify-center md:hover:scale-105"
@@ -27,23 +31,20 @@ export function Hero() {
         className="text-gray -800 text-4xl font-bold
       tracking-tight dark:text-white sm:text-5xl"
       >
-        {t("hero.title", { name: INFO.name })}
+        {hero.title}
       </h1>
-      <p className="mt-6 text-xl text-gray-800 dark:text-gray-300 [&>strong]:font-semibold [&>strong]:text-blue-500 dark:[&>strong]:text-blue-200">
-        <Trans
-          i18nKey="hero.description"
-          ns="portfolio"
-          components={{ strong: <strong></strong> }}
-        />
-      </p>
+      <p
+        className="mt-6 text-xl text-gray-800 dark:text-gray-300 [&>strong]:font-semibold [&>strong]:text-blue-500 dark:[&>strong]:text-blue-200"
+        dangerouslySetInnerHTML={{ __html: hero.description }}
+      />
       <nav className="mt-8 flex flex-wrap gap-4">
-        <SocialPill href={`mailto:${INFO.email}`}>
+        <SocialPill href={`mailto:${links.email}`}>
           <>
             <MailIcon className="size-4" />
             {t("contactMe")}
           </>
         </SocialPill>
-        <SocialPill href="https://www.linkedin.com/in/juan-jose-navarro-perea/">
+        <SocialPill href={links.linkedin}>
           <>
             <LinkedInIcon className="size-4" />
             {t("linkedIn")}

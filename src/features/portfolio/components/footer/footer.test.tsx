@@ -4,8 +4,18 @@ import { Footer } from "./footer";
 
 describe("footer", () => {
   it("render footer", () => {
-    const { getByText } = render(<Footer />);
-    expect(getByText("Juan José").getAttribute("href")).toBe(
+    const { getByText, getByTestId } = render(
+      <Footer
+        info={{
+          name: "Juan José",
+          firstSurname: "Navarro",
+          fullName: "Juan José Navarro Perea",
+          secondSurname: "Perea",
+        }}
+        links={{ email: "juanjosenavarroperea@gmail.com", linkedin: "" }}
+      />,
+    );
+    expect(getByTestId("footer_url").getAttribute("href")).toBe(
       "https://www.juanjosenavarro.es/",
     );
     expect(getByText("contact").getAttribute("href")).toBe(

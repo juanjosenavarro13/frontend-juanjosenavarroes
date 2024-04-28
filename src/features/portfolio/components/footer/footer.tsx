@@ -1,7 +1,10 @@
 import { useTranslation } from "react-i18next";
-import { INFO } from "../../constants/info";
+import { InfoType, LinksType } from "../../types";
 
-export function Footer() {
+export function Footer({
+  links,
+  info,
+}: Readonly<{ links: LinksType; info: InfoType }>) {
   const currentYear = new Date().getFullYear();
   const { t } = useTranslation("portfolio");
   return (
@@ -9,8 +12,12 @@ export function Footer() {
       <div className="mx-auto w-full max-w-screen-xl rounded-lg py-4 md:flex md:items-center md:justify-between">
         <span className="text-sm text-zinc-800/90 dark:text-zinc-200/90 sm:text-center">
           © {currentYear}{" "}
-          <a href="https://www.juanjosenavarro.es/" className="hover:underline">
-            {INFO.name}
+          <a
+            data-testid="footer_url"
+            href="https://www.juanjosenavarro.es/"
+            className="hover:underline"
+          >
+            {info.name}
           </a>{" "}
           . {t("footer.copyright")}
         </span>
@@ -18,7 +25,7 @@ export function Footer() {
           <li>
             <a
               id="contacto"
-              href={`mailto:${INFO.email}`}
+              href={`mailto:${links.email}`}
               className="hover:underline"
             >
               {t("contact")}
