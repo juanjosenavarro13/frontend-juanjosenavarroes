@@ -11,7 +11,7 @@ export const router = createBrowserRouter([
     index: true,
     path: "/",
     element: (
-      <Suspense fallback={<GeneralLoading />}>
+      <Suspense>
         <PortfolioLazy />
       </Suspense>
     ),
