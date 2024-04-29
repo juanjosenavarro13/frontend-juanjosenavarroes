@@ -1,12 +1,12 @@
 import { useTranslation } from "react-i18next";
-import { InfoType, LinksType } from "../../types";
+import { usePortfolio } from "../../hooks";
 
-export function Footer({
-  links,
-  info,
-}: Readonly<{ links: LinksType; info: InfoType }>) {
+export function Footer() {
   const currentYear = new Date().getFullYear();
   const { t } = useTranslation("portfolio");
+  const { portfolio } = usePortfolio();
+  if (!portfolio) return <h1>jee</h1>;
+  const { info, links } = portfolio;
   return (
     <footer className="container m-4 mx-auto mb-10 mt-16 flex w-full justify-center text-center opacity-80 md:max-w-2xl lg:max-w-4xl">
       <div className="mx-auto w-full max-w-screen-xl rounded-lg py-4 md:flex md:items-center md:justify-between">

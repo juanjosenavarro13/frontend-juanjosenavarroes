@@ -1,7 +1,10 @@
 import { Trans } from "react-i18next";
-import { InfoType } from "../../types";
+import { usePortfolio } from "../../hooks";
 
-export function AboutMe({ info }: Readonly<{ info: InfoType }>) {
+export function AboutMe() {
+  const { portfolio } = usePortfolio();
+  if (!portfolio) return <h1>jee</h1>;
+  const { info } = portfolio;
   return (
     <article className="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
       <div className="order-2 text-pretty md:order-1 [&>p>strong]:font-mono [&>p>strong]:font-normal [&>p>strong]:text-blue-500 dark:[&>p>strong]:text-blue-100 [&>p]:mb-4">
