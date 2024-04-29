@@ -19,7 +19,7 @@ export function HeroSkeleton() {
           </Badge>
         </p>
       </div>
-      <div className="grid h-32 animate-pulse gap-2">
+      <div className="h-50 sm:32 grid animate-pulse gap-2">
         <div className="col-span-2 h-2 rounded bg-gray-400"></div>
         <div className="col-span-2 h-2 rounded bg-gray-400"></div>
         <div className="col-span-2 h-2 rounded bg-gray-400"></div>
