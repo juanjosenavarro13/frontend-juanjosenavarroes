@@ -14,6 +14,9 @@ export function SelectLanguage() {
         i18n.changeLanguage(selectedLanguage);
       }}
     >
+      <option disabled selected value={i18n.language}>
+        {i18n.language.toUpperCase()}
+      </option>
       <option value="es">ES</option>
       <option value="en">EN</option>
     </select>
