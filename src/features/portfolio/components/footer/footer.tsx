@@ -1,11 +1,12 @@
 import { useTranslation } from "react-i18next";
 import { usePortfolio } from "../../hooks";
+import { FooterSkeleton } from "./footer-skeleton";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const { t } = useTranslation("portfolio");
   const { portfolio } = usePortfolio();
-  if (!portfolio) return <h1>jee</h1>;
+  if (!portfolio) return <FooterSkeleton />;
   const { info, links } = portfolio;
   return (
     <footer className="container m-4 mx-auto mb-10 mt-16 flex w-full justify-center text-center opacity-80 md:max-w-2xl lg:max-w-4xl">

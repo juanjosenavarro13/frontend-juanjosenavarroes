@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { Badge } from "./badge";
-import { LoadingImage } from "./loading-image";
-import { SocialPillSkeleton } from "./social-pill-skeleton";
-import { SpinnerIcon } from "./spinner";
+import { Badge } from "./components/badge";
+import { SocialPillSkeleton } from "./components/social-pill-skeleton";
+import { SpinnerIcon } from "./components/spinner";
+import { LoadingImage } from "@/features/portfolio/components";
 
 export function HeroSkeleton() {
   const { t } = useTranslation("portfolio");

@@ -1,12 +1,13 @@
 import { Trans } from "react-i18next";
 import { usePortfolio } from "../../hooks";
+import { AboutMeSkeleton } from "./about-me-skeleton";
 
 export function AboutMe() {
   const { portfolio } = usePortfolio();
-  if (!portfolio) return <h1>jee</h1>;
+  if (!portfolio) return <AboutMeSkeleton />;
   const { info } = portfolio;
   return (
-    <article className="flex flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 md:flex-row">
+    <article className="flex h-[45rem] flex-col items-center justify-center gap-8 text-gray-700 dark:text-gray-300 sm:h-56 md:flex-row">
       <div className="order-2 text-pretty md:order-1 [&>p>strong]:font-mono [&>p>strong]:font-normal [&>p>strong]:text-blue-500 dark:[&>p>strong]:text-blue-100 [&>p]:mb-4">
         <p>
           <Trans
