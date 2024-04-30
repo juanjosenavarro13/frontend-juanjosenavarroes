@@ -10,14 +10,11 @@ export function HeroSkeleton() {
     <div className="max-w-xl ">
       <div className="mb-4 flex gap-4">
         <LoadingImage className="size-16 animate-pulse rounded-full text-gray-400 shadow-lg" />
-        <p
-          rel="noopener"
-          className="flex items-center transition md:justify-center md:hover:scale-105"
-        >
+        <button className="flex items-center transition md:justify-center md:hover:scale-105">
           <Badge>
             <SpinnerIcon />
           </Badge>
-        </p>
+        </button>
       </div>
       <div className="grid h-60 animate-pulse gap-2 sm:h-32">
         <div className="col-span-2 h-2 rounded bg-gray-400"></div>
