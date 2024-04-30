@@ -9,12 +9,13 @@ export function SelectLanguage() {
       aria-label="Language"
       data-testid="language-select"
       className={styles.select}
+      defaultValue={i18n.language}
       onChange={(event) => {
         const selectedLanguage = event.target.value;
         i18n.changeLanguage(selectedLanguage);
       }}
     >
-      <option disabled selected value={i18n.language}>
+      <option disabled value={i18n.language}>
         {i18n.language.toUpperCase()}
       </option>
       <option value="es">ES</option>

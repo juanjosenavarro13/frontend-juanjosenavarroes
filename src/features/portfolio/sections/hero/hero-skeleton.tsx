@@ -1,8 +1,8 @@
 import { useTranslation } from "react-i18next";
-import { Badge } from "./badge";
-import { LoadingImage } from "./loading-image";
-import { SocialPillSkeleton } from "./social-pill-skeleton";
-import { SpinnerIcon } from "./spinner";
+import { Badge } from "./components/badge";
+import { SocialPillSkeleton } from "./components/social-pill-skeleton";
+import { SpinnerIcon } from "./components/spinner";
+import { LoadingImage } from "@/features/portfolio/components";
 
 export function HeroSkeleton() {
   const { t } = useTranslation("portfolio");
@@ -10,19 +10,17 @@ export function HeroSkeleton() {
     <div className="max-w-xl ">
       <div className="mb-4 flex gap-4">
         <LoadingImage className="size-16 animate-pulse rounded-full text-gray-400 shadow-lg" />
-        <p
-          rel="noopener"
-          className="flex items-center transition md:justify-center md:hover:scale-105"
-        >
+        <button className="flex items-center transition md:justify-center md:hover:scale-105">
           <Badge>
             <SpinnerIcon />
           </Badge>
-        </p>
+        </button>
       </div>
-      <div className="h-50 sm:32 grid animate-pulse gap-2">
+      <div className="grid h-60 animate-pulse gap-2 sm:h-32">
         <div className="col-span-2 h-2 rounded bg-gray-400"></div>
         <div className="col-span-2 h-2 rounded bg-gray-400"></div>
         <div className="col-span-2 h-2 rounded bg-gray-400"></div>
+        <div className="black col-span-2 h-2 sm:hidden"></div>
         <div className="col-span-3 h-2 rounded bg-gray-400"></div>
         <div className="col-span-3 h-2 rounded bg-gray-400"></div>
         <div className="col-span-3 h-2 rounded bg-gray-400"></div>
