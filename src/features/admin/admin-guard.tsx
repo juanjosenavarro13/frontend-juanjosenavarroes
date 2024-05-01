@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { Outlet, useNavigate } from "react-router-dom";
 import { useStoreUser } from "../auth/store/user/store-user";
+import { Header, Sidebar } from "./components";
 
 export default function AdminGuard() {
   const navigate = useNavigate();
@@ -11,5 +12,13 @@ export default function AdminGuard() {
   }, [navigate, user]);
 
   if (!user) return null;
-  return <Outlet />;
+  return (
+    <div className="flex">
+      <Sidebar />
+      <div className="flex flex-1 flex-col">
+        <Header />
+        <Outlet />
+      </div>
+    </div>
+  );
 }
