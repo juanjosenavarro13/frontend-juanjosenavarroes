@@ -1,18 +1,18 @@
 import { useTranslation } from "react-i18next";
-import { Experiencie } from "../../../constants/experiencie";
 import { LinkInLine } from "./link-in-line";
 import { ArrowRightIcon } from "@/features/portfolio/icons";
+import { ExperienceType } from "@/features/portfolio/types";
 
 interface ExperienceItemProps {
-  experiencieItem: Experiencie;
+  experiencieItem: ExperienceType;
 }
 export function ExperienceItem({
   experiencieItem,
 }: Readonly<ExperienceItemProps>) {
   const { t } = useTranslation("portfolio");
-  const { company, date, description, link, title } = experiencieItem;
+  const { company, endDate, description, url, title } = experiencieItem;
   return (
-    <div className="md:space-x-4] relative mx-12 grid pb-12 before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 before:content-[''] dark:before:border-white/15 md:grid-cols-5 md:gap-10">
+    <div className="relative mx-12 grid pb-12 before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 before:content-[''] dark:before:border-white/15 md:grid-cols-5 md:gap-10 md:space-x-[4]">
       <div className="relative pb-12 md:col-span-2">
         <div className="sticky top-0">
           <span className="absolute -left-[42px] rounded-full text-5xl text-blue-400">
@@ -24,14 +24,14 @@ export function ExperienceItem({
             {company}
           </h4>
           <time className="m-0 p-0 text-sm text-gray-600/80 dark:text-white/80">
-            {t(date)}
+            {t(endDate)}
           </time>
         </div>
       </div>
       <div className="relative flex flex-col gap-2 pb-4 text-gray-600 dark:text-gray-300 md:col-span-3">
         {t(description)}
-        {link && (
-          <LinkInLine href={link}>
+        {url && (
+          <LinkInLine href={url}>
             <>
               {t("experienceSection.knowMore")}{" "}
               <ArrowRightIcon className="w-5" />
