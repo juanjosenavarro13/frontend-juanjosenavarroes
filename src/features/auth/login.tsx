@@ -3,12 +3,11 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import axios from "axios";
 import { SubmitHandler, useForm } from "react-hook-form";
+import { useTranslation } from "react-i18next";
 import { useNavigate } from "react-router-dom";
 import { LoginFormSchema } from "./schema/login.schema";
 import { useStoreUser } from "./store/user/store-user";
 import { Inputs, ResponseLogin } from "./types/login";
-import { useTranslation } from "react-i18next";
-import { SelectLanguage } from "@/components";
 
 export default function Login() {
   const { t } = useTranslation("auth");
@@ -39,10 +38,6 @@ export default function Login() {
   return (
     <div className="flex h-screen items-center justify-center bg-gray-200">
       <div className="relative w-96 rounded bg-white p-8 shadow-md">
-        <div className="absolute right-2 top-2 text-center font-semibold">
-          {t("language", { ns: "translation" })}:
-          <SelectLanguage />
-        </div>
         <h2 className="mb-4 text-center text-2xl font-bold">{t("login")}</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">
@@ -50,7 +45,7 @@ export default function Login() {
               htmlFor="email"
               className="mb-2 block text-sm font-bold text-gray-700"
             >
-              {t("email")}
+              Correo electrónico
             </label>
             <input
               {...register("email")}
@@ -66,7 +61,7 @@ export default function Login() {
               htmlFor="password"
               className="mb-2 block text-sm font-bold text-gray-700"
             >
-              {t("password")}
+              Contraseña
             </label>
             <input
               {...register("password")}
@@ -86,7 +81,7 @@ export default function Login() {
             >
               {mutation.isPending
                 ? t("loading", { ns: "translation" })
-                : t("login")}
+                : "Iniciar sesión"}
             </button>
           </div>
         </form>
