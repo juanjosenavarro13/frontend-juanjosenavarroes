@@ -2,5 +2,5 @@
 
 Aquí se encuentra una lista de tareas pendientes:
 
-- [ ] Login
-- [ ] Administración
+<!-- - [ ] Login
+- [ ] Administración -->
