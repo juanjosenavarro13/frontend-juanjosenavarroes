@@ -2,6 +2,7 @@ import { useTranslation } from "react-i18next";
 import { LinkInLine } from "./link-in-line";
 import { ArrowRightIcon } from "@/features/portfolio/icons";
 import { ExperienceType } from "@/features/portfolio/types";
+import { formatDate } from "@/core/utils/format-date";
 
 interface ExperienceItemProps {
   experiencieItem: ExperienceType;
@@ -10,7 +11,8 @@ export function ExperienceItem({
   experiencieItem,
 }: Readonly<ExperienceItemProps>) {
   const { t } = useTranslation("portfolio");
-  const { company, endDate, description, url, title } = experiencieItem;
+  const { company, startDate, endDate, description, url, title } =
+    experiencieItem;
   return (
     <div className="relative mx-12 grid pb-12 before:absolute before:left-[-35px] before:block before:h-full before:border-l-2 before:border-black/20 before:content-[''] dark:before:border-white/15 md:grid-cols-5 md:gap-10 md:space-x-[4]">
       <div className="relative pb-12 md:col-span-2">
@@ -24,7 +26,8 @@ export function ExperienceItem({
             {company}
           </h4>
           <time className="m-0 p-0 text-sm text-gray-600/80 dark:text-white/80">
-            {t(endDate)}
+            {formatDate(startDate)} ~{" "}
+            {endDate ? formatDate(endDate) : t("experienceSection.now")}
           </time>
         </div>
       </div>
