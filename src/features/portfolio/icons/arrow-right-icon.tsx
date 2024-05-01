@@ -1,4 +1,6 @@
-export function ArrowRightIcon({ className }: { className?: string }) {
+export function ArrowRightIcon({
+  className,
+}: Readonly<{ className?: string }>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

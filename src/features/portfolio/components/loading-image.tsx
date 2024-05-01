@@ -1,7 +1,7 @@
 export function LoadingImage({ className }: Readonly<{ className: string }>) {
   return (
     <svg
-      className={className}
+      className={`${className ?? ""} animate-pulse`}
       aria-hidden="true"
       xmlns="http://www.w3.org/2000/svg"
       fill="currentColor"
