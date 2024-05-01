@@ -2,7 +2,7 @@ import { useTranslation } from "react-i18next";
 import { Badge } from "./components/badge";
 import { SocialPillSkeleton } from "./components/social-pill-skeleton";
 import { SpinnerIcon } from "./components/spinner";
-import { LoadingImage } from "@/features/portfolio/components";
+import { LoadingImage, TextSkeleton } from "@/features/portfolio/components";
 
 export function HeroSkeleton() {
   const { t } = useTranslation("portfolio");
@@ -16,16 +16,15 @@ export function HeroSkeleton() {
           </Badge>
         </button>
       </div>
-      <div className="grid h-60 animate-pulse gap-2 sm:h-32">
-        <div className="col-span-2 h-2 rounded bg-gray-400"></div>
-        <div className="col-span-2 h-2 rounded bg-gray-400"></div>
-        <div className="col-span-2 h-2 rounded bg-gray-400"></div>
-        <div className="black col-span-2 h-2 sm:hidden"></div>
-        <div className="col-span-3 h-2 rounded bg-gray-400"></div>
-        <div className="col-span-3 h-2 rounded bg-gray-400"></div>
-        <div className="col-span-3 h-2 rounded bg-gray-400"></div>
-        <div className="col-span-3 h-2 rounded bg-gray-400"></div>
-        <div className="col-span-3 h-2 rounded bg-gray-400"></div>
+      <div className="grid h-52 gap-2 sm:h-32">
+        <TextSkeleton span={3} />
+        <TextSkeleton span={3} />
+        <TextSkeleton span={3} />
+        <TextSkeleton span={3} />
+        <TextSkeleton span={3} />
+        <TextSkeleton span={3} />
+        <TextSkeleton span={3} />
+        <TextSkeleton span={3} />
       </div>
       <nav className="mt-8 flex flex-wrap gap-4">
         <SocialPillSkeleton>

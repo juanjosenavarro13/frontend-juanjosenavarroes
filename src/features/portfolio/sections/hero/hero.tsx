@@ -27,7 +27,7 @@ export function Hero() {
           <Badge>{t("onGoinProject")}</Badge>
         </a>
       </div>
-      <div className="h-60 sm:h-32">
+      <div className="h-52 sm:h-32">
         <h1
           className="text-gray -800 text-balance text-4xl
       font-bold tracking-tight dark:text-white sm:text-5xl"
