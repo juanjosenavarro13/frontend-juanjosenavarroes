@@ -1,6 +1,11 @@
-import { useTranslation } from "react-i18next";
-
 export default function Admin() {
-  const { i18n } = useTranslation();
-  return <div data-testid="adminPage">admin {i18n.language}</div>;
+  return (
+    <div className="p-4">
+      <h2 className="text-lg font-semibold">Welcome to the admin panel!</h2>
+      <p className="mt-2">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec
+        odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi.
+      </p>
+    </div>
+  );
 }
