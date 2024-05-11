@@ -1,7 +1,7 @@
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter } from "react-router-dom";
 import i18n from "i18next";
-import { initReactI18next, I18nextProvider } from "react-i18next";
+import { I18nextProvider, initReactI18next } from "react-i18next";
+import { BrowserRouter } from "react-router-dom";
 
 const i18nForTests = i18n.createInstance();
 i18nForTests.use(initReactI18next).init({
