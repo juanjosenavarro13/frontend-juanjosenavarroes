@@ -1,13 +1,9 @@
 import { useTranslation } from "react-i18next";
-import { usePortfolio } from "../../hooks";
-import { FooterSkeleton } from "./footer-skeleton";
+import { INFO } from "../../constants/info";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
   const { t } = useTranslation("portfolio");
-  const { portfolio } = usePortfolio();
-  if (!portfolio) return <FooterSkeleton />;
-  const { info, links } = portfolio;
   return (
     <footer className="container m-4 mx-auto mb-10 mt-16 flex w-full justify-center text-center opacity-80 md:max-w-2xl lg:max-w-4xl">
       <div className="mx-auto w-full max-w-screen-xl rounded-lg py-4 md:flex md:items-center md:justify-between">
@@ -18,7 +14,7 @@ export function Footer() {
             href="https://www.juanjosenavarro.es/"
             className="hover:underline"
           >
-            {info.name}
+            {INFO.name}
           </a>{" "}
           . {t("footer.copyright")}
         </span>
@@ -26,7 +22,7 @@ export function Footer() {
           <li>
             <a
               id="contacto"
-              href={`mailto:${links.email}`}
+              href={`mailto:${INFO.email}`}
               className="hover:underline"
             >
               {t("contact")}

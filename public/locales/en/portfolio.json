@@ -1,33 +1,41 @@
 {
-  "laboralExperience": "Work experience",
-  "experience": "Experience",
-  "projects": "Projects",
   "aboutMe": "About me",
-  "contact": "Contact",
-  "onGoinProject": "Ongoing project",
-  "contactMe": "Contact me",
-  "linkedIn": "LinkedIn",
-  "experienceSection": {
-    "now": "At the moment...",
-    "knowMore": "Know more"
+  "aboutMeSection": {
+    "description": "My name is Juan José but my friends call me Juanjo. \nI started programming with a game (Habbo) when I was 13 years old. \nI am currently <strong>Developing and maintaining SPA applications for IBERIA </strong>. \nI am self-taught and I like to learn different web development technologies, especially based on javascript. \nI also have knowledge of the different sectors in development; \nDatabases such as mysql, postgres, mongodb; \nBackend with nodejs, express or nestjs and frontend with angularjs, angular, react or astro."
   },
-  "preview": "Preview",
   "code": "Code",
-  "projectsSection": {
-    "pokeapi": {
-      "description": "Developed a Pokeapi application using React, Tanstack Query v5 and Axios to efficiently manage the state of asynchronous calls. "
+  "contact": "Contact",
+  "contactMe": "Contact me",
+  "experience": "Experience",
+  "experienceSection": {
+    "description": {
+      "GESIMAR": "Repair and maintenance of computer equipment. Management of servers and ISP services",
+      "NTT": "Dual boot development using AngularJS (TypeScript) and Angular 13 or higher for the implementation of advanced web solutions. Creation of applications using React 18 and TypeScript to improve the user experience in the services provided to clients. Version management using tools such as GitLab and GitHub to ensure collaboration and effective tracking of changes in libraries and applications. Experience managing application deployments to production and pre-production environments, ensuring a smooth implementation."
     },
+    "knowMore": "Know more",
+    "now": "At the moment..."
+  },
+  "footer": {
+    "copyright": "Almost all rights reserved"
+  },
+  "hero": {
+    "description": "2 years of experience. \n<strong>Software Engineer</strong> from Seville, Spain Specialized in the development of SPA (typescript) applications",
+    "onGoinProject": "Ongoing project",
+    "title": "Hey, I'm Juan José"
+  },
+  "laboralExperience": "Work experience",
+  "linkedIn": "LinkedIn",
+  "preview": "Preview",
+  "projects": "Projects",
+  "projectsSection": {
     "belsay": {
       "description": "I developed the official website of a pizzeria, which offers a complete home delivery service. "
     },
     "gesimar": {
       "description": "I developed a landing website for a company specialized in computer services and networks. "
+    },
+    "pokeapi": {
+      "description": "Developed a Pokeapi application using React, Tanstack Query v5 and Axios to efficiently manage the state of asynchronous calls. "
     }
-  },
-  "aboutMeSection": {
-    "description": "My name is Juan José but my friends call me Juanjo.  <strong> Developing and maintaining SPA applications for IBERIA </strong>. "
-  },
-  "footer": {
-    "copyright": "Almost all rights reserved"
   }
 }

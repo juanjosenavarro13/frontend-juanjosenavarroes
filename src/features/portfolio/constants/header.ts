@@ -1,8 +1,8 @@
-interface NavItems {
+type navItemsType = {
   title: string;
   url: string;
-}
-export const NAVITEMS: NavItems[] = [
+};
+export const NAVITEMS: navItemsType[] = [
   {
     title: "experience",
     url: "/#experiencia",
@@ -15,4 +15,4 @@ export const NAVITEMS: NavItems[] = [
     title: "aboutMe",
     url: "/#sobre-mi",
   },
-];
+] as const;
