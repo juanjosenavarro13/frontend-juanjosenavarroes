@@ -1,8 +1,8 @@
+import { formatDate } from "@/core/utils/format-date";
+import { experienceType } from "@portfolio/constants/experience";
+import { ArrowRightIcon } from "@portfolio/icons";
 import { useTranslation } from "react-i18next";
 import { LinkInLine } from "./link-in-line";
-import { ArrowRightIcon } from "@/features/portfolio/icons";
-import { formatDate } from "@/core/utils/format-date";
-import { experienceType } from "@/features/portfolio/constants/experience";
 
 interface ExperienceItemProps {
   experiencieItem: experienceType;

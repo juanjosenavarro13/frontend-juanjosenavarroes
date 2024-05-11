@@ -1,6 +1,6 @@
+import { PROJECTS } from "@portfolio/constants";
+import { GithubIcon, LinkIcon } from "@portfolio/icons";
 import { useTranslation } from "react-i18next";
-import { PROJECTS } from "../../constants/projects";
-import { GithubIcon, LinkIcon } from "../../icons";
 import { LinkButton } from "./link-button";
 
 export function Projects() {

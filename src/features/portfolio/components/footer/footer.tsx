@@ -1,5 +1,5 @@
+import { INFO } from "@portfolio/constants";
 import { useTranslation } from "react-i18next";
-import { INFO } from "../../constants/info";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
