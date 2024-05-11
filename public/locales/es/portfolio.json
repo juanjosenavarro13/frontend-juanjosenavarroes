@@ -1,11 +1,9 @@
 {
-  "aboutMe": "Sobre mí",
   "aboutMeSection": {
     "description": "Me llamo Juan José pero mis amigos me llaman Juanjo. Empecé en la programación con un juego (Habbo) cuando tenía 13 años. Actualmente estoy <strong> Desarrollando y manteniendo aplicaciones SPA para IBERIA </strong>. Soy autodidacta y me gusta aprender distintas tecnologías de desarrollo web, sobre todo basadas en javascript. También tengo conocimientos de los distintos sectores en el desarrollo; Bases de datos como mysql, postgres, mongodb; Backend con nodejs, express o nestjs y frontend con angularjs, angular, react o astro."
   },
   "code": "Código",
   "contactMe": "Contácteme",
-  "experience": "Experiencia",
   "experienceSection": {
     "knowMore": "Saber más",
     "now": "Actualmente...",
@@ -26,7 +24,11 @@
   "laboralExperience": "Experiencia laboral",
   "linkedIn": "LinkedIn",
   "preview": "Preview",
-  "projects": "Proyectos",
+  "header": {
+    "projects": "Proyectos",
+    "experience": "Experiencia",
+    "aboutMe": "Sobre mí"
+  },
   "projectsSection": {
     "belsay": {
       "description": "Desarrollé la página web oficial de una pizzería, la cual ofrece un servicio completo de reparto a domicilio. Utilicé tecnologías modernas y técnicas de diseño eficientes para garantizar una experiencia de usuario óptima. Además, implementé un sistema de gestión de pedidos intuitivo y seguro para facilitar la interacción de los clientes con el servicio de entrega."

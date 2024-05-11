@@ -4,7 +4,7 @@ import { MoonIcon, SunIcon } from "./icons";
 export function ThemeToggle() {
   const { theme, toggleTheme } = useStoreTheme();
   return (
-    <div className="relative ml-1 mr-1">
+    <div className="relative ml-1 mr-1" data-testid="toggle-theme">
       <button
         aria-label="cambiar tema"
         data-testid="buttonChangeTheme"

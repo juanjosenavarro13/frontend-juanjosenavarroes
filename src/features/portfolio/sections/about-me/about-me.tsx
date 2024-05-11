@@ -9,7 +9,7 @@ export function AboutMe() {
           <Trans
             i18nKey="aboutMeSection.description"
             ns="portfolio"
-            components={{ string: <strong></strong> }}
+            components={{ strong: <strong /> }}
           />
         </p>
       </div>
