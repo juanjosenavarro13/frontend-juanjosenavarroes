@@ -1,10 +1,13 @@
-import { AdminGuardLazy, AdminLazy } from "@/features/admin";
 import { Suspense } from "react";
 import { createBrowserRouter } from "react-router-dom";
-import { GeneralLoading } from "../features/loading";
-import { NotFoundPageLazy } from "../features/not-found";
-import { AuthLoginLazy } from "@/features/auth";
-import Portfolio from "@/features/portfolio/portfolio";
+import {
+  Portfolio,
+  NotFoundPageLazy,
+  GeneralLoading,
+  AuthLoginLazy,
+  AdminGuardLazy,
+  AdminLazy,
+} from "@/features";
 
 export const router = createBrowserRouter([
   {
