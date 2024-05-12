@@ -1,38 +1,15 @@
-import { PhpIcon, ReactIcon, TailwindIcon, WordpressIcon } from "../icons";
-type Tag = {
-  name: string;
-  icon: ({ className }: Readonly<{ className?: string }>) => JSX.Element;
-};
+import { tagType, TAGS } from "./tags";
 
-export const TAGS: { [key: string]: Tag } = {
-  WORDPRESS: {
-    name: "Wordpress",
-    icon: WordpressIcon,
-  },
-  TAILWIND: {
-    name: "Tailwind CSS",
-    icon: TailwindIcon,
-  },
-  REACT: {
-    name: "React 18",
-    icon: ReactIcon,
-  },
-  PHP: {
-    name: "PHP",
-    icon: PhpIcon,
-  },
-};
-
-interface Projects {
+type projectsType = {
   title: string;
   description: string;
   image: string;
-  tags: Tag[];
+  tags: tagType[];
   link?: string;
   github?: string;
-}
+};
 
-export const PROJECTS: Projects[] = [
+export const PROJECTS: projectsType[] = [
   {
     title: "Pokeapi",
     description: "projectsSection.pokeapi.description",
@@ -55,4 +32,4 @@ export const PROJECTS: Projects[] = [
     image: "/projects/gesimar.avif",
     tags: [TAGS.WORDPRESS],
   },
-];
+] as const;

@@ -1,3 +1,2 @@
-export * from "./badge";
-export * from "./social-pill";
-export * from "./social-pill-skeleton";
+export * from "./badge/badge";
+export * from "./social-pill/social-pill";
