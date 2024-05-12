@@ -1,29 +1,53 @@
 import { TestWrapper } from "@/core/utils/test-wrapper";
-import { fireEvent, render, waitFor } from "@testing-library/react";
+import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
+import * as useLogin from "./hooks/use-login/use-login";
 import Login from "./login";
-
-vi.mock("axios");
 
 describe("login", () => {
   it("user login valid", async () => {
-    const { getByTestId } = render(
+    vi.spyOn(useLogin, "useLogin").mockReturnValue({
+      handleSubmit: vi.fn(),
+      isValid: true,
+      mutation: { isPending: false } as never,
+      onSubmit: vi.fn(),
+      register: vi.fn(),
+    });
+    render(
       <TestWrapper>
         <Login />
       </TestWrapper>,
     );
 
-    fireEvent.change(getByTestId("email"), {
+    fireEvent.change(screen.getByTestId("email"), {
       target: { value: "test@example.com" },
     });
-    fireEvent.change(getByTestId("password"), {
+    fireEvent.change(screen.getByTestId("password"), {
       target: { value: "password123" },
     });
 
-    fireEvent.click(getByTestId("btnSubmitLogin"));
+    fireEvent.click(screen.getByTestId("btnSubmitLogin"));
+    await waitFor(() =>
+      expect(screen.getByText("Iniciar sesión")).toBeInTheDocument(),
+    );
+  });
+
+  it("user login loading fetch", async () => {
+    vi.spyOn(useLogin, "useLogin").mockReturnValue({
+      handleSubmit: vi.fn(),
+      isValid: true,
+      mutation: { isPending: true } as never,
+      onSubmit: vi.fn(),
+      register: vi.fn(),
+    });
+    render(
+      <TestWrapper>
+        <Login />
+      </TestWrapper>,
+    );
 
     await waitFor(() =>
-      expect(getByTestId("btnSubmitLogin")).toBeInTheDocument(),
+      expect(screen.getByText("Cargando...")).toBeInTheDocument(),
     );
   });
 });
