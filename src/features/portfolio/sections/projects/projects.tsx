@@ -1,7 +1,7 @@
 import { PROJECTS } from "@portfolio/constants";
 import { GithubIcon, LinkIcon } from "@portfolio/icons";
 import { useTranslation } from "react-i18next";
-import { LinkButton } from "./link-button";
+import { LinkButton } from "./components/link-button/link-button";
 
 export function Projects() {
   const { t } = useTranslation("portfolio");
@@ -15,7 +15,7 @@ export function Projects() {
           <div className="w-full md:w-1/2">
             <div className="relative col-span-6 row-span-5 flex transform flex-col items-center gap-8 overflow-clip rounded-xl shadow-xl transition duration-500 ease-in-out sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
               <img
-                alt="Recién llegado vs 5 años en Nueva Zelanda"
+                alt={title}
                 className="h-56 w-full object-cover object-top transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
                 loading="lazy"
                 src={image}

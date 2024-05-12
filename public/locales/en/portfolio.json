@@ -1,4 +1,5 @@
 {
+  "aboutMe": "About me",
   "aboutMeSection": {
     "description": "My name is Juan José but my friends call me Juanjo. \nI started programming with a game (Habbo) when I was 13 years old. \nI am currently <strong>Developing and maintaining SPA applications for IBERIA </strong>. \nI am self-taught and I like to learn different web development technologies, especially based on javascript. \nI also have knowledge of the different sectors in development; \nDatabases such as mysql, postgres, mongodb; \nBackend with nodejs, express or nestjs and frontend with angularjs, angular, react or astro."
   },
@@ -16,6 +17,11 @@
     "contact": "Contact",
     "copyright": "Almost all rights reserved"
   },
+  "header": {
+    "aboutMe": "About me",
+    "experience": "Experience",
+    "projects": "Projects"
+  },
   "hero": {
     "description": "2 years of experience. \n<strong>Software Engineer</strong> from Seville, Spain Specialized in the development of SPA (typescript) applications",
     "onGoinProject": "Ongoing project",
@@ -24,11 +30,7 @@
   "laboralExperience": "Work experience",
   "linkedIn": "LinkedIn",
   "preview": "Preview",
-  "header": {
-    "projects": "Projects",
-    "experience": "Experience",
-    "aboutMe": "About me"
-  },
+  "projects": "Projects",
   "projectsSection": {
     "belsay": {
       "description": "I developed the official website of a pizzeria, which offers a complete home delivery service. "
