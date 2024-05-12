@@ -12,16 +12,11 @@ describe("hero section", () => {
     );
 
     const links = document.querySelectorAll("a");
+    const img = document.querySelector("img");
 
-    expect(document.querySelector("img")).toHaveAttribute(
-      "src",
-      "/juanjose.avif",
-    );
-    expect(document.querySelector("img")).toHaveAttribute(
-      "alt",
-      "juan jose navarro perea",
-    );
-    expect(document.querySelector("img")).toHaveAttribute("loading", "eager");
+    expect(img).toHaveAttribute("src", "/juanjose.avif");
+    expect(img).toHaveAttribute("alt", "juan jose navarro perea");
+    expect(img).toHaveAttribute("loading", "eager");
     expect(links[0]).toHaveAttribute(
       "href",
       "https://www.linkedin.com/in/juan-jose-navarro-perea/",
