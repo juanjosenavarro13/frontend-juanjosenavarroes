@@ -1,56 +1,35 @@
-import { Suspense } from "react";
-import { createBrowserRouter } from "react-router-dom";
+import { RouteWithSuspense } from "@/components";
 import {
-  Portfolio,
-  NotFoundPageLazy,
-  GeneralLoading,
-  AuthLoginLazy,
   AdminGuardLazy,
   AdminLazy,
+  AuthLoginLazy,
+  NotFoundPageLazy,
+  PortfolioLazy,
 } from "@/features";
+import { createBrowserRouter } from "react-router-dom";
 
 export const router = createBrowserRouter([
   {
     index: true,
     path: "/",
-    element: <Portfolio />,
-    errorElement: <GeneralLoading />,
+    element: <RouteWithSuspense element={PortfolioLazy} />,
   },
   {
     path: "/auth",
-    element: (
-      <Suspense fallback={<GeneralLoading />}>
-        <AuthLoginLazy />
-      </Suspense>
-    ),
-    errorElement: <GeneralLoading />,
+    element: <RouteWithSuspense element={AuthLoginLazy} />,
   },
   {
     path: "/admin",
-    element: (
-      <Suspense fallback={<GeneralLoading />}>
-        <AdminGuardLazy />
-      </Suspense>
-    ),
-    errorElement: <GeneralLoading />,
+    element: <RouteWithSuspense element={AdminGuardLazy} />,
     children: [
       {
         index: true,
-        element: (
-          <Suspense fallback={<GeneralLoading />}>
-            <AdminLazy />
-          </Suspense>
-        ),
+        element: <RouteWithSuspense element={AdminLazy} />,
       },
     ],
   },
   {
     path: "*",
-    element: (
-      <Suspense fallback={<GeneralLoading />}>
-        <NotFoundPageLazy />
-      </Suspense>
-    ),
-    errorElement: <GeneralLoading />,
+    element: <RouteWithSuspense element={NotFoundPageLazy} />,
   },
 ]);

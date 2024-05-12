@@ -5,7 +5,7 @@ import "./portfolio.css";
 import { AboutMe, Experience, Hero, Projects } from "./sections";
 import { useStoreTheme } from "./store";
 
-export function Portfolio() {
+export default function Portfolio() {
   const { theme } = useStoreTheme();
   const { t } = useTranslation("portfolio");
 

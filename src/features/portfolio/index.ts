@@ -1,1 +1,3 @@
-export * from "./portfolio";
+import { lazy } from "react";
+
+export const PortfolioLazy = lazy(() => import("./portfolio"));
