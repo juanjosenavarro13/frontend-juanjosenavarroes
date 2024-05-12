@@ -11,7 +11,13 @@ export default defineConfig({
     minify: true,
   },
   resolve: {
-    alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }],
+    alias: [
+      { find: "@", replacement: path.resolve(__dirname, "./src") },
+      {
+        find: "@portfolio",
+        replacement: path.resolve(__dirname, "./src/features/portfolio"),
+      },
+    ],
   },
   server: {
     port: 3000,
@@ -21,6 +27,9 @@ export default defineConfig({
     environment: "happy-dom",
     coverage: {
       provider: "v8",
+      thresholds: {
+        "100": false,
+      },
       enabled: true,
       include: ["src/**"],
       exclude: ["src/core/**", "src/**/index.ts"],

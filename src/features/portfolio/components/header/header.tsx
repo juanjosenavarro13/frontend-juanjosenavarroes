@@ -1,8 +1,8 @@
-import { useTranslation } from "react-i18next";
-import { NAVITEMS } from "../../constants/header";
-import { ThemeToggle } from "../theme-toggle";
-import styles from "./header.module.css";
 import { SelectLanguage } from "@/components";
+import { ThemeToggle } from "@portfolio/components";
+import { NAVITEMS } from "@portfolio/constants";
+import { useTranslation } from "react-i18next";
+import styles from "./header.module.css";
 
 export function Header() {
   const { t } = useTranslation("portfolio");

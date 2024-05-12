@@ -1,18 +1,18 @@
-interface NavItems {
+type navItemsType = {
   title: string;
   url: string;
-}
-export const NAVITEMS: NavItems[] = [
+};
+export const NAVITEMS: navItemsType[] = [
   {
-    title: "experience",
+    title: "header.experience",
     url: "/#experiencia",
   },
   {
-    title: "projects",
+    title: "header.projects",
     url: "/#proyectos",
   },
   {
-    title: "aboutMe",
+    title: "header.aboutMe",
     url: "/#sobre-mi",
   },
-];
+] as const;

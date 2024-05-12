@@ -1,6 +1,8 @@
-export const HTTP_ENDPOINTS = {
+type httpEndpointsType = {
+  login: string;
+};
+export const HTTP_ENDPOINTS: httpEndpointsType = {
   login: remplaceEnv("auth/login"),
-  portfolio: remplaceEnv("portfolio"),
 };
 
 function remplaceEnv(url: string) {
