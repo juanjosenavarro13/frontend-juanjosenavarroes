@@ -55,13 +55,19 @@ export function AdminUsers() {
                 <td className="px-6 py-4">
                   {formatDate(new Date(user.updatedAt))}
                 </td>
-                <td className="px-6 py-4 text-gray-800">
+                <td className="flex justify-between px-6 py-4">
                   <Link
-                    className="hover:font-bold"
-                    to={`/admin/users/${user.id}`}
+                    className="hover:text-gray-900"
+                    to={`/admin/users/delete/${user.id}`}
                   >
                     EDITAR
-                  </Link>{" "}
+                  </Link>
+                  <Link
+                    className="hover:text-gray-900"
+                    to={`/admin/users/edit/${user.id}`}
+                  >
+                    ELIMINAR
+                  </Link>
                 </td>
               </tr>
             );
