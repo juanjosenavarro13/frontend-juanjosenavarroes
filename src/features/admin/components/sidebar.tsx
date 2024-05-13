@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 
 export function Sidebar() {
   return (
-    <div className="h-screen w-64 bg-gray-800 text-white">
+    <div className="h-auto w-64 bg-gray-800 text-white">
       <div className="p-4">
         <h1 className="text-2xl font-bold">Admin Panel</h1>
       </div>
