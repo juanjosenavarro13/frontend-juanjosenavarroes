@@ -17,7 +17,7 @@ export default function AdminGuard() {
       <Sidebar />
       <div className="flex flex-1 flex-col">
         <Header />
-        <div className="p-12">
+        <div className="h-full p-12">
           <Outlet />
         </div>
       </div>

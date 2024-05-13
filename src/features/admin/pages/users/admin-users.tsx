@@ -1,20 +1,40 @@
 import { Loading } from "@/features/loading/loading";
 import { useGetUsers } from "./hooks/use-get-user";
-import styles from "./admin-users.module.css";
 import { formatDate } from "@/core/utils";
+import { useState } from "react";
 
 export function AdminUsers() {
-  const { users, isError, isLoading } = useGetUsers();
-
-  if (isLoading || isError)
+  const [page, setPage] = useState<number>(1);
+  const { users, isError, isLoading, totalPages } = useGetUsers(page);
+  const loading = isLoading || isError || !totalPages;
+  if (loading)
     return (
-      <div className={styles.container_loading}>
+      <div className="flex h-full items-center justify-center">
         <Loading />
       </div>
     );
 
   return (
     <div className="relative overflow-x-auto">
+      <div className="flex justify-between">
+        <button
+          onClick={() => {
+            setPage((prevPage) => (prevPage !== 1 ? prevPage - 1 : 1));
+          }}
+        >
+          prev page
+        </button>
+        {page}
+        <button
+          onClick={() => {
+            setPage((prevPage) =>
+              prevPage < totalPages ? prevPage + 1 : prevPage,
+            );
+          }}
+        >
+          next page
+        </button>
+      </div>
       <table className="w-full text-left text-sm text-gray-500">
         <thead className="bg-gray-50 text-center text-xs uppercase text-gray-700">
           <tr>
