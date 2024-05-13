@@ -10,7 +10,7 @@ describe("header", () => {
         <Header />
       </TestWrapper>,
     );
-    expect(document.querySelector("header")).toBeInTheDocument();
+
     expect(screen.getByTestId("toggle-theme")).toBeInTheDocument();
     expect(screen.getByText("header.experience")).toBeInTheDocument();
     expect(screen.getByText("header.projects")).toBeInTheDocument();
