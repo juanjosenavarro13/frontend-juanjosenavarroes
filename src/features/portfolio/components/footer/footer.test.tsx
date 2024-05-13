@@ -10,21 +10,23 @@ describe("footer", () => {
         <Footer />
       </TestWrapper>,
     );
-    expect(screen.getByTestId("footer")).toBeInTheDocument();
+    expect(screen.getByRole("contentinfo")).toBeInTheDocument();
   });
 
-  it("render info", () => {
+  it("should render info", () => {
     render(
       <TestWrapper>
         <Footer />
       </TestWrapper>,
     );
-    expect(screen.getByText("footer.contact")).toBeInTheDocument();
+    expect(screen.getByText(/footer.contact/i)).toBeInTheDocument();
     expect(screen.getByText("Juan José")).toBeInTheDocument();
-    expect(screen.getByTestId("footer_url").getAttribute("href")).toBe(
+    expect(screen.getByText(/Juan José/i)).toHaveAttribute(
+      "href",
       "https://www.juanjosenavarro.es/",
     );
-    expect(screen.getByTestId("footer_contact").getAttribute("href")).toBe(
+    expect(screen.getByText(/footer.contact/i)).toHaveAttribute(
+      "href",
       "mailto:juanjosenavarroperea@gmail.com",
     );
   });
