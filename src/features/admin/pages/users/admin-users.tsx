@@ -2,6 +2,8 @@ import { Loading } from "@/features/loading/loading";
 import { useGetUsers } from "./hooks/use-get-user";
 import { formatDate } from "@/core/utils";
 import { useState } from "react";
+import { Paginate } from "./components/paginate/paginate";
+import { Link } from "react-router-dom";
 
 export function AdminUsers() {
   const [page, setPage] = useState<number>(1);
@@ -16,25 +18,6 @@ export function AdminUsers() {
 
   return (
     <div className="relative overflow-x-auto">
-      <div className="flex justify-between">
-        <button
-          onClick={() => {
-            setPage((prevPage) => (prevPage !== 1 ? prevPage - 1 : 1));
-          }}
-        >
-          prev page
-        </button>
-        {page}
-        <button
-          onClick={() => {
-            setPage((prevPage) =>
-              prevPage < totalPages ? prevPage + 1 : prevPage,
-            );
-          }}
-        >
-          next page
-        </button>
-      </div>
       <table className="w-full text-left text-sm text-gray-500">
         <thead className="bg-gray-50 text-center text-xs uppercase text-gray-700">
           <tr>
@@ -72,12 +55,20 @@ export function AdminUsers() {
                 <td className="px-6 py-4">
                   {formatDate(new Date(user.updatedAt))}
                 </td>
-                <td className="px-6 py-4">EDITAR</td>
+                <td className="px-6 py-4 text-gray-800">
+                  <Link
+                    className="hover:font-bold"
+                    to={`/admin/users/${user.id}`}
+                  >
+                    EDITAR
+                  </Link>{" "}
+                </td>
               </tr>
             );
           })}
         </tbody>
       </table>
+      <Paginate page={page} setPage={setPage} totalPages={totalPages} />
     </div>
   );
 }
