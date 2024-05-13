@@ -25,6 +25,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "happy-dom",
+    clearMocks: true,
     coverage: {
       provider: "v8",
       thresholds: {
