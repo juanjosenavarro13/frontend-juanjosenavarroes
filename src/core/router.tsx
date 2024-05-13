@@ -5,6 +5,7 @@ import {
   AuthLoginLazy,
   NotFoundPageLazy,
   PortfolioLazy,
+  AdminUsers,
 } from "@/features";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
       {
         index: true,
         element: <RouteWithSuspense element={AdminLazy} />,
+      },
+      {
+        path: "users",
+        element: <AdminUsers />,
       },
     ],
   },

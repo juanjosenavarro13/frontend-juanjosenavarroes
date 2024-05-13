@@ -23,7 +23,11 @@ export function useLogin() {
       return axios.post<ResponseLogin>(HTTP_ENDPOINTS.login, login);
     },
     onSuccess: (response) => {
-      setUser(response.data.user);
+      setUser({
+        id: response.data.user.id,
+        email: response.data.user.email,
+        token: response.data.access_token,
+      });
       navigate("/admin");
     },
     onError: () => reset(),
