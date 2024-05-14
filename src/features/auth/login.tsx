@@ -5,7 +5,8 @@ export default function Login() {
 
   return (
     <div className="flex h-screen items-center justify-center bg-gray-200">
-      <div className="relative w-96 rounded bg-white p-8 shadow-md">
+      <div className="text-3xl xl:hidden">Resolución inadecuada</div>
+      <div className="relative hidden w-96 rounded bg-white p-8 shadow-md xl:block">
         <h2 className="mb-4 text-center text-2xl font-bold">Iniciar Sesión</h2>
         <form onSubmit={handleSubmit(onSubmit)}>
           <div className="mb-4">

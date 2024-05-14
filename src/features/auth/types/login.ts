@@ -4,7 +4,7 @@ export type Inputs = {
 };
 
 export type ResponseLogin = {
-  token: string;
+  access_token: string;
   user: {
     id: number;
     email: string;
