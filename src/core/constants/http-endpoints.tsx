@@ -1,6 +1,7 @@
 export const HTTP_ENDPOINTS = {
   login: remplaceEnv("auth/login"),
   user: remplaceEnv("user"),
+  fingUserById: remplaceEnv("user/{{id}}"),
 };
 
 function remplaceEnv(url: string) {

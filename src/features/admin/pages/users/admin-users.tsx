@@ -1,5 +1,5 @@
 import { Loading } from "@/features/loading/loading";
-import { useGetUsers } from "./hooks/use-get-user";
+import { useUsersPaginate } from "../hooks/use-users-paginate";
 import { formatDate } from "@/core/utils";
 import { useState } from "react";
 import { Paginate } from "./components/paginate/paginate";
@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 
 export function AdminUsers() {
   const [page, setPage] = useState<number>(1);
-  const { users, isError, isLoading, totalPages } = useGetUsers(page);
+  const { users, isError, isLoading, totalPages } = useUsersPaginate(page);
   const loading = isLoading || isError || !totalPages;
   if (loading)
     return (
@@ -58,13 +58,13 @@ export function AdminUsers() {
                 <td className="flex justify-evenly px-6 py-4">
                   <Link
                     className="hover:text-gray-900"
-                    to={`/admin/users/delete/${user.id}`}
+                    to={`/admin/users/edit/${user.id}`}
                   >
                     EDITAR
                   </Link>
                   <Link
                     className="hover:text-gray-900"
-                    to={`/admin/users/edit/${user.id}`}
+                    to={`/admin/users/delete/${user.id}`}
                   >
                     ELIMINAR
                   </Link>

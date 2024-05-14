@@ -15,12 +15,12 @@ type responseUsers = {
   users: users[];
 };
 
-export function useGetUsers(page = 1) {
+export function useUsersPaginate(page = 1) {
   const take = 10;
   const skip = (page - 1) * 10;
   const { user } = useStoreUser();
   const { data, isError, isLoading } = useQuery({
-    queryKey: ["users", page],
+    queryKey: ["usersPaginate", page],
     queryFn: () =>
       axios.get<responseUsers>(HTTP_ENDPOINTS.user, {
         headers: { Authorization: "Bearer " + user?.token },
