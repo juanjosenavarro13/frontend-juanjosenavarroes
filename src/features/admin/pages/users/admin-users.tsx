@@ -55,7 +55,7 @@ export function AdminUsers() {
                 <td className="px-6 py-4">
                   {formatDate(new Date(user.updatedAt))}
                 </td>
-                <td className="flex justify-between px-6 py-4">
+                <td className="flex justify-evenly px-6 py-4">
                   <Link
                     className="hover:text-gray-900"
                     to={`/admin/users/delete/${user.id}`}
@@ -74,7 +74,10 @@ export function AdminUsers() {
           })}
         </tbody>
       </table>
-      <Paginate page={page} setPage={setPage} totalPages={totalPages} />
+
+      {totalPages > 1 && (
+        <Paginate page={page} setPage={setPage} totalPages={totalPages} />
+      )}
     </div>
   );
 }
