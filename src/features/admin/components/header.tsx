@@ -4,7 +4,7 @@ export function Header() {
   const { user } = useStoreUser();
   return (
     <div className="bg-gray-900 p-4 text-white">
-      <h1 className="text-xl font-bold">{user?.email}</h1>
+      <h1 className="text-center text-xl font-bold">{user?.email}</h1>
     </div>
   );
 }

@@ -8,7 +8,7 @@ describe("store user", () => {
 
     expect(result.current.user).toBeUndefined();
 
-    const user = { id: 1, email: "example@example.com" };
+    const user = { id: 1, email: "example@example.com", token: "token" };
 
     act(() => {
       result.current.setUser(user);

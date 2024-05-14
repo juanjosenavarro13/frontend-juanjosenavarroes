@@ -11,23 +11,21 @@ describe("hero section", () => {
       </TestWrapper>,
     );
 
-    const links = document.querySelectorAll("a");
-    const img = document.querySelector("img");
+    const img = screen.getByAltText("juan jose navarro perea");
+    const linkedInLink = screen.getByRole("link", { name: "linkedIn" });
+    const contactMeLink = screen.getByRole("link", { name: "contactMe" });
 
     expect(img).toHaveAttribute("src", "/juanjose.avif");
-    expect(img).toHaveAttribute("alt", "juan jose navarro perea");
     expect(img).toHaveAttribute("loading", "eager");
-    expect(links[0]).toHaveAttribute(
+    expect(linkedInLink).toHaveAttribute(
       "href",
       "https://www.linkedin.com/in/juan-jose-navarro-perea/",
     );
-    expect(links[1]).toHaveAttribute(
+    expect(contactMeLink).toHaveAttribute(
       "href",
       "mailto:juanjosenavarroperea@gmail.com",
     );
     expect(screen.getByText("hero.title")).toBeInTheDocument();
     expect(screen.getByText("hero.description")).toBeInTheDocument();
-    expect(screen.getByText("contactMe")).toBeInTheDocument();
-    expect(screen.getByText("linkedIn")).toBeInTheDocument();
   });
 });
