@@ -16,7 +16,9 @@ export function Paginate(props: Readonly<PaginateProps>) {
           setPage((prevPage) => (prevPage !== 1 ? prevPage - 1 : 1));
         }}
       />
-      <p className="border-gray-800 text-xl font-bold">{page}</p>
+      <p className="border-gray-800 text-xl font-bold">
+        {page} / {totalPages}
+      </p>
       <Button
         text="Siguiente"
         onClick={() => {

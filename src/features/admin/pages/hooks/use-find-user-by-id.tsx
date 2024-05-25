@@ -16,7 +16,7 @@ export function useFindUserById(id: number) {
     queryKey: ["user", id],
     queryFn: () =>
       axios.get<responseUsers>(
-        HTTP_ENDPOINTS.fingUserById.replace("{{id}}", id.toString()),
+        HTTP_ENDPOINTS.findUserById.replace("{{id}}", id.toString()),
         {
           headers: { Authorization: "Bearer " + user?.token },
         },

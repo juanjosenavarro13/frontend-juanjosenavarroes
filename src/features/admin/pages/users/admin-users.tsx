@@ -19,21 +19,21 @@ export function AdminUsers() {
   return (
     <div className="relative overflow-x-auto">
       <table className="w-full text-left text-sm text-gray-500">
-        <thead className="bg-gray-50 text-center text-xs uppercase text-gray-700">
+        <thead className="bg-gray-50 text-xs uppercase text-gray-700">
           <tr>
-            <th scope="col" className="px-6 py-3">
-              ID
+            <th scope="col" align="center" className="px-auto py-3">
+              #
             </th>
-            <th scope="col" className="px-6 py-3">
+            <th scope="col" align="center" className="px-auto py-3">
               Email
             </th>
-            <th scope="col" className="px-6 py-3">
+            <th scope="col" align="center" className="px-auto py-3">
               Fecha Creación
             </th>
-            <th scope="col" className="px-6 py-3">
+            <th scope="col" align="center" className="px-auto py-3">
               Ultima edición
             </th>
-            <th scope="col" className="px-6 py-3">
+            <th scope="col" align="center" className="px-auto py-3">
               Acciones
             </th>
           </tr>
@@ -41,21 +41,24 @@ export function AdminUsers() {
         <tbody>
           {users?.map((user) => {
             return (
-              <tr key={user.id} className="border-b bg-white text-center">
+              <tr key={user.id} className="border-b bg-white">
                 <th
                   scope="row"
-                  className="whitespace-nowrap px-6 py-4 font-medium text-gray-900"
+                  align="center"
+                  className="px-auto whitespace-nowrap py-4 font-medium text-gray-900"
                 >
                   {user.id}
                 </th>
-                <td className="px-6 py-4">{user.email}</td>
-                <td className="px-6 py-4">
+                <td align="center" className="px-auto py-4">
+                  {user.email}
+                </td>
+                <td align="center" className="px-auto py-4">
                   {formatDate(new Date(user.createdAt))}
                 </td>
-                <td className="px-6 py-4">
+                <td align="center" className="px-auto py-4">
                   {formatDate(new Date(user.updatedAt))}
                 </td>
-                <td className="flex justify-evenly px-6 py-4">
+                <td align="center" className="px-auto flex justify-evenly py-4">
                   <Link
                     className="hover:text-gray-900"
                     to={`/admin/users/edit/${user.id}`}
