@@ -20,8 +20,8 @@ devDependencies:
     specifier: 19.2.2
     version: 19.2.2
   '@hookform/resolvers':
-    specifier: 3.3.4
-    version: 3.3.4(react-hook-form@7.51.4)
+    specifier: 3.4.2
+    version: 3.4.2(react-hook-form@7.51.4)
   '@tanstack/react-query':
     specifier: 5.39.0
     version: 5.39.0(react@18.3.1)
@@ -619,8 +619,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /@hookform/resolvers@3.3.4(react-hook-form@7.51.4):
-    resolution: {integrity: sha512-o5cgpGOuJYrd+iMKvkttOclgwRW86EsWJZZRC23prf0uU2i48Htq4PuT73AVb9ionFyZrwYEITuOFGF+BydEtQ==}
+  /@hookform/resolvers@3.4.2(react-hook-form@7.51.4):
+    resolution: {integrity: sha512-1m9uAVIO8wVf7VCDAGsuGA0t6Z3m6jVGAN50HkV9vYLl0yixKK/Z1lr01vaRvYCkIKGoy1noVRxMzQYb4y/j1Q==}
     peerDependencies:
       react-hook-form: ^7.0.0
     dependencies:
