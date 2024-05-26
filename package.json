@@ -28,7 +28,7 @@
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
     "@hookform/resolvers": "3.3.4",
-    "@tanstack/react-query": "5.36.0",
+    "@tanstack/react-query": "5.39.0",
     "@tanstack/react-query-devtools": "5.36.0",
     "@testing-library/jest-dom": "6.4.5",
     "@testing-library/react": "15.0.7",
