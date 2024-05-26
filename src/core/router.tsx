@@ -6,6 +6,8 @@ import {
   NotFoundPageLazy,
   PortfolioLazy,
   AdminUsers,
+  UsersEdit,
+  UsersDelete,
 } from "@/features";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -30,6 +32,14 @@ export const router = createBrowserRouter([
       {
         path: "users",
         element: <AdminUsers />,
+      },
+      {
+        path: "users/edit/:id",
+        element: <UsersEdit />,
+      },
+      {
+        path: "users/delete/:id",
+        element: <UsersDelete />,
       },
     ],
   },

@@ -1,6 +1,8 @@
 export const HTTP_ENDPOINTS = {
   login: remplaceEnv("auth/login"),
   user: remplaceEnv("user"),
+  findUserById: remplaceEnv("user/{{id}}"),
+  deleteUserById: remplaceEnv("user/{{id}}"),
 };
 
 function remplaceEnv(url: string) {

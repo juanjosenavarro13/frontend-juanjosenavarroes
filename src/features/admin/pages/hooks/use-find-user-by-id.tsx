@@ -3,37 +3,28 @@ import { useStoreUser } from "@/features/auth/store/user/store-user";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-type users = {
+type responseUsers = {
   id: number;
   email: string;
   createdAt: string;
   updatedAt: string;
 };
 
-type responseUsers = {
-  totalPages: number;
-  users: users[];
-};
-
-export function useGetUsers(page = 1) {
-  const take = 10;
-  const skip = (page - 1) * 10;
+export function useFindUserById(id: number) {
   const { user } = useStoreUser();
   const { data, isError, isLoading } = useQuery({
-    queryKey: ["users", page],
+    queryKey: ["user", id],
     queryFn: () =>
-      axios.get<responseUsers>(HTTP_ENDPOINTS.user, {
-        headers: { Authorization: "Bearer " + user?.token },
-        params: {
-          take,
-          skip,
+      axios.get<responseUsers>(
+        HTTP_ENDPOINTS.findUserById.replace("{{id}}", id.toString()),
+        {
+          headers: { Authorization: "Bearer " + user?.token },
         },
-      }),
+      ),
   });
 
   return {
-    users: data?.data.users,
-    totalPages: data?.data.totalPages,
+    user: data?.data,
     isError,
     isLoading,
   };
