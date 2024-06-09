@@ -29,6 +29,8 @@
   },
   "laboralExperience": "Experiencia laboral",
   "linkedIn": "LinkedIn",
+  "openChat": "Abrir chat",
+  "placeholderSendMessageChat": "Escribe un mensaje...",
   "preview": "Preview",
   "projects": "Proyectos",
   "projectsSection": {
@@ -41,5 +43,6 @@
     "pokeapi": {
       "description": "Desarrollé una aplicación Pokeapi utilizando React, Tanstack Query v5 y Axios para gestionar eficientemente el estado de las llamadas asíncronas. Implementé custom hooks para la paginación y mantenimiento del estado de la página actual mediante parámetros de consulta, garantizando una experiencia de usuario fluida y eficaz."
     }
-  }
+  },
+  "sendMessageChat": "Enviar"
 }
