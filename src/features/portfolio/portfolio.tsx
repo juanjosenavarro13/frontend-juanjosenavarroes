@@ -1,4 +1,3 @@
-import { Chat } from "@/features";
 import { useTranslation } from "react-i18next";
 import { Background, Footer, Header, SectionContainer } from "./components";
 import { CodeIcon, UserIcon, WorkIcon } from "./icons";
@@ -12,7 +11,6 @@ export default function Portfolio() {
 
   return (
     <main className={`${theme} relative`}>
-      <Chat />
       <Background />
       <Header />
       <main className="px-4">
