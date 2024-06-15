@@ -29,8 +29,6 @@
   },
   "laboralExperience": "Work experience",
   "linkedIn": "LinkedIn",
-  "openChat": "Open chat",
-  "placeholderSendMessageChat": "Write a message...",
   "preview": "Preview",
   "projects": "Projects",
   "projectsSection": {
@@ -43,6 +41,5 @@
     "pokeapi": {
       "description": "Developed a Pokeapi application using React, Tanstack Query v5 and Axios to efficiently manage the state of asynchronous calls. "
     }
-  },
-  "sendMessageChat": "Send"
+  }
 }
