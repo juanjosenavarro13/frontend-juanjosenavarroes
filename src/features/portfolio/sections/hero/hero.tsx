@@ -24,10 +24,7 @@ export function Hero() {
         </a>
       </div>
       <div className="h-52 sm:h-32">
-        <h1
-          className="text-gray -800 text-balance text-4xl
-      font-bold tracking-tight dark:text-white sm:text-5xl"
-        >
+        <h1 className="text-gray -800 text-balance text-4xl font-bold tracking-tight dark:text-white sm:text-5xl">
           {t("hero.title")}
         </h1>
         <p

@@ -24,7 +24,7 @@ export function UsersDelete() {
 
   return (
     <div className="flex flex-col items-center gap-2">
-      <p className="text-2xl ">¿seguro que quieres eliminar el usuario {id}?</p>
+      <p className="text-2xl">¿seguro que quieres eliminar el usuario {id}?</p>
       <button
         onClick={() => {
           mutation.mutate();
