@@ -9,7 +9,7 @@ export default defineConfig({
     react(),
     federation({
       name: "juanjosenavarro",
-      filename: "juanjosenavarro.js",
+      filename: "remoteEntry.js",
       exposes: {
         "./Portfolio": "./src/features/portfolio/portfolio.tsx",
       },
