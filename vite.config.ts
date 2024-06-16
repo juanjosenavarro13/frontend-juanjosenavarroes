@@ -11,7 +11,7 @@ export default defineConfig({
       name: "juanjosenavarro",
       filename: "juanjosenavarro.js",
       exposes: {
-        "./Porfolio": "./src/features/portfolio/portfolio.tsx",
+        "./Portfolio": "./src/features/portfolio/portfolio.tsx",
       },
     }),
   ],
