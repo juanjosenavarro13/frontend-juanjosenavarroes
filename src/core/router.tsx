@@ -8,6 +8,7 @@ import {
   AdminUsers,
   UsersEdit,
   UsersDelete,
+  BlogLazy,
 } from "@/features";
 import { createBrowserRouter } from "react-router-dom";
 
@@ -42,6 +43,10 @@ export const router = createBrowserRouter([
         element: <UsersDelete />,
       },
     ],
+  },
+  {
+    path: "/blog",
+    element: <RouteWithSuspense element={BlogLazy} />,
   },
   {
     path: "*",
