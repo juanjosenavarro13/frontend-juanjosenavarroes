@@ -20,10 +20,11 @@
   "header": {
     "aboutMe": "Sobre mí",
     "experience": "Experiencia",
-    "projects": "Proyectos"
+    "projects": "Proyectos",
+    "blog": "Blog"
   },
   "hero": {
-    "description": "2 años de experiencia. <strong>Ingeniero de Software</strong> de Sevilla, España Especializado en el desarrollo de aplicaciones SPA (typescript)",
+    "description": "3 años de experiencia. <strong>Ingeniero de Software</strong> de Sevilla, España Especializado en el desarrollo de aplicaciones SPA (typescript)",
     "onGoinProject": "Proyecto en curso",
     "title": "Hey, soy Juan José"
   },

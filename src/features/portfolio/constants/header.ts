@@ -2,6 +2,12 @@ type navItemsType = {
   title: string;
   url: string;
 };
+
+const itemMenuBlog = {
+  title: "header.blog",
+  url: "/blog",
+};
+
 export const NAVITEMS: navItemsType[] = [
   {
     title: "header.experience",
@@ -15,4 +21,5 @@ export const NAVITEMS: navItemsType[] = [
     title: "header.aboutMe",
     url: "/#sobre-mi",
   },
+  ...(import.meta.env.VITE_FEATURE_TOGGLE_BLOG ? [itemMenuBlog] : []),
 ] as const;

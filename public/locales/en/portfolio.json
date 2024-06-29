@@ -20,10 +20,11 @@
   "header": {
     "aboutMe": "About me",
     "experience": "Experience",
-    "projects": "Projects"
+    "projects": "Projects",
+    "blog": "Blog"
   },
   "hero": {
-    "description": "2 years of experience. \n<strong>Software Engineer</strong> from Seville, Spain Specialized in the development of SPA (typescript) applications",
+    "description": "3 years of experience. \n<strong>Software Engineer</strong> from Seville, Spain Specialized in the development of SPA (typescript) applications",
     "onGoinProject": "Ongoing project",
     "title": "Hey, I'm Juan José"
   },

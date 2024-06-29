@@ -8,7 +8,7 @@ export type experienceType = {
 };
 export const EXPERIENCE: experienceType[] = [
   {
-    title: "Center developer Specialist",
+    title: "Center Senior Specialist (CSS)",
     description: "experienceSection.description.NTT",
     company: "NTT Data",
     url: "https://es.nttdata.com/",
