@@ -2,21 +2,31 @@ import { RouteWithSuspense } from "@/components";
 import {
   AdminGuardLazy,
   AdminLazy,
+  AdminUsers,
   AuthLoginLazy,
   NotFoundPageLazy,
-  PortfolioLazy,
-  AdminUsers,
-  UsersEdit,
   UsersDelete,
-  BlogLazy,
+  UsersEdit,
 } from "@/features";
 import { createBrowserRouter } from "react-router-dom";
+import { LayoutPortfolioBlog } from "./layouts";
+import Portfolio from "@/features/portfolio/portfolio";
+import Blog from "@/features/blog/blog";
 
 export const router = createBrowserRouter([
   {
-    index: true,
     path: "/",
-    element: <RouteWithSuspense element={PortfolioLazy} />,
+    element: <RouteWithSuspense element={LayoutPortfolioBlog} />,
+    children: [
+      {
+        index: true,
+        element: <Portfolio />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
+      },
+    ],
   },
   {
     path: "/auth",
@@ -43,10 +53,6 @@ export const router = createBrowserRouter([
         element: <UsersDelete />,
       },
     ],
-  },
-  {
-    path: "/blog",
-    element: <RouteWithSuspense element={BlogLazy} />,
   },
   {
     path: "*",

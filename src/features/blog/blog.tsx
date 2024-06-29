@@ -1,6 +1,6 @@
-import { Header } from "@/components";
 import { useStoreTheme } from "@/core/storages";
 import { SectionContainer } from "../portfolio/components";
+import { Header } from "./components";
 
 export default function Blog() {
   const { theme } = useStoreTheme();

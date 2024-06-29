@@ -1,10 +1,9 @@
 import { useTranslation } from "react-i18next";
-import { Footer, SectionContainer } from "./components";
+import { Footer, Header, SectionContainer } from "./components";
 import { CodeIcon, UserIcon, WorkIcon } from "./icons";
 import "./portfolio.css";
 import { AboutMe, Experience, Hero, Projects } from "./sections";
 import { useStoreTheme } from "@/core/storages";
-import { Header } from "@/components";
 
 export default function Portfolio() {
   const { theme } = useStoreTheme();
