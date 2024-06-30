@@ -2,6 +2,7 @@ import { useStoreTheme } from "@/core/storages";
 import { SectionContainer } from "../portfolio/components";
 import { Header } from "./components";
 import { BlogIcon } from "@/core/icons";
+import { Footer } from "@/core/components";
 
 export default function Blog() {
   const { theme } = useStoreTheme();
@@ -18,6 +19,7 @@ export default function Blog() {
           <p>blog</p>
         </SectionContainer>
       </main>
+      <Footer />
     </main>
   );
 }
