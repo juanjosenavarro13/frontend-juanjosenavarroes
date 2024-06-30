@@ -1,4 +1,4 @@
-import { SelectLanguage } from "@/components";
+import { SelectLanguage } from "@/core/components";
 import { NAVITEMS } from "@portfolio/constants";
 import { useTranslation } from "react-i18next";
 import styles from "./header.module.css";

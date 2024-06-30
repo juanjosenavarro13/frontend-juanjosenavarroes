@@ -1,6 +1,7 @@
 import { useStoreTheme } from "@/core/storages";
 import { SectionContainer } from "../portfolio/components";
 import { Header } from "./components";
+import { BlogIcon } from "@/core/icons";
 
 export default function Blog() {
   const { theme } = useStoreTheme();
@@ -9,7 +10,11 @@ export default function Blog() {
     <main className={`${theme} relative`}>
       <Header />
       <main className="px-4">
-        <SectionContainer>
+        <SectionContainer
+          icon={<BlogIcon />}
+          title="Blog"
+          className="py-16 md:pt-36"
+        >
           <p>blog</p>
         </SectionContainer>
       </main>

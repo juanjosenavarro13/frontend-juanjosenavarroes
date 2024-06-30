@@ -1,4 +1,4 @@
-import { RouteWithSuspense } from "@/components";
+import { RouteWithSuspense } from "@/core/components";
 import {
   AdminGuardLazy,
   AdminLazy,

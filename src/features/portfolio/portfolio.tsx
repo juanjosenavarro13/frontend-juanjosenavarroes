@@ -1,6 +1,6 @@
 import { useTranslation } from "react-i18next";
 import { Footer, Header, SectionContainer } from "./components";
-import { CodeIcon, UserIcon, WorkIcon } from "./icons";
+import { CodeIcon, UserIcon, WorkIcon } from "../../core/icons";
 import "./portfolio.css";
 import { AboutMe, Experience, Hero, Projects } from "./sections";
 import { useStoreTheme } from "@/core/storages";

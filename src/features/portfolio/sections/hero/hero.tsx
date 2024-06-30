@@ -1,5 +1,5 @@
 import { INFO } from "@portfolio/constants";
-import { LinkedInIcon, MailIcon } from "@portfolio/icons";
+import { LinkedInIcon, MailIcon } from "@/core/icons";
 import { useTranslation } from "react-i18next";
 import { Badge, SocialPill } from "./components";
 

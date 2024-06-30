@@ -10,3 +10,4 @@ export * from "./php-icon";
 export * from "./link-icon";
 export * from "./github-icon";
 export * from "./arrow-right-icon";
+export * from "./blog-icon";
