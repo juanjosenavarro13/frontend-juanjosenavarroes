@@ -2,7 +2,7 @@ import { useStoreTheme } from "@/core/storages";
 import { SectionContainer } from "../portfolio/components";
 import { Header } from "./components";
 import { BlogIcon } from "@/core/icons";
-import { Footer } from "@/core/components";
+import { Footer } from "@/core/layouts/portfolio-blog/components";
 
 export default function Blog() {
   const { theme } = useStoreTheme();
