@@ -7,6 +7,8 @@ import {
   NotFoundPageLazy,
   UsersDelete,
   UsersEdit,
+  NotFoundAdmin,
+  BlogAdmin,
 } from "@/features";
 import { createBrowserRouter } from "react-router-dom";
 import { LayoutPortfolioBlog } from "./layouts";
@@ -51,6 +53,14 @@ export const router = createBrowserRouter([
       {
         path: "users/delete/:id",
         element: <UsersDelete />,
+      },
+      {
+        path: "blog",
+        element: <BlogAdmin />,
+      },
+      {
+        path: "*",
+        element: <NotFoundAdmin />,
       },
     ],
   },

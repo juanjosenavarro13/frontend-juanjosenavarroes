@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 export function AdminUsers() {
   const [page, setPage] = useState<number>(1);
   const { users, isError, isLoading, totalPages } = useUsersPaginate(page);
-  const loading = isLoading || isError || !totalPages;
+  const loading = isLoading || isError;
   if (loading)
     return (
       <div className="flex h-full items-center justify-center">

@@ -33,7 +33,7 @@ export function useUsersPaginate(page = 1) {
 
   return {
     users: data?.data.users,
-    totalPages: data?.data.totalPages,
+    totalPages: data?.data.totalPages ?? 0,
     isError,
     isLoading,
   };
