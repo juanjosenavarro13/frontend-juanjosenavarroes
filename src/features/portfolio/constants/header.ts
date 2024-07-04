@@ -16,11 +16,6 @@ export const NAVITEMS: navItemsType[] = [
     tag: true,
   },
   {
-    title: "header.projects",
-    url: "/#proyectos",
-    tag: true,
-  },
-  {
     title: "header.aboutMe",
     url: "/#sobre-mi",
     tag: true,

@@ -14,7 +14,7 @@ export function Article({ tittle, body, created_at }: Readonly<ArticleProps>) {
         </h1>
       </header>
       <div className="text-pretty" dangerouslySetInnerHTML={{ __html: body }} />
-      <footer className="mt-6 border-t pt-4 text-center text-gray-600">
+      <footer className="mt-6 border-b pt-4 text-center text-gray-600">
         <p className="text-gray-500">
           Publicado: {formatDate(new Date(created_at))}
         </p>
