@@ -1,13 +1,13 @@
 import { Loading } from "@/features/loading/loading";
-import { useUsersPaginate } from "../hooks/use-users-paginate";
-import { formatDate } from "@/core/utils";
 import { useState } from "react";
+import { useBlogPaginate } from "../hooks/use-blog-paginate";
+import { formatDate } from "@/core/utils";
 import { Link } from "react-router-dom";
 import { Paginate } from "../../components";
 
-export function AdminUsers() {
+export function ArticleAdmin() {
   const [page, setPage] = useState<number>(1);
-  const { users, isError, isLoading, totalPages } = useUsersPaginate(page);
+  const { articles, isError, isLoading, totalPages } = useBlogPaginate(page);
   const loading = isLoading || isError;
   if (loading)
     return (
@@ -25,7 +25,7 @@ export function AdminUsers() {
               #
             </th>
             <th scope="col" align="center" className="px-auto py-3">
-              Email
+              Titulo
             </th>
             <th scope="col" align="center" className="px-auto py-3">
               Fecha Creación
@@ -39,35 +39,35 @@ export function AdminUsers() {
           </tr>
         </thead>
         <tbody>
-          {users?.map((user) => {
+          {articles?.map((article) => {
             return (
-              <tr key={user.id} className="border-b bg-white">
+              <tr key={article.id} className="border-b bg-white">
                 <th
                   scope="row"
                   align="center"
                   className="px-auto whitespace-nowrap py-4 font-medium text-gray-900"
                 >
-                  {user.id}
+                  {article.id}
                 </th>
                 <td align="center" className="px-auto py-4">
-                  {user.email}
+                  {article.title}
                 </td>
                 <td align="center" className="px-auto py-4">
-                  {formatDate(new Date(user.createdAt))}
+                  {formatDate(new Date(article.createdAt))}
                 </td>
                 <td align="center" className="px-auto py-4">
-                  {formatDate(new Date(user.updatedAt))}
+                  {formatDate(new Date(article.updatedAt))}
                 </td>
                 <td align="center" className="px-auto flex justify-evenly py-4">
                   <Link
                     className="hover:text-gray-900"
-                    to={`/admin/users/edit/${user.id}`}
+                    to={`/admin/article/edit/${article.id}`}
                   >
                     EDITAR
                   </Link>
                   <Link
                     className="hover:text-gray-900"
-                    to={`/admin/users/delete/${user.id}`}
+                    to={`/admin/article/delete/${article.id}`}
                   >
                     ELIMINAR
                   </Link>
