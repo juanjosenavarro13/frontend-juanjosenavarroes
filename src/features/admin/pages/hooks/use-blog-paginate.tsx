@@ -1,18 +1,10 @@
 import { HTTP_ENDPOINTS } from "@/core/constants/http-endpoints";
+import { article } from "@/core/models/article";
 import { useStoreUser } from "@/features/auth/store/user/store-user";
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
-type article = {
-  id: number;
-  title: string;
-  body: string;
-  createdAt: string;
-  updatedAt: string;
-  userId: number;
-};
-
-type responseUsers = {
+type responseArticles = {
   totalPages: number;
   articles: article[];
 };
@@ -24,7 +16,7 @@ export function useBlogPaginate(page = 1) {
   const { data, isError, isLoading } = useQuery({
     queryKey: ["articlePaginate", page],
     queryFn: () =>
-      axios.get<responseUsers>(HTTP_ENDPOINTS.article, {
+      axios.get<responseArticles>(HTTP_ENDPOINTS.article, {
         headers: { Authorization: "Bearer " + user?.token },
         params: {
           take,

@@ -9,6 +9,8 @@ import {
   UsersEdit,
   NotFoundAdmin,
   ArticleAdmin,
+  ArticleEdit,
+  ArticleDelete,
 } from "@/features";
 import { createBrowserRouter } from "react-router-dom";
 import { LayoutPortfolioBlog } from "./layouts";
@@ -58,10 +60,10 @@ export const router = createBrowserRouter([
         path: "article",
         element: <ArticleAdmin />,
       },
-      { path: "article/edit/:id", element: null },
+      { path: "article/edit/:id", element: <ArticleEdit /> },
       {
         path: "article/delete/:id",
-        element: null,
+        element: <ArticleDelete />,
       },
       {
         path: "*",
