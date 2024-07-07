@@ -1,6 +1,5 @@
+import { QuillEditor } from "@/core/components/quill-editor/quill-editor";
 import { Loading } from "@/features/loading/loading";
-import ReactQuill from "react-quill";
-import "react-quill/dist/quill.snow.css";
 import { useParams } from "react-router-dom";
 import { useFindArticleById } from "../hooks/use-find-article-by-id";
 
@@ -41,7 +40,7 @@ export function ArticleEdit() {
           >
             Contenido:
           </label>
-          <ReactQuill value={article?.body} />
+          <QuillEditor value={article?.body} />
         </div>
       </div>
     </div>

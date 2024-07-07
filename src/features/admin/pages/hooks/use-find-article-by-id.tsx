@@ -15,6 +15,8 @@ export function useFindArticleById(id: number) {
           headers: { Authorization: "Bearer " + user?.token },
         },
       ),
+    staleTime: Infinity,
+    refetchOnWindowFocus: false,
   });
 
   return {
