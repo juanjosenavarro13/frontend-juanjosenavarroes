@@ -1,11 +1,22 @@
-import { QuillEditor } from "@/core/components/quill-editor/quill-editor";
+import { Editor } from "@/core/components/";
 import { Loading } from "@/features/loading/loading";
 import { useParams } from "react-router-dom";
 import { useFindArticleById } from "../hooks/use-find-article-by-id";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { useState } from "react";
 
 export function ArticleEdit() {
   const { id } = useParams();
   const { article, isError, isLoading } = useFindArticleById(Number(id));
+  const [editorData, setEditorData] = useState(article?.body);
+
+  type Inputs = {
+    title: string;
+    body: string;
+  };
+
+  const { register, handleSubmit } = useForm<Inputs>();
+  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
 
   const loading = isLoading || isError || !id;
   if (loading)
@@ -17,7 +28,7 @@ export function ArticleEdit() {
 
   return (
     <div>
-      <div className="mb-6 grid gap-6">
+      <form className="mb-6 grid gap-6" onSubmit={handleSubmit(onSubmit)}>
         <div>
           <label
             htmlFor="title"
@@ -26,6 +37,7 @@ export function ArticleEdit() {
             titulo:
           </label>
           <input
+            {...register("title")}
             type="text"
             name="title"
             id="title"
@@ -33,16 +45,22 @@ export function ArticleEdit() {
             className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-gray-500 focus:ring-gray-500"
           />
         </div>
-        <div>
+        <div className="overflow-hidden">
           <label
             htmlFor="body"
             className="mb-2 block text-sm font-medium text-gray-900"
           >
             Contenido:
           </label>
-          <QuillEditor value={article?.body} />
+          <Editor value={editorData} onChange={setEditorData} />
         </div>
-      </div>
+        <button
+          className="rounded bg-gray-800 p-2 text-white hover:bg-gray-900"
+          type="submit"
+        >
+          Guardar
+        </button>
+      </form>
     </div>
   );
 }
