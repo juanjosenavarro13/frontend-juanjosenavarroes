@@ -1,4 +1,6 @@
 import { Loading } from "@/features/loading/loading";
+import ReactQuill from "react-quill";
+import "react-quill/dist/quill.snow.css";
 import { useParams } from "react-router-dom";
 import { useFindArticleById } from "../hooks/use-find-article-by-id";
 
@@ -16,7 +18,7 @@ export function ArticleEdit() {
 
   return (
     <div>
-      <div className="mb-6 grid gap-6 md:grid-cols-2">
+      <div className="mb-6 grid gap-6">
         <div>
           <label
             htmlFor="title"
@@ -39,13 +41,7 @@ export function ArticleEdit() {
           >
             Contenido:
           </label>
-          <textarea
-            rows={5}
-            name="body"
-            id="body"
-            defaultValue={article?.body}
-            className="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 focus:border-gray-500 focus:ring-gray-500"
-          />
+          <ReactQuill value={article?.body} />
         </div>
       </div>
     </div>
