@@ -57,12 +57,12 @@ export const router = createBrowserRouter([
         element: <UsersDelete />,
       },
       {
-        path: "article",
+        path: "articles",
         element: <ArticleAdmin />,
       },
-      { path: "article/edit/:id", element: <ArticleEdit /> },
+      { path: "articles/edit/:id", element: <ArticleEdit /> },
       {
-        path: "article/delete/:id",
+        path: "articles/delete/:id",
         element: <ArticleDelete />,
       },
       {

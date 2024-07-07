@@ -61,13 +61,13 @@ export function ArticleAdmin() {
                 <td align="center" className="px-auto flex justify-evenly py-4">
                   <Link
                     className="hover:text-gray-900"
-                    to={`/admin/article/edit/${article.id}`}
+                    to={`/admin/articles/edit/${article.id}`}
                   >
                     EDITAR
                   </Link>
                   <Link
                     className="hover:text-gray-900"
-                    to={`/admin/article/delete/${article.id}`}
+                    to={`/admin/articles/delete/${article.id}`}
                   >
                     ELIMINAR
                   </Link>

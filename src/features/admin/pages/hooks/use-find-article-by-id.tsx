@@ -7,7 +7,7 @@ import axios from "axios";
 export function useFindArticleById(id: number) {
   const { user } = useStoreUser();
   const { data, isError, isLoading } = useQuery({
-    queryKey: ["user", id],
+    queryKey: ["article", id],
     queryFn: () =>
       axios.get<article>(
         HTTP_ENDPOINTS.findArticleById.replace("{{id}}", id.toString()),

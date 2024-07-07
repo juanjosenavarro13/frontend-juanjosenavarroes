@@ -1,22 +1,42 @@
 import { Editor } from "@/core/components/";
+import { HTTP_ENDPOINTS } from "@/core/constants/http-endpoints";
+import { useStoreUser } from "@/features/auth/store/user/store-user";
 import { Loading } from "@/features/loading/loading";
-import { useParams } from "react-router-dom";
-import { useFindArticleById } from "../hooks/use-find-article-by-id";
+import { useMutation } from "@tanstack/react-query";
+import axios from "axios";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
+import { useFindArticleById } from "../hooks/use-find-article-by-id";
 
 export function ArticleEdit() {
   const { id } = useParams();
+  const { user } = useStoreUser();
+  const navigate = useNavigate();
   const { article, isError, isLoading } = useFindArticleById(Number(id));
-  const [editorData, setEditorData] = useState(article?.body);
 
   type Inputs = {
     title: string;
     body: string;
   };
 
-  const { register, handleSubmit } = useForm<Inputs>();
-  const onSubmit: SubmitHandler<Inputs> = (data) => console.log(data);
+  const { register, handleSubmit, setValue } = useForm<Inputs>();
+
+  const mutationEdit = useMutation({
+    mutationFn: (data: Inputs) => {
+      return axios.patch(
+        HTTP_ENDPOINTS.findArticleById.replace("{{id}}", String(id)),
+        data,
+        {
+          headers: { Authorization: "Bearer " + user?.token },
+        },
+      );
+    },
+    onSuccess: () => {
+      navigate("/admin/articles");
+    },
+  });
+
+  const onSubmit: SubmitHandler<Inputs> = (data) => mutationEdit.mutate(data);
 
   const loading = isLoading || isError || !id;
   if (loading)
@@ -34,7 +54,7 @@ export function ArticleEdit() {
             htmlFor="title"
             className="mb-2 block text-sm font-medium text-gray-900"
           >
-            titulo:
+            Título:
           </label>
           <input
             {...register("title")}
@@ -52,7 +72,12 @@ export function ArticleEdit() {
           >
             Contenido:
           </label>
-          <Editor value={editorData} onChange={setEditorData} />
+          <Editor
+            value={article?.body}
+            onChange={(data) => {
+              setValue("body", data);
+            }}
+          />
         </div>
         <button
           className="rounded bg-gray-800 p-2 text-white hover:bg-gray-900"
