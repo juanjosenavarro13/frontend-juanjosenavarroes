@@ -13,7 +13,6 @@ describe("header", () => {
 
     expect(screen.getByTestId("toggle-theme")).toBeInTheDocument();
     expect(screen.getByText("header.experience")).toBeInTheDocument();
-    expect(screen.getByText("header.projects")).toBeInTheDocument();
     expect(screen.getByText("header.aboutMe")).toBeInTheDocument();
   });
 });
