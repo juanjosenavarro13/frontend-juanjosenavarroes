@@ -4,11 +4,6 @@ type navItemsType = {
   tag?: boolean;
 };
 
-const itemMenuBlog = {
-  title: "header.blog",
-  url: "/blog",
-};
-
 export const NAVITEMS: navItemsType[] = [
   {
     title: "header.experience",
@@ -20,5 +15,8 @@ export const NAVITEMS: navItemsType[] = [
     url: "/#sobre-mi",
     tag: true,
   },
-  ...(import.meta.env.VITE_FEATURE_TOGGLE_BLOG ? [itemMenuBlog] : []),
+  {
+    title: "header.blog",
+    url: "/blog",
+  },
 ] as const;
