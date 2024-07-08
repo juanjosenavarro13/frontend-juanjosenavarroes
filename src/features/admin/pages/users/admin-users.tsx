@@ -17,7 +17,15 @@ export function AdminUsers() {
     );
 
   return (
-    <div className="relative overflow-x-auto">
+    <div className="relative">
+      <div className="flex justify-end py-3">
+        <Link
+          to="/admin/users/create"
+          className="rounded bg-gray-800 p-2 text-white hover:bg-gray-900"
+        >
+          Crear Usuario
+        </Link>
+      </div>
       <table className="w-full text-left text-sm text-gray-500">
         <thead className="bg-gray-50 text-xs uppercase text-gray-700">
           <tr>
