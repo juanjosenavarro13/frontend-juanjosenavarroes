@@ -1,21 +1,38 @@
-import { RouteWithSuspense } from "@/components";
+import { RouteWithSuspense } from "@/core/components";
 import {
   AdminGuardLazy,
   AdminLazy,
+  AdminUsers,
   AuthLoginLazy,
   NotFoundPageLazy,
-  PortfolioLazy,
-  AdminUsers,
-  UsersEdit,
   UsersDelete,
+  UsersEdit,
+  NotFoundAdmin,
+  ArticleAdmin,
+  ArticleEdit,
+  ArticleDelete,
+  ArticleCreate,
+  UsersCreate,
 } from "@/features";
 import { createBrowserRouter } from "react-router-dom";
+import { LayoutPortfolioBlog } from "./layouts";
+import Portfolio from "@/features/portfolio/portfolio";
+import Blog from "@/features/blog/blog";
 
 export const router = createBrowserRouter([
   {
-    index: true,
     path: "/",
-    element: <RouteWithSuspense element={PortfolioLazy} />,
+    element: <RouteWithSuspense element={LayoutPortfolioBlog} />,
+    children: [
+      {
+        index: true,
+        element: <Portfolio />,
+      },
+      {
+        path: "/blog",
+        element: <Blog />,
+      },
+    ],
   },
   {
     path: "/auth",
@@ -34,12 +51,33 @@ export const router = createBrowserRouter([
         element: <AdminUsers />,
       },
       {
+        path: "users/create",
+        element: <UsersCreate />,
+      },
+      {
         path: "users/edit/:id",
         element: <UsersEdit />,
       },
       {
         path: "users/delete/:id",
         element: <UsersDelete />,
+      },
+      {
+        path: "articles",
+        element: <ArticleAdmin />,
+      },
+      {
+        path: "articles/create",
+        element: <ArticleCreate />,
+      },
+      { path: "articles/edit/:id", element: <ArticleEdit /> },
+      {
+        path: "articles/delete/:id",
+        element: <ArticleDelete />,
+      },
+      {
+        path: "*",
+        element: <NotFoundAdmin />,
       },
     ],
   },

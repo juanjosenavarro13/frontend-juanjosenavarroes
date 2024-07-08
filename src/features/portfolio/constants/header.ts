@@ -1,25 +1,22 @@
 type navItemsType = {
   title: string;
   url: string;
-};
-
-const itemMenuBlog = {
-  title: "header.blog",
-  url: "/blog",
+  tag?: boolean;
 };
 
 export const NAVITEMS: navItemsType[] = [
   {
     title: "header.experience",
     url: "/#experiencia",
-  },
-  {
-    title: "header.projects",
-    url: "/#proyectos",
+    tag: true,
   },
   {
     title: "header.aboutMe",
     url: "/#sobre-mi",
+    tag: true,
   },
-  ...(import.meta.env.VITE_FEATURE_TOGGLE_BLOG ? [itemMenuBlog] : []),
+  {
+    title: "header.blog",
+    url: "/blog",
+  },
 ] as const;

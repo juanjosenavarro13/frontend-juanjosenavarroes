@@ -2,13 +2,13 @@ import { Loading } from "@/features/loading/loading";
 import { useUsersPaginate } from "../hooks/use-users-paginate";
 import { formatDate } from "@/core/utils";
 import { useState } from "react";
-import { Paginate } from "./components/paginate/paginate";
 import { Link } from "react-router-dom";
+import { Paginate } from "@/core/components";
 
 export function AdminUsers() {
   const [page, setPage] = useState<number>(1);
   const { users, isError, isLoading, totalPages } = useUsersPaginate(page);
-  const loading = isLoading || isError || !totalPages;
+  const loading = isLoading || isError;
   if (loading)
     return (
       <div className="flex h-full items-center justify-center">
@@ -17,7 +17,15 @@ export function AdminUsers() {
     );
 
   return (
-    <div className="relative overflow-x-auto">
+    <div className="relative">
+      <div className="flex justify-end py-3">
+        <Link
+          to="/admin/users/create"
+          className="rounded bg-gray-800 p-2 text-white hover:bg-gray-900"
+        >
+          Crear Usuario
+        </Link>
+      </div>
       <table className="w-full text-left text-sm text-gray-500">
         <thead className="bg-gray-50 text-xs uppercase text-gray-700">
           <tr>

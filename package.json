@@ -25,6 +25,7 @@
     "react-dom": "18.3.1"
   },
   "devDependencies": {
+    "@ckeditor/ckeditor5-react": "8.0.0",
     "@commitlint/cli": "19.3.0",
     "@commitlint/config-conventional": "19.2.2",
     "@hookform/resolvers": "3.9.0",
@@ -45,6 +46,7 @@
     "@vitest/ui": "1.6.0",
     "autoprefixer": "10.4.19",
     "axios": "1.7.2",
+    "ckeditor5": "42.0.0",
     "eslint": "8.57.0",
     "eslint-config-prettier": "9.1.0",
     "eslint-plugin-react-hooks": "4.6.2",

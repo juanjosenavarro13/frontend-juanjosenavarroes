@@ -18,9 +18,11 @@ export function Sidebar() {
               Usuarios
             </li>
           </Link>
-          <li className="cursor-pointer px-4 py-2 hover:bg-gray-700">
-            Ajustes
-          </li>
+          <Link to="/admin/articles">
+            <li className="cursor-pointer px-4 py-2 hover:bg-gray-700">
+              Articulos blog
+            </li>
+          </Link>
         </ul>
       </nav>
     </div>

@@ -1,4 +1,9 @@
-import { PhpIcon, ReactIcon, TailwindIcon, WordpressIcon } from "../icons";
+import {
+  PhpIcon,
+  ReactIcon,
+  TailwindIcon,
+  WordpressIcon,
+} from "../../../core/icons";
 
 export type tagType = {
   name: string;

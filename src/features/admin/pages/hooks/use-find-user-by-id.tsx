@@ -21,6 +21,7 @@ export function useFindUserById(id: number) {
           headers: { Authorization: "Bearer " + user?.token },
         },
       ),
+    staleTime: Infinity,
   });
 
   return {

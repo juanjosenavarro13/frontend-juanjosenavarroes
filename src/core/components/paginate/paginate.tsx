@@ -12,14 +12,16 @@ export function Paginate(props: Readonly<PaginateProps>) {
     <div className="flex items-center justify-between pt-4">
       <Button
         text="Anterior"
+        disabled={page === 1}
         onClick={() => {
           setPage((prevPage) => (prevPage !== 1 ? prevPage - 1 : 1));
         }}
       />
-      <p className="border-gray-800 text-xl font-bold">
+      <p className="border-gray-800 text-xl font-bold dark:text-white">
         {page} / {totalPages}
       </p>
       <Button
+        disabled={page === totalPages}
         text="Siguiente"
         onClick={() => {
           setPage((prevPage) =>
