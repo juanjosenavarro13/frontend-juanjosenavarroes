@@ -7,7 +7,7 @@ interface ArticleProps {
 }
 export function Article({ tittle, body, created_at }: Readonly<ArticleProps>) {
   return (
-    <article className="mx-auto rounded-lg bg-transparent p-6 text-black/80 shadow-md dark:text-white">
+    <article className="mx-auto w-full rounded-lg bg-transparent p-6 text-black/80 shadow-md dark:text-white">
       <header className="mb-4">
         <h1 className="text-balance text-center text-3xl font-bold">
           {tittle}
