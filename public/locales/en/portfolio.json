@@ -19,9 +19,9 @@
   },
   "header": {
     "aboutMe": "About me",
+    "blog": "Blog",
     "experience": "Experience",
-    "projects": "Projects",
-    "blog": "Blog"
+    "projects": "Projects"
   },
   "hero": {
     "description": "3 years of experience. \n<strong>Software Engineer</strong> from Seville, Spain Specialized in the development of SPA (typescript) applications",
@@ -42,5 +42,6 @@
     "pokeapi": {
       "description": "Developed a Pokeapi application using React, Tanstack Query v5 and Axios to efficiently manage the state of asynchronous calls. "
     }
-  }
+  },
+  "published": "Published:"
 }

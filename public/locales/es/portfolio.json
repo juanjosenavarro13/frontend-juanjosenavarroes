@@ -19,9 +19,9 @@
   },
   "header": {
     "aboutMe": "Sobre mí",
+    "blog": "Blog",
     "experience": "Experiencia",
-    "projects": "Proyectos",
-    "blog": "Blog"
+    "projects": "Proyectos"
   },
   "hero": {
     "description": "3 años de experiencia. <strong>Ingeniero de Software</strong> de Sevilla, España Especializado en el desarrollo de aplicaciones SPA (typescript)",
@@ -42,5 +42,6 @@
     "pokeapi": {
       "description": "Desarrollé una aplicación Pokeapi utilizando React, Tanstack Query v5 y Axios para gestionar eficientemente el estado de las llamadas asíncronas. Implementé custom hooks para la paginación y mantenimiento del estado de la página actual mediante parámetros de consulta, garantizando una experiencia de usuario fluida y eficaz."
     }
-  }
+  },
+  "published": "Publicado:"
 }
