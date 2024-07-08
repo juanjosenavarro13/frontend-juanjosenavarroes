@@ -1,13 +1,13 @@
 import { Loading } from "@/features/loading/loading";
 import { useState } from "react";
-import { useBlogPaginate } from "../hooks/use-blog-paginate";
+import { useArticlePaginate } from "../hooks/use-article-paginate";
 import { formatDate } from "@/core/utils";
 import { Link } from "react-router-dom";
-import { Paginate } from "../../components";
+import { Paginate } from "@/core/components";
 
 export function ArticleAdmin() {
   const [page, setPage] = useState<number>(1);
-  const { articles, isError, isLoading, totalPages } = useBlogPaginate(page);
+  const { articles, isError, isLoading, totalPages } = useArticlePaginate(page);
   const loading = isLoading || isError;
   if (loading)
     return (

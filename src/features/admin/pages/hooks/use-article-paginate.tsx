@@ -9,7 +9,7 @@ type responseArticles = {
   articles: article[];
 };
 
-export function useBlogPaginate(page = 1) {
+export function useArticlePaginate(page = 1) {
   const take = 10;
   const skip = (page - 1) * 10;
   const { user } = useStoreUser();

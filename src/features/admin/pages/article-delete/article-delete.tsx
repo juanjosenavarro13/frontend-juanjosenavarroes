@@ -18,7 +18,7 @@ export function ArticleDelete() {
       );
     },
     onSuccess: () => {
-      navigate("/admin/article");
+      navigate("/admin/articles");
     },
   });
 

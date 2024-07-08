@@ -18,7 +18,7 @@ type responseArticles = {
 
 export function useArticlePaginate(page = 1) {
   const take = 10;
-  const skip = (page - 1) * 10;
+  const skip = (page - 1) * take;
   const { data, isError, isLoading } = useQuery({
     queryKey: ["articlesPaginate", page],
     queryFn: () =>

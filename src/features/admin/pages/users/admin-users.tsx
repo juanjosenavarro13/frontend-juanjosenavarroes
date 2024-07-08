@@ -3,7 +3,7 @@ import { useUsersPaginate } from "../hooks/use-users-paginate";
 import { formatDate } from "@/core/utils";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { Paginate } from "../../components";
+import { Paginate } from "@/core/components";
 
 export function AdminUsers() {
   const [page, setPage] = useState<number>(1);
