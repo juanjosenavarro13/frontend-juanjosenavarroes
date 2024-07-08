@@ -11,6 +11,8 @@ import {
   ArticleAdmin,
   ArticleEdit,
   ArticleDelete,
+  ArticleCreate,
+  UsersCreate,
 } from "@/features";
 import { createBrowserRouter } from "react-router-dom";
 import { LayoutPortfolioBlog } from "./layouts";
@@ -49,6 +51,10 @@ export const router = createBrowserRouter([
         element: <AdminUsers />,
       },
       {
+        path: "users/create",
+        element: <UsersCreate />,
+      },
+      {
         path: "users/edit/:id",
         element: <UsersEdit />,
       },
@@ -59,6 +65,10 @@ export const router = createBrowserRouter([
       {
         path: "articles",
         element: <ArticleAdmin />,
+      },
+      {
+        path: "articles/create",
+        element: <ArticleCreate />,
       },
       { path: "articles/edit/:id", element: <ArticleEdit /> },
       {
