@@ -2,7 +2,6 @@
 
 [![E2E Tests](https://github.com/juanjosenavarro13/frontend-juanjosenavarroes/actions/workflows/E2E.yml/badge.svg?branch=main)](https://github.com/juanjosenavarro13/frontend-juanjosenavarroes/actions/workflows/E2E.yml)
 [![Run Lint, Format, and Test](https://github.com/juanjosenavarro13/frontend-juanjosenavarroes/actions/workflows/CI.yml/badge.svg)](https://github.com/juanjosenavarro13/frontend-juanjosenavarroes/actions/workflows/CI.yml)
-![Dependabot Status](https://api.dependabot.com/badges/status?host=github&repo=juanjosenavarro13/frontend-juanjosenavarroes)
 
 # Git flow
 
