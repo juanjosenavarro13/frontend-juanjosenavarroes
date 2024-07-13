@@ -2,7 +2,7 @@ name: Run Lint, Format, and Test
 
 on:
   push:
-    branches: ["feat/**"]
+    branches: ["main", "feat/**"]
   pull_request:
     branches: ["main"]
 
