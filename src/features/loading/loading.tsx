@@ -1,6 +1,7 @@
 export function Loading() {
   return (
     <svg
+      data-testid="loading"
       aria-hidden="true"
       className="inline h-10 w-10 animate-spin fill-blue-600 text-gray-200 dark:text-gray-600"
       viewBox="0 0 100 101"
