@@ -34,6 +34,7 @@ export default defineConfig({
       include: ["src/**"],
       exclude: ["src/core/**", "src/**/index.ts"],
     },
+    reporters: process.env.GITHUB_ACTIONS ? ["dot", "github-actions"] : ["dot"],
     include: ["src/**/*.{test,spec}.{ts,tsx}"],
     exclude: ["tests/**"],
     setupFiles: "./setup-test.ts",
