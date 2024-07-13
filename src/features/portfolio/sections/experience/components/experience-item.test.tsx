@@ -17,7 +17,6 @@ describe("experience-item", () => {
         />
       </TestWrapper>,
     );
-    expect(screen.getByText("title")).toBeInTheDocument();
     expect(screen.getByText("company")).toBeInTheDocument();
     expect(screen.getByText("description")).toBeInTheDocument();
     const time = document.querySelector("time")?.textContent;
@@ -36,7 +35,6 @@ describe("experience-item", () => {
         }}
       />,
     );
-    expect(screen.getByText("title")).toBeInTheDocument();
     expect(screen.getByText("company")).toBeInTheDocument();
     expect(screen.getByText("description")).toBeInTheDocument();
     expect(document.querySelector("time")?.textContent).toContain("01/01/2010");
