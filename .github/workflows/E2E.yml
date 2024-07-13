@@ -28,9 +28,13 @@ jobs:
       - name: Install Playwright browsers and dependencies
         run: pnpm exec playwright install --with-deps
 
-      - name: Delay Execution (if pushed to main)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: sleep 180
+      - name: Verify environment variables
+        run: |
+          echo "PLAYWRIGHT_USER=$PLAYWRIGHT_USER"
+          echo "PLAYWRIGHT_PASSWORD=$PLAYWRIGHT_PASSWORD"
+        env:
+          PLAYWRIGHT_USER: ${{ secrets.PLAYWRIGHT_USER }}
+          PLAYWRIGHT_PASSWORD: ${{ secrets.PLAYWRIGHT_PASSWORD }}
 
       - name: Run Playwright tests
         env:
@@ -39,7 +43,6 @@ jobs:
         run: pnpm exec playwright test
 
       - name: Upload test report as artifact
-        if: always()
         uses: actions/upload-artifact@v4
         with:
           name: playwright-report
