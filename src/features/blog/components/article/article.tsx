@@ -1,7 +1,7 @@
 import { formatDate } from "@/core/utils";
 import { useTranslation } from "react-i18next";
 
-interface ArticleProps {
+export interface ArticleProps {
   tittle: string;
   body: string;
   created_at: string;
