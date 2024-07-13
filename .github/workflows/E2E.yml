@@ -15,10 +15,6 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Delay Execution (if pushed to main)
-        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
-        run: sleep 180
-
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
@@ -31,6 +27,10 @@ jobs:
 
       - name: Install Playwright browsers and dependencies
         run: pnpm exec playwright install --with-deps
+
+      - name: Delay Execution (if pushed to main)
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        run: sleep 180
 
       - name: Run Playwright tests
         env:
