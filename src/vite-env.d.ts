@@ -1,8 +1,8 @@
 /// <reference types="vite/client" />
 
 interface ImportMetaEnv {
-  PLAYWIRGHT_USER: string;
-  PLAYWIRGHT_PASSWORD: string;
+  PLAYWRIGHT_USER: string;
+  PLAYWRIGHT_PASSWORD: string;
 }
 
 interface ImportMeta {
