@@ -34,7 +34,7 @@ export default defineConfig({
       include: ["src/**"],
       exclude: ["src/core/**", "src/**/index.ts"],
     },
-    include: ["src/**/*.test.{ts,tsx}"],
+    include: ["src/**/*.{test,spec}.{ts,tsx}"],
     exclude: ["tests/**"],
     setupFiles: "./setup-test.ts",
   },
