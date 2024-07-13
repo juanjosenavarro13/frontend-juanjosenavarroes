@@ -1,15 +1,11 @@
-name: CI Quality Code
+name: Run Lint, Format, and Test
 
 on:
   push:
     branches: ["main", "feat/**"]
   pull_request:
     branches: ["main"]
-
-permissions:
-  actions: read
-  contents: read
-  security-events: write
+  workflow_dispatch:
 
 jobs:
   format:
@@ -83,23 +79,3 @@ jobs:
 
       - name: Run unit tests
         run: pnpm test:coverage
-
-  analyze:
-    name: Analyze codeQL
-    runs-on: ubuntu-latest
-    strategy:
-      fail-fast: false
-      matrix:
-        include:
-          - language: javascript-typescript
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Initialize CodeQL
-        uses: github/codeql-action/init@v3
-        with:
-          languages: ${{ matrix.language }}
-
-      - name: Perform CodeQL Analysis
-        uses: github/codeql-action/analyze@v3
