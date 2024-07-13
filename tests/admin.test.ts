@@ -1,15 +1,18 @@
 import { test, expect, Page } from "@playwright/test";
 
 async function login(page: Page) {
+  const email = process.env.PLAYWRIGHT_USER;
+  const password = process.env.PLAYWRIGHT_PASSWORD;
+
+  if (!email || !password) {
+    throw new Error("PLAYWRIGHT_USER and PLAYWRIGHT_PASSWORD must be set");
+  }
+
   await page.goto("https://www.juanjosenavarro.es/auth");
   await page.locator("[data-testid=email]").click();
-  await page
-    .locator("[data-testid=email]")
-    .fill(import.meta.env.PLAYWIRGHT_USER);
+  await page.locator("[data-testid=email]").fill(email);
   await page.locator("[data-testid=password]").click();
-  await page
-    .locator("[data-testid=password]")
-    .fill(import.meta.env.PLAYWIRGHT_PASSWORD);
+  await page.locator("[data-testid=password]").fill(password);
   await page.locator("[data-testid=btnSubmitLogin]").click();
 }
 

@@ -29,10 +29,10 @@ jobs:
         run: pnpm exec playwright install --with-deps
 
       - name: Run Playwright tests
-        run: pnpm exec playwright test
         env:
           PLAYWRIGHT_USER: ${{ secrets.PLAYWRIGHT_USER }}
           PLAYWRIGHT_PASSWORD: ${{ secrets.PLAYWRIGHT_PASSWORD }}
+        run: pnpm exec playwright test
 
       - name: Upload test report as artifact
         uses: actions/upload-artifact@v4
