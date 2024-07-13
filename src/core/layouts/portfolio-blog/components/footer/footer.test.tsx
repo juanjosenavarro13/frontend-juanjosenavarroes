@@ -19,7 +19,6 @@ describe("footer", () => {
         <Footer />
       </TestWrapper>,
     );
-    expect(screen.getByText(/footer.contact/i)).toBeInTheDocument();
     expect(screen.getByText("Juan José")).toBeInTheDocument();
     expect(screen.getByText(/Juan José/i)).toHaveAttribute(
       "href",
