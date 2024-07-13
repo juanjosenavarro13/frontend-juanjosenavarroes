@@ -2,11 +2,13 @@ import { test, expect, Page } from "@playwright/test";
 
 async function login(page: Page) {
   await page.goto("https://www.juanjosenavarro.es/auth");
-  await page.getByTestId("email").click();
-  await page.getByTestId("email").fill("user@user.es");
-  await page.getByTestId("password").click();
-  await page.getByTestId("password").fill("123123");
-  await page.getByTestId("btnSubmitLogin").click();
+  await page.locator("[data-testid=email]").click();
+  await page.locator("[data-testid=email]").fill(process.env.PLAYWIRGHT_USER!);
+  await page.locator("[data-testid=password]").click();
+  await page
+    .locator("[data-testid=password]")
+    .fill(process.env.PLAYWIRGHT_PASSWORD!);
+  await page.locator("[data-testid=btnSubmitLogin]").click();
 }
 
 test.beforeEach(async ({ page }) => {

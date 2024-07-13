@@ -21,6 +21,9 @@ jobs:
       - name: Install Playwright Browsers
         run: pnpm exec playwright install --with-deps
       - name: Run Playwright tests
+        env:
+          USER_EMAIL: ${{ secrets.PLAYWIRGHT_USER }}
+          USER_PASSWORD: ${{ secrets.PLAYWIRGHT_PASSWORD }}
         run: pnpm exec playwright test
       - uses: actions/upload-artifact@v4
         if: always()
