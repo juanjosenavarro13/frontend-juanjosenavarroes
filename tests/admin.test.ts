@@ -42,7 +42,7 @@ test("articulos", async ({ page }) => {
   await page.getByRole("button", { name: "Crear" }).click();
 
   // validar articulo
-  await page.waitForTimeout(5000);
+  await page.waitForTimeout(500);
   await page.goto("https://www.juanjosenavarro.es/");
   await page.getByRole("link", { name: "Blog" }).click();
   await expect(page.locator("h1")).toContainText("titulo test e2e");
