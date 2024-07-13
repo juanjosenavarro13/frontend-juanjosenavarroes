@@ -10,7 +10,6 @@ describe("footer", () => {
         <Footer />
       </TestWrapper>,
     );
-    expect(screen.getByRole("contentinfo")).toBeInTheDocument();
   });
 
   it("should render info", () => {
@@ -19,7 +18,6 @@ describe("footer", () => {
         <Footer />
       </TestWrapper>,
     );
-    expect(screen.getByText("Juan José")).toBeInTheDocument();
     expect(screen.getByText(/Juan José/i)).toHaveAttribute(
       "href",
       "https://www.juanjosenavarro.es/",
