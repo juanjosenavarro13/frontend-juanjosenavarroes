@@ -3,11 +3,13 @@ import { test, expect, Page } from "@playwright/test";
 async function login(page: Page) {
   await page.goto("https://www.juanjosenavarro.es/auth");
   await page.locator("[data-testid=email]").click();
-  await page.locator("[data-testid=email]").fill(process.env.PLAYWIRGHT_USER!);
+  await page
+    .locator("[data-testid=email]")
+    .fill(import.meta.env.PLAYWIRGHT_USER);
   await page.locator("[data-testid=password]").click();
   await page
     .locator("[data-testid=password]")
-    .fill(process.env.PLAYWIRGHT_PASSWORD!);
+    .fill(import.meta.env.PLAYWIRGHT_PASSWORD);
   await page.locator("[data-testid=btnSubmitLogin]").click();
 }
 
