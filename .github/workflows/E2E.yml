@@ -1,14 +1,19 @@
-name: Playwright Tests
+name: E2E Tests
 on:
   push:
-    branches: [main]
+    branches:
+      - main
+  schedule:
+    - cron: "0 0 * * *"
+
 jobs:
   test:
-    timeout-minutes: 65
     runs-on: ubuntu-latest
     steps:
       - name: Delay Execution
+        if: github.event_name == 'push'
         run: sleep 300
+
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
