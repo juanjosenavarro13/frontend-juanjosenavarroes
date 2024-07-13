@@ -2,9 +2,7 @@ name: Run Lint, Format, and Test
 
 on:
   push:
-    branches: ["main", "feat/**"]
   pull_request:
-    branches: ["main"]
   workflow_dispatch:
 
 jobs:
