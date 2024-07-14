@@ -1,7 +1,7 @@
 {
   "aboutMe": "Sobre mi",
   "aboutMeSection": {
-    "description": "Me llamo Juan José pero mis amigos me llaman Juanjo. Empecé en la programación con un juego (Habbo) cuando tenía 13 años. Actualmente estoy <strong> Desarrollando y manteniendo aplicaciones SPA para IBERIA </strong>. Soy autodidacta y me gusta aprender distintas tecnologías de desarrollo web, sobre todo basadas en javascript. También tengo conocimientos de los distintos sectores en el desarrollo; Bases de datos como mysql, postgres, mongodb; Backend con nodejs, express o nestjs y frontend con angularjs, angular, react o astro."
+    "description": "Mi nombre es Juan José, pero mis amigos me llaman Juanjo. Actualmente, <strong>desarrollando y manteniendo aplicaciones SPA para IBERIA</strong>. Soy autodidacta y me apasiona aprender distintas tecnologías de desarrollo web, especialmente las basadas en JavaScript. También tengo conocimientos en diversos sectores del desarrollo, incluyendo bases de datos como MySQL, PostgreSQL y MongoDB; backend con Node.js, Express y NestJS; y frontend con AngularJS, Angular, React y Astro."
   },
   "code": "Código",
   "contactMe": "Contácteme",
