@@ -52,17 +52,21 @@ test("articulos", async ({ page }) => {
   await page.waitForTimeout(500);
   await page.goto("https://www.juanjosenavarro.es/");
   await page.getByRole("link", { name: "Blog" }).click();
-  await expect(page.locator("h1")).toContainText("titulo test e2e");
-  await expect(page.getByRole("article")).toContainText("contenido test e2e");
+  await expect(page.locator("h1").first()).toContainText("titulo test e2e");
+  await expect(page.getByRole("article").first()).toContainText(
+    "contenido test e2e",
+  );
 
   // editar
   await login(page);
   await page.getByRole("link", { name: "Articulos blog" }).click();
-  await page.getByRole("link", { name: "EDITAR" }).click();
+  await page.getByRole("link", { name: "EDITAR" }).first().click();
   await page.getByLabel("Título:").click();
   await page.getByLabel("Título:").fill("titulo test e2e editado");
   await page.getByLabel("Área de edición del editor:").click();
   await page.getByRole("button", { name: "Guardar" }).click();
-  await page.getByRole("link", { name: "ELIMINAR" }).click();
+
+  // eliminar articulo
+  await page.getByRole("link", { name: "ELIMINAR" }).first().click();
   await page.getByRole("button", { name: "Eliminar" }).click();
 });
