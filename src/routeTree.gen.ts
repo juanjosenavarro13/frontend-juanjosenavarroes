@@ -1,5 +1,3 @@
-/* prettier-ignore-start */
-
 /* eslint-disable */
 
 // @ts-nocheck
@@ -291,8 +289,6 @@ export const routeTree = rootRoute.addChildren({
   BlogRoute,
   LoginLazyRoute,
 });
-
-/* prettier-ignore-end */
 
 /* ROUTE_MANIFEST_START
 {
