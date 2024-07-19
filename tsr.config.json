@@ -1,6 +1,8 @@
 {
   "routesDirectory": "./src/routes",
   "generatedRouteTree": "./src/routeTree.gen.ts",
+  "quoteStyle": "double",
+  "semicolons": true,
   "routeTreeFileHeader": [
     "/* eslint-disable */",
     "// @ts-nocheck",
