@@ -10,6 +10,24 @@ export default defineConfig({
     cssCodeSplit: true,
     cssMinify: true,
     minify: true,
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          react: ["react", "react-dom"],
+          ckeditor5: ["ckeditor5"],
+          tanstack: ["@tanstack/react-query", "@tanstack/react-query-devtools"],
+          testing: [
+            "@testing-library/react",
+            "@testing-library/jest-dom",
+            "@testing-library/user-event",
+          ],
+          i18next: ["i18next", "i18next-http-backend", "react-i18next"],
+          axios: ["axios"],
+          zustand: ["zustand"],
+          zod: ["zod"],
+        },
+      },
+    },
   },
   resolve: {
     alias: [
