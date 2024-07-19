@@ -1,12 +1,11 @@
 import { HTTP_ENDPOINTS } from "@/core/constants/http-endpoints";
 import { useStoreUser } from "@/features/auth/store/user/store-user";
 import { useMutation } from "@tanstack/react-query";
+import { Navigate } from "@tanstack/react-router";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 export function Buttons({ id }: Readonly<{ id: string }>) {
   const { user } = useStoreUser();
-  const navigate = useNavigate();
   const mutationResetPassword = useMutation({
     mutationFn: () => {
       return axios.put(
@@ -18,7 +17,7 @@ export function Buttons({ id }: Readonly<{ id: string }>) {
       );
     },
     onSuccess: () => {
-      navigate("/admin/users");
+      Navigate({ to: "/admin/users" });
     },
   });
 

@@ -1,16 +1,17 @@
-import { useMutation } from "@tanstack/react-query";
-import { Inputs, ResponseLogin } from "../../types/login";
-import axios from "axios";
 import { HTTP_ENDPOINTS } from "@/core/constants/http-endpoints";
-import { useStoreUser } from "../../store/user/store-user";
-import { useNavigate } from "react-router-dom";
-import { SubmitHandler, useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useMutation } from "@tanstack/react-query";
+import { useNavigate } from "@tanstack/react-router";
+import axios from "axios";
+import { useEffect } from "react";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { LoginFormSchema } from "../../schema/login.schema";
+import { useStoreUser } from "../../store/user/store-user";
+import { Inputs, ResponseLogin } from "../../types/login";
 
 export function useLogin() {
+  const { setUser, user } = useStoreUser();
   const navigate = useNavigate();
-  const { setUser } = useStoreUser();
   const {
     register,
     handleSubmit,
@@ -28,7 +29,6 @@ export function useLogin() {
         email: response.data.user.email,
         token: response.data.access_token,
       });
-      navigate("/admin");
     },
     onError: () => reset(),
   });
@@ -36,6 +36,12 @@ export function useLogin() {
   const onSubmit: SubmitHandler<Inputs> = (data) => {
     mutation.mutate(data);
   };
+
+  useEffect(() => {
+    if (user?.email) {
+      navigate({ to: "/admin" });
+    }
+  }, [user, navigate]);
 
   return { onSubmit, register, handleSubmit, isValid, mutation };
 }

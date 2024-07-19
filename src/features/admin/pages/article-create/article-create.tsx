@@ -3,9 +3,9 @@ import { HTTP_ENDPOINTS } from "@/core/constants/http-endpoints";
 import { useStoreUser } from "@/features/auth/store/user/store-user";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
+import { Navigate } from "@tanstack/react-router";
 import axios from "axios";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useNavigate } from "react-router-dom";
 import { z } from "zod";
 
 const inputsSchema = z.object({
@@ -17,7 +17,6 @@ type Inputs = z.infer<typeof inputsSchema>;
 
 export function ArticleCreate() {
   const { user } = useStoreUser();
-  const navigate = useNavigate();
   const { register, handleSubmit, setValue } = useForm<Inputs>({
     resolver: zodResolver(inputsSchema),
   });
@@ -34,7 +33,7 @@ export function ArticleCreate() {
       );
     },
     onSuccess: () => {
-      navigate("/admin/articles");
+      Navigate({ to: "/admin/articles" });
     },
   });
 

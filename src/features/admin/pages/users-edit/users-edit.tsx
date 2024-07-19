@@ -1,10 +1,12 @@
 import { Loading } from "@/features/loading/loading";
-import { useParams } from "react-router-dom";
 import { useFindUserById } from "../hooks/use-find-user-by-id";
 import { Buttons } from "./components";
+import { useParams } from "@tanstack/react-router";
 
 export function UsersEdit() {
-  const { id } = useParams();
+  const { id } = useParams({
+    from: "/_authenticated/_adminLayout/admin/users/edit/$id",
+  });
   const { user, isError, isLoading } = useFindUserById(Number(id));
 
   const loading = isLoading || isError || !id;

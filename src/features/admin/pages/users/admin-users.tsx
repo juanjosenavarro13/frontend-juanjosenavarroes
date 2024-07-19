@@ -2,8 +2,8 @@ import { Loading } from "@/features/loading/loading";
 import { useUsersPaginate } from "../hooks/use-users-paginate";
 import { formatDate } from "@/core/utils";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 import { Paginate } from "@/core/components";
+import { Link } from "@tanstack/react-router";
 
 export function AdminUsers() {
   const [page, setPage] = useState<number>(1);

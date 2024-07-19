@@ -1,14 +1,9 @@
-import { render } from "@testing-library/react";
+import { renderWithWrapper } from "@/core/utils/test-utils";
 import { describe, it } from "vitest";
-import Blog from "./blog";
-import { TestWrapper } from "@/core/utils";
+import { Blog } from "./blog";
 
 describe("blog", () => {
   it("render blog", () => {
-    render(
-      <TestWrapper>
-        <Blog />
-      </TestWrapper>,
-    );
+    renderWithWrapper(<Blog />);
   });
 });
