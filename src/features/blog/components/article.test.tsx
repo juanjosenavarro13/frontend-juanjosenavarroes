@@ -1,4 +1,4 @@
-import { formatDate, TestWrapper } from "@/core/utils";
+import { formatDate } from "@/core/utils";
 import { render, screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { Article, ArticleProps } from "./article/article";
@@ -11,11 +11,7 @@ describe("article", () => {
       body: "body",
       created_at: today.toString(),
     };
-    render(
-      <TestWrapper>
-        <Article {...article} />
-      </TestWrapper>,
-    );
+    render(<Article {...article} />);
     expect(screen.getByText(article.body)).toBeInTheDocument();
     expect(screen.getByText(article.tittle)).toBeInTheDocument();
     expect(

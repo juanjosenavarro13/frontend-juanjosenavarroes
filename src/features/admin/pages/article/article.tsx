@@ -2,8 +2,8 @@ import { Loading } from "@/features/loading/loading";
 import { useState } from "react";
 import { useArticlePaginate } from "../hooks/use-article-paginate";
 import { formatDate } from "@/core/utils";
-import { Link } from "react-router-dom";
 import { Paginate } from "@/core/components";
+import { Link } from "@tanstack/react-router";
 
 export function ArticleAdmin() {
   const [page, setPage] = useState<number>(1);

@@ -1,10 +1,11 @@
 import { defineConfig } from "vitest/config";
 import react from "@vitejs/plugin-react-swc";
 import * as path from "path";
+import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react()],
+  plugins: [TanStackRouterVite(), react()],
   build: {
     cssCodeSplit: true,
     cssMinify: true,
@@ -37,6 +38,6 @@ export default defineConfig({
     reporters: process.env.GITHUB_ACTIONS ? ["dot", "github-actions"] : ["dot"],
     include: ["src/**/*.{test,spec}.{ts,tsx}"],
     exclude: ["tests/**"],
-    setupFiles: "./setup-test.ts",
+    setupFiles: "./setup-test.tsx",
   },
 });

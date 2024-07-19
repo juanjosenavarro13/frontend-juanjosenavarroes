@@ -2,11 +2,9 @@ import { SelectLanguage } from "@/core/components";
 import { NAVITEMS } from "@portfolio/constants";
 import { useTranslation } from "react-i18next";
 import styles from "./header.module.css";
-import {
-  Background,
-  ThemeToggle,
-} from "@/core/layouts/portfolio-blog/components";
-import { Link } from "react-router-dom";
+import { Link } from "@tanstack/react-router";
+import { ThemeToggle } from "@/core/components/theme-toggle/theme-toggle";
+import { Background } from "@/core/components/background/background";
 
 export function Header() {
   const { t } = useTranslation("portfolio");

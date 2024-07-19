@@ -1,13 +1,15 @@
 import { HTTP_ENDPOINTS } from "@/core/constants/http-endpoints";
 import { useStoreUser } from "@/features/auth/store/user/store-user";
 import { useMutation } from "@tanstack/react-query";
+import { useNavigate, useParams } from "@tanstack/react-router";
 import axios from "axios";
-import { useNavigate, useParams } from "react-router-dom";
 
 export function UsersDelete() {
-  const { id } = useParams();
-  const { user } = useStoreUser();
+  const { id } = useParams({
+    from: "/_authenticated/_adminLayout/admin/users/delete/$id",
+  });
   const navigate = useNavigate();
+  const { user } = useStoreUser();
   const mutation = useMutation({
     mutationFn: () => {
       return axios.delete(
@@ -18,7 +20,7 @@ export function UsersDelete() {
       );
     },
     onSuccess: () => {
-      navigate("/admin/users");
+      navigate({ to: "/admin/users" });
     },
   });
 

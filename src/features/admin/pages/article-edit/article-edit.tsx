@@ -3,15 +3,17 @@ import { HTTP_ENDPOINTS } from "@/core/constants/http-endpoints";
 import { useStoreUser } from "@/features/auth/store/user/store-user";
 import { Loading } from "@/features/loading/loading";
 import { useMutation, useQueryClient } from "@tanstack/react-query";
+import { useNavigate, useParams } from "@tanstack/react-router";
 import axios from "axios";
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useNavigate, useParams } from "react-router-dom";
 import { useFindArticleById } from "../hooks/use-find-article-by-id";
 
 export function ArticleEdit() {
-  const { id } = useParams();
-  const { user } = useStoreUser();
+  const { id } = useParams({
+    from: "/_authenticated/_adminLayout/admin/articles/edit/$id",
+  });
   const navigate = useNavigate();
+  const { user } = useStoreUser();
   const { article, isError, isLoading } = useFindArticleById(Number(id));
   const queryClient = useQueryClient();
 
@@ -34,7 +36,7 @@ export function ArticleEdit() {
     },
     onSuccess: (data) => {
       queryClient.invalidateQueries({ queryKey: ["article", data.data.id] });
-      navigate("/admin/articles");
+      navigate({ to: "/admin/articles" });
     },
   });
 

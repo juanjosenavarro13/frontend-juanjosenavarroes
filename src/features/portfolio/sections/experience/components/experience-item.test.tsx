@@ -1,21 +1,19 @@
-import { render, screen } from "@testing-library/react";
+import { renderWithWrapper } from "@/core/utils/test-utils";
+import { screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { ExperienceItem } from "./experience-item";
-import { TestWrapper } from "@/core/utils";
 
 describe("experience-item", () => {
   it("should render out end date", () => {
-    render(
-      <TestWrapper>
-        <ExperienceItem
-          experiencieItem={{
-            title: "title",
-            company: "company",
-            description: "description",
-            startDate: new Date("1,1,10"),
-          }}
-        />
-      </TestWrapper>,
+    renderWithWrapper(
+      <ExperienceItem
+        experiencieItem={{
+          title: "title",
+          company: "company",
+          description: "description",
+          startDate: new Date("1,1,10"),
+        }}
+      />,
     );
     expect(screen.getByText("company")).toBeInTheDocument();
     expect(screen.getByText("description")).toBeInTheDocument();
@@ -24,7 +22,7 @@ describe("experience-item", () => {
     expect(time).toContain("experienceSection.now");
   });
   it("should render with end date", () => {
-    render(
+    renderWithWrapper(
       <ExperienceItem
         experiencieItem={{
           title: "title",

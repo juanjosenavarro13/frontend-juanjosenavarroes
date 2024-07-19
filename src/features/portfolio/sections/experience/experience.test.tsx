@@ -1,23 +1,14 @@
-import { TestWrapper } from "@/core/utils";
-import { render } from "@testing-library/react";
+import { renderWithWrapper } from "@/core/utils/test-utils";
 import { describe, expect, it } from "vitest";
 import { Experience } from "./experience";
 
 describe("experience", () => {
   it("should render", () => {
-    render(
-      <TestWrapper>
-        <Experience />
-      </TestWrapper>,
-    );
+    renderWithWrapper(<Experience />);
     expect(document.querySelector("ol")).toBeInTheDocument();
   });
   it("should render with class reveal", () => {
-    render(
-      <TestWrapper>
-        <Experience />
-      </TestWrapper>,
-    );
+    renderWithWrapper(<Experience />);
 
     const list = document.querySelectorAll("li");
 

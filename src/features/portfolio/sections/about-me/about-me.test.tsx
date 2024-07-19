@@ -1,15 +1,11 @@
-import { render, screen } from "@testing-library/react";
+import { renderWithWrapper } from "@/core/utils/test-utils";
+import { screen } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
 import { AboutMe } from "./about-me";
-import { TestWrapper } from "@/core/utils";
 
 describe("about me", () => {
   it("should render", () => {
-    render(
-      <TestWrapper>
-        <AboutMe />
-      </TestWrapper>,
-    );
+    renderWithWrapper(<AboutMe />);
 
     expect(screen.getByText("aboutMeSection.description")).toBeInTheDocument();
     expect(document.querySelector("img")).toBeInTheDocument();

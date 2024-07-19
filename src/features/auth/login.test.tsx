@@ -1,4 +1,3 @@
-import { TestWrapper } from "@/core/utils/test-wrapper";
 import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import * as useLogin from "./hooks/use-login/use-login";
@@ -13,11 +12,7 @@ describe("login", () => {
       onSubmit: vi.fn(),
       register: vi.fn(),
     });
-    render(
-      <TestWrapper>
-        <Login />
-      </TestWrapper>,
-    );
+    render(<Login />);
 
     fireEvent.change(screen.getByTestId("email"), {
       target: { value: "test@example.com" },
@@ -40,11 +35,7 @@ describe("login", () => {
       onSubmit: vi.fn(),
       register: vi.fn(),
     });
-    render(
-      <TestWrapper>
-        <Login />
-      </TestWrapper>,
-    );
+    render(<Login />);
 
     await waitFor(() =>
       expect(screen.getByText("Cargando...")).toBeInTheDocument(),
