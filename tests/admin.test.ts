@@ -61,7 +61,8 @@ test("articulos", async ({ page }) => {
   await page.getByRole("link", { name: "EDITAR" }).first().click();
   await page.getByLabel("Título:").click();
   await page.getByLabel("Título:").fill("titulo test e2e editado");
-  await page.getByLabel("Área de edición del editor:").click();
+  await page.locator(".ql-editor").click();
+  await page.locator(".ql-editor").fill("contenido test e2e editado");
   await page.getByRole("button", { name: "Guardar" }).click();
 
   // eliminar articulo
