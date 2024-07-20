@@ -1,10 +1,11 @@
-import { Editor } from "@/core/components";
+import { LazyCKEditor } from "@/core/components";
 import { HTTP_ENDPOINTS } from "@/core/constants/http-endpoints";
 import { useStoreUser } from "@/features/auth/store/user/store-user";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation } from "@tanstack/react-query";
 import { Navigate } from "@tanstack/react-router";
 import axios from "axios";
+import { Suspense } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { z } from "zod";
 
@@ -62,12 +63,14 @@ export function ArticleCreate() {
           >
             Contenido:
           </label>
-          <Editor
-            value=""
-            onChange={(data) => {
-              setValue("body", data);
-            }}
-          />
+          <Suspense>
+            <LazyCKEditor
+              value=""
+              onChange={(data) => {
+                setValue("body", data);
+              }}
+            />
+          </Suspense>
         </div>
         <button
           className="rounded bg-gray-800 p-2 text-white hover:bg-gray-900"

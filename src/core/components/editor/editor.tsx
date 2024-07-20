@@ -4,13 +4,19 @@ import { ClassicEditor } from "ckeditor5";
 
 import "ckeditor5/ckeditor5.css";
 import { CONFIG_EDITOR } from "./config-editor";
+import { lazy } from "react";
+
+export const LazyCKEditor = lazy(() => import("./editor"));
 
 interface EditorProps {
   value: string | undefined;
   onChange: (value: string) => void;
 }
 
-export function Editor({ value = "", onChange }: Readonly<EditorProps>) {
+export default function Editor({
+  value = "",
+  onChange,
+}: Readonly<EditorProps>) {
   return (
     <CKEditor
       editor={ClassicEditor}
