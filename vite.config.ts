@@ -12,9 +12,7 @@ export default defineConfig({
     minify: true,
     rollupOptions: {
       output: {
-        manualChunks: {
-          react: ["react", "react-dom"],
-        },
+        manualChunks: {},
       },
     },
   },
