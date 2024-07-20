@@ -1,6 +1,6 @@
-import "react-quill/dist/quill.snow.css";
+import { lazy, Suspense, useEffect } from "react";
 
-import ReactQuill from "react-quill";
+const ReactQuill = lazy(() => import("react-quill"));
 
 interface EditorProps {
   value: string | undefined;
@@ -46,18 +46,18 @@ const formats = [
   "background",
 ];
 
-export default function QuillEditor({
-  value,
-  onChange,
-}: Readonly<EditorProps>) {
+export function QuillEditor({ value, onChange }: Readonly<EditorProps>) {
+  useEffect(() => {
+    import("react-quill/dist/quill.snow.css");
+  }, []);
   return (
-    <div>
+    <Suspense fallback={<div>Loading...</div>}>
       <ReactQuill
         value={value}
         onChange={onChange}
         modules={modules}
         formats={formats}
       />
-    </div>
+    </Suspense>
   );
 }

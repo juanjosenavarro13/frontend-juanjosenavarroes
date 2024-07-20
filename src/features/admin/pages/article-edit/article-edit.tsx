@@ -6,9 +6,7 @@ import { useNavigate, useParams } from "@tanstack/react-router";
 import axios from "axios";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { useFindArticleById } from "../hooks/use-find-article-by-id";
-import { lazy, Suspense } from "react";
-
-const QuillEditor = lazy(() => import("@/core/components/editor/editor"));
+import { QuillEditor } from "@/core/components";
 
 export function ArticleEdit() {
   const { id } = useParams({
@@ -78,14 +76,12 @@ export function ArticleEdit() {
           >
             Contenido:
           </label>
-          <Suspense fallback={<div>Loading...</div>}>
-            <QuillEditor
-              value={article?.body}
-              onChange={(data) => {
-                setValue("body", data);
-              }}
-            />
-          </Suspense>
+          <QuillEditor
+            value={article?.body}
+            onChange={(data) => {
+              setValue("body", data);
+            }}
+          />
         </div>
         <button
           className="rounded bg-gray-800 p-2 text-white hover:bg-gray-900"
