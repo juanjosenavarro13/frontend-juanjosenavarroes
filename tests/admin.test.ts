@@ -42,10 +42,8 @@ test("articulos", async ({ page }) => {
   await page.getByRole("link", { name: "Crear Articulo" }).click();
   await page.getByLabel("Título:").click();
   await page.getByLabel("Título:").fill("titulo test e2e");
-  await page.getByLabel("Área de edición del editor:").click();
-  await page
-    .getByLabel("Área de edición del editor:")
-    .fill("contenido test e2e");
+  await page.locator(".ql-editor").click();
+  await page.locator(".ql-editor").fill("contenido test e2e");
   await page.getByRole("button", { name: "Crear" }).click();
 
   // validar articulo
