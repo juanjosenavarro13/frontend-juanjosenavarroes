@@ -13,7 +13,7 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          quill: ["quill", "react-quill"],
+          react: ["react", "react-dom"],
         },
       },
     },
