@@ -46,7 +46,10 @@ const formats = [
   "background",
 ];
 
-export function QuillEditor({ value, onChange }: Readonly<EditorProps>) {
+export default function QuillEditor({
+  value,
+  onChange,
+}: Readonly<EditorProps>) {
   return (
     <div>
       <ReactQuill
