@@ -13,7 +13,9 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks: {
-          ckeditor5: ["ckeditor5"],
+          react: ["react", "react-dom"],
+          quill: ["quill", "react-quill"],
+          tanstack: ["@tanstack/react-query", "@tanstack/react-router"],
         },
       },
     },

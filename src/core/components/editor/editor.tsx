@@ -1,29 +1,60 @@
-// https://ckeditor.com/docs/ckeditor5/latest/getting-started/index.html
-import { CKEditor } from "@ckeditor/ckeditor5-react";
-import { ClassicEditor } from "ckeditor5";
+import "react-quill/dist/quill.snow.css";
 
-import "ckeditor5/ckeditor5.css";
-import { CONFIG_EDITOR } from "./config-editor";
-import { lazy } from "react";
-
-export const LazyCKEditor = lazy(() => import("./editor"));
+import ReactQuill from "react-quill";
 
 interface EditorProps {
   value: string | undefined;
   onChange: (value: string) => void;
 }
 
-export default function Editor({
-  value = "",
-  onChange,
-}: Readonly<EditorProps>) {
+const modules = {
+  toolbar: [
+    [{ header: "1" }, { header: "2" }, { font: [] }],
+    [{ size: [] }],
+    ["bold", "italic", "underline", "strike", "blockquote"],
+    [{ color: [] }, { background: [] }],
+    [
+      { list: "ordered" },
+      { list: "bullet" },
+      { indent: "-1" },
+      { indent: "+1" },
+    ],
+    ["link", "image", "video"],
+    ["clean"],
+  ],
+  clipboard: {
+    matchVisual: false,
+  },
+};
+
+const formats = [
+  "header",
+  "font",
+  "size",
+  "bold",
+  "italic",
+  "underline",
+  "strike",
+  "blockquote",
+  "list",
+  "bullet",
+  "indent",
+  "link",
+  "image",
+  "video",
+  "color",
+  "background",
+];
+
+export function QuillEditor({ value, onChange }: Readonly<EditorProps>) {
   return (
-    <CKEditor
-      editor={ClassicEditor}
-      config={{ ...CONFIG_EDITOR, initialData: value }}
-      onChange={(_e, editor) => {
-        onChange(editor.getData());
-      }}
-    />
+    <div>
+      <ReactQuill
+        value={value}
+        onChange={onChange}
+        modules={modules}
+        formats={formats}
+      />
+    </div>
   );
 }

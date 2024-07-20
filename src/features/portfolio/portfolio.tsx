@@ -1,10 +1,10 @@
+import { Footer } from "@/core/components/footer/footer";
+import { useStoreTheme } from "@/core/storages";
 import { useTranslation } from "react-i18next";
-import { Header, SectionContainer } from "./components";
 import { CodeIcon, UserIcon, WorkIcon } from "../../core/icons";
+import { Header, SectionContainer } from "./components";
 import "./portfolio.css";
 import { AboutMe, Experience, Hero, Projects } from "./sections";
-import { useStoreTheme } from "@/core/storages";
-import { Footer } from "@/core/components/footer/footer";
 
 export function Portfolio() {
   const { theme } = useStoreTheme();
