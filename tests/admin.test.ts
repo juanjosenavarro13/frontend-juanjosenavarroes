@@ -8,7 +8,7 @@ async function login(page: Page) {
     throw new Error("PLAYWRIGHT_USER and PLAYWRIGHT_PASSWORD must be set");
   }
 
-  await page.goto("https://www.juanjosenavarro.es/auth");
+  await page.goto("https://www.juanjosenavarro.es/login");
   await page.locator("[data-testid=email]").click();
   await page.locator("[data-testid=email]").fill(email);
   await page.locator("[data-testid=password]").click();
