@@ -15,7 +15,7 @@
     "test:ui": "vitest --coverage --ui",
     "test:coverage": "vitest --coverage --no-watch",
     "test:e2e": "playwright test",
-    "delete-old-branch": "git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -d",
+    "delete-old-branch": "git remote prune origin && git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -r git branch -d -f",
     "version:patch": "npm version patch && git push && git push --tags",
     "version:minor": "npm version minor && git push && git push --tags",
     "version:major": "npm version major && git push && git push --tags",
