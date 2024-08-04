@@ -1,7 +1,8 @@
 import { INFO } from "@portfolio/constants";
 import { LinkedInIcon, MailIcon } from "@/core/icons";
 import { useTranslation } from "react-i18next";
-import { Badge, SocialPill } from "./components";
+import { SocialPill } from "./components";
+import { Badge, Text } from "library-juanjosenavarroes";
 
 export function Hero() {
   const { t } = useTranslation("portfolio");
@@ -24,9 +25,14 @@ export function Hero() {
         </a>
       </div>
       <div className="h-52 sm:h-32">
-        <h1 className="text-gray -800 text-balance text-4xl font-bold tracking-tight dark:text-white sm:text-5xl">
+        <Text
+          type="h1"
+          variant="bold"
+          color="black"
+          className="text-balance tracking-tight sm:text-5xl"
+        >
           {t("hero.title")}
-        </h1>
+        </Text>
         <p
           className="mt-6 text-pretty text-xl text-gray-800 dark:text-gray-300 [&>strong]:font-semibold [&>strong]:text-blue-500 dark:[&>strong]:text-blue-200"
           dangerouslySetInnerHTML={{ __html: t("hero.description") }}
