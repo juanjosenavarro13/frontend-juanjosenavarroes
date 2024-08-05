@@ -29,6 +29,7 @@ export default defineConfig({
     port: 3000,
   },
   test: {
+    css: true,
     globals: true,
     environment: "happy-dom",
     coverage: {
