@@ -1,4 +1,4 @@
-import { Blog } from "@/features/blog/blog";
+import { Blog } from "@/features";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/blog")({

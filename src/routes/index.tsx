@@ -1,4 +1,4 @@
-import { Portfolio } from "@/features/portfolio/portfolio";
+import { Portfolio } from "@/ui/portfolio";
 import { createFileRoute } from "@tanstack/react-router";
 
 export const Route = createFileRoute("/")({

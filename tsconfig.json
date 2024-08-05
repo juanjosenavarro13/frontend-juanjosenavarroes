@@ -17,8 +17,7 @@
     "types": ["node", "@testing-library/jest-dom"],
 
     "paths": {
-      "@/*": ["./src/*"],
-      "@portfolio/*": ["./src/features/portfolio/*"]
+      "@/*": ["./src/*"]
     },
 
     /* Linting */

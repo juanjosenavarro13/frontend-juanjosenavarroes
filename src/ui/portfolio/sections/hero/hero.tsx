@@ -1,8 +1,8 @@
-import { INFO } from "@portfolio/constants";
 import { LinkedInIcon, MailIcon } from "@/core/icons";
 import { useTranslation } from "react-i18next";
 import { SocialPill } from "./components";
 import { Badge, Text } from "library-juanjosenavarroes";
+import { INFO } from "../../constants";
 
 export function Hero() {
   const { t } = useTranslation("portfolio");

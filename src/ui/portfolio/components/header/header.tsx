@@ -1,10 +1,10 @@
 import { SelectLanguage } from "@/core/components";
-import { NAVITEMS } from "@portfolio/constants";
 import { useTranslation } from "react-i18next";
 import styles from "./header.module.css";
 import { Link } from "@tanstack/react-router";
 import { ThemeToggle } from "@/core/components/theme-toggle/theme-toggle";
 import { Background } from "@/core/components/background/background";
+import { NAVITEMS } from "../../constants";
 
 export function Header() {
   const { t } = useTranslation("portfolio");

@@ -3,6 +3,16 @@ import react from "@vitejs/plugin-react-swc";
 import * as path from "path";
 import { TanStackRouterVite } from "@tanstack/router-plugin/vite";
 
+const excludeTestFiles = [
+  "src/tests/**",
+  "src/core/**",
+  "src/**/index.ts",
+  "src/features/**",
+  "src/routes/**",
+  "src/ui/app.tsx",
+  "src/routeTree.gen.ts",
+];
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [TanStackRouterVite(), react()],
@@ -17,13 +27,7 @@ export default defineConfig({
     },
   },
   resolve: {
-    alias: [
-      { find: "@", replacement: path.resolve(__dirname, "./src") },
-      {
-        find: "@portfolio",
-        replacement: path.resolve(__dirname, "./src/features/portfolio"),
-      },
-    ],
+    alias: [{ find: "@", replacement: path.resolve(__dirname, "./src") }],
   },
   server: {
     port: 3000,
@@ -39,11 +43,16 @@ export default defineConfig({
       },
       enabled: true,
       include: ["src/**"],
-      exclude: ["src/core/**", "src/**/index.ts"],
+      exclude: excludeTestFiles,
     },
     reporters: process.env.GITHUB_ACTIONS ? ["dot", "github-actions"] : ["dot"],
     include: ["src/**/*.{test,spec}.{ts,tsx}"],
-    exclude: ["tests/**"],
+    exclude: excludeTestFiles,
     setupFiles: "./setup-test.tsx",
+    server: {
+      deps: {
+        inline: ["library-juanjosenavarroes"],
+      },
+    },
   },
 });

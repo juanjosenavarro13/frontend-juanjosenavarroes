@@ -1,4 +1,4 @@
-import { INFO } from "@portfolio/constants";
+import { INFO } from "@/ui/portfolio/constants";
 import { useTranslation } from "react-i18next";
 
 export function Footer() {

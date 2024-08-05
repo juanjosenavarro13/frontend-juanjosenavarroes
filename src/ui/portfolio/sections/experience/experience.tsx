@@ -1,4 +1,4 @@
-import { EXPERIENCE } from "@portfolio/constants";
+import { EXPERIENCE } from "../../constants";
 import { ExperienceItem } from "./components";
 
 export function Experience() {

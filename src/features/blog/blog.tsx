@@ -1,8 +1,8 @@
 import { useStoreTheme } from "@/core/storages";
-import { SectionContainer } from "../portfolio/components";
 import { Header } from "./components";
 import { GroupArticle } from "./components/article/group-article";
 import { Footer } from "@/core/components/footer/footer";
+import { SectionContainer } from "@/ui/portfolio/components";
 
 export function Blog() {
   const { theme } = useStoreTheme();
