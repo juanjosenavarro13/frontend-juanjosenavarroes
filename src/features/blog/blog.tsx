@@ -1,4 +1,4 @@
-import { useStoreTheme } from "@/core/storages";
+import { useStoreTheme } from "@/aplication/store";
 import { Header } from "./components";
 import { GroupArticle } from "./components/article/group-article";
 import { Footer } from "@/core/components/footer/footer";

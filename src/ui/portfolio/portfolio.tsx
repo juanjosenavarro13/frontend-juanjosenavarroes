@@ -1,9 +1,9 @@
+import { useStoreTheme } from "@/aplication/store";
 import { Footer } from "@/core/components/footer/footer";
-import { useStoreTheme } from "@/core/storages";
 import { CodeIcon, UserIcon, WorkIcon } from "@/ui/icons";
 import { useTranslation } from "react-i18next";
 import { Header, SectionContainer } from "./components";
-import "./portfolio.css";
+import styles from "./portfolio.module.css";
 import { AboutMe, Experience, Hero, Projects } from "./sections";
 
 export function Portfolio() {
@@ -26,7 +26,7 @@ export function Portfolio() {
             <Experience />
           </SectionContainer>
           <SectionContainer
-            className="reveal"
+            className={styles.reveal}
             title={t("projects")}
             icon={<CodeIcon className="size-8" />}
             id="proyectos"
@@ -34,7 +34,7 @@ export function Portfolio() {
             <Projects />
           </SectionContainer>
           <SectionContainer
-            className="reveal"
+            className={styles.reveal}
             title={t("aboutMe")}
             icon={<UserIcon className="size-8" />}
             id="sobre-mi"

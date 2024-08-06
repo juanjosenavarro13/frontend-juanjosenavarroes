@@ -1,6 +1,6 @@
 import { fireEvent, render } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
-import * as useStoreTheme from "@/core/storages";
+import * as useStoreTheme from "@/aplication/store";
 import { ThemeToggle } from "./theme-toggle";
 
 describe("toggle theme", () => {

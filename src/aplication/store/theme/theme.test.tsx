@@ -1,6 +1,6 @@
 import { act, renderHook } from "@testing-library/react";
 import { describe, expect, it } from "vitest";
-import { useStoreTheme } from "./store-theme";
+import { useStoreTheme } from "./theme";
 
 describe("useStoreTheme", () => {
   it("should initialize theme", () => {

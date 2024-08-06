@@ -12,10 +12,10 @@ describe("experience", () => {
 
     const list = document.querySelectorAll("li");
 
-    expect(list[0]).not.toHaveClass("reveal");
+    expect(list[0]).not.toHaveClass(/reveal/);
 
     for (let i = 1; i < list.length; i++) {
-      expect(list[i]).toHaveClass("reveal");
+      expect(list[i]).toHaveClass(/reveal/);
     }
   });
 });

@@ -1,9 +1,7 @@
-import { SelectLanguage } from "@/core/components";
-import { Background } from "@/core/components/background/background";
-import { ThemeToggle } from "@/core/components/theme-toggle/theme-toggle";
 import { NAVITEMS } from "@/domain/portfolio/constants";
 import { Link } from "@tanstack/react-router";
 import { useTranslation } from "react-i18next";
+import { Background, SelectLanguage, ThemeToggle } from "./components";
 import styles from "./header.module.css";
 
 export function Header() {
