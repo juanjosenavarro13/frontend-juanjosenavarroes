@@ -1,7 +1,7 @@
-import { GithubIcon, LinkIcon } from "@/core/icons";
+import { PROJECTS } from "@/domain/portfolio/constants";
+import { GithubIcon, LinkIcon } from "@/ui/icons";
 import { useTranslation } from "react-i18next";
 import { LinkButton } from "./components/link-button/link-button";
-import { PROJECTS } from "../../constants";
 
 export function Projects() {
   const { t } = useTranslation("portfolio");

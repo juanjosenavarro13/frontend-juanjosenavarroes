@@ -1,7 +1,8 @@
-import { EXPERIENCE } from "../../constants";
+import { EXPERIENCE } from "@/domain/portfolio/constants";
 import { ExperienceItem } from "./components";
 
 export function Experience() {
+  // !REFACTOR USE CLSX
   return (
     <ol className="relative mt-16">
       {EXPERIENCE.map((experiencie, index) => (

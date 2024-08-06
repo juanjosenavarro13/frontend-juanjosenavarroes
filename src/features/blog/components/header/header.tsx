@@ -4,7 +4,7 @@ import styles from "./header.module.css";
 import { Link } from "@tanstack/react-router";
 import { ThemeToggle } from "@/core/components/theme-toggle/theme-toggle";
 import { Background } from "@/core/components/background/background";
-import { NAVITEMS } from "@/ui/portfolio/constants";
+import { NAVITEMS } from "@/domain/portfolio/constants/index";
 
 export function Header() {
   const { t } = useTranslation("portfolio");

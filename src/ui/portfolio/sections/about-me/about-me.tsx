@@ -1,5 +1,5 @@
+import { INFO } from "@/domain/portfolio/constants";
 import { Trans } from "react-i18next";
-import { INFO } from "../../constants";
 
 export function AboutMe() {
   return (

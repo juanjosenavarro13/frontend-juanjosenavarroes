@@ -1,8 +1,8 @@
-import { LinkedInIcon, MailIcon } from "@/core/icons";
+import { LinkedInIcon, MailIcon } from "@/ui/icons";
+import { Badge, Text } from "library-juanjosenavarroes";
 import { useTranslation } from "react-i18next";
 import { SocialPill } from "./components";
-import { Badge, Text } from "library-juanjosenavarroes";
-import { INFO } from "../../constants";
+import { INFO } from "@/domain/portfolio/constants";
 
 export function Hero() {
   const { t } = useTranslation("portfolio");
@@ -21,6 +21,7 @@ export function Hero() {
           rel="noopener"
           className="flex items-center transition md:justify-center md:hover:scale-105"
         >
+          {/* ! REFACTOR BORRAR COMPONENTE BADGE DE LIBRARY-JUANJOSENAVARROES */}
           <Badge>{t("hero.onGoinProject")}</Badge>
         </a>
       </div>

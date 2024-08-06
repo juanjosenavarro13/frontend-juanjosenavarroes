@@ -3,7 +3,7 @@ import {
   ReactIcon,
   TailwindIcon,
   WordpressIcon,
-} from "../../../core/icons";
+} from "../../../ui/icons";
 
 export type tagType = {
   name: string;
